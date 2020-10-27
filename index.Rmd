@@ -1,8 +1,8 @@
 --- 
-title: "Ryten lab induction pack"
+title: "Ryten lab induction book"
 author: 
-    - name: "David Zhang"
-    - name: "Regina Reynolds"
+    - David Zhang^[UCL, david.zhang.12@ucl.ac.uk]
+    - Regina Reynolds^[UCL, regina.reynolds.16@ucl.ac.uk]
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
