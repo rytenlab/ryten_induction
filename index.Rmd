@@ -1,0 +1,37 @@
+--- 
+title: "Ryten lab induction pack"
+author: 
+    - name: "David Zhang"
+    - name: "Regina Reynolds"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rytenlab/ryten_induction
+description: "Induction bookdown for all things Ryten lab"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+> The goal of this book is to provide instructions to that you'll need to get started in the Ryten lab as well as 
+
+# Welcome!
+
+We hope you enjoy your time in the Ryten lab! Some description about the book... **TO BE ADDED**
+
+## Acknowledgements
+
+For example, this book was made possible thanks to the R package `bookdown` [@R-bookdown].
+
+The below code automatically generates the `packages.bib`, a `bibtex` format for all the packages listed. If you contribute to this book and include a particular R package in your guide (as with `bookdown` above), consider adding it to the code chunk and citing it via including `[@R-package_name]` in the text.
+
+```{r r_package_references, include = TRUE}
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
