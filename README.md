@@ -1,2 +1,2 @@
 # Welcome to the Ryten lab!
-[Induction bookdown](https://bookdown.org/rytenlab/ryten_induction/) for the Ryten Lab
+The [Ryten Lab induction book](https://bookdown.org/rytenlab/ryten_induction/) is designed to take you through some of the most common setup/analysis/resources that existing members have followed in the past. 
