@@ -1,2 +1,2 @@
 # Welcome to the Ryten lab!
-Induction bookdown for the Ryten Lab
+[Induction bookdown](https://bookdown.org/rytenlab/ryten_induction/) for the Ryten Lab
