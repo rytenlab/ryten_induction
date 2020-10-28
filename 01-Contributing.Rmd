@@ -30,7 +30,7 @@ git clone https://github.com/rytenlab/ryten_induction.git
 
 3.  **Adding a new page.** Familiarize yourself with the structure of the book. The [usage](https://bookdown.org/yihui/bookdown/usage.html) page of the bookdown guide gives a nice overview. In brief, `.Rmd` docs are the pages of the book. The `index.Rmd` serves as the header/preface/first page of the book. The remainder of the `.Rmd` files are labeled with "01-PAGE-NAME" and form the pages of this book. To create a new page, just make a new `.Rmd` and name it with an informative title. Bear in mind that the pages will be ordered by their alphanumerical name (01, 02, 03...). The contents of each `.Rmd` (except `index.Rmd`) is expected to have one "\#" prefixed title, which will be the title of the page. If you want to include subsections, then use "\#\#" or "\#\#\#" etc. The rest of the page structure follows the traditional `.Rmd` syntax. 
 
-> By default, `.Rmd` files have a YAML header at the top contained within the "---"s. If you are making a new page please remove these, leaving just a "\# PAGE TITLE" at the top. The YAML header for the entire book can be found in the `index.Rmd`.
+> Note: By default, `.Rmd` files have a YAML header at the top contained within the "---"s. If you are making a new page please remove these, leaving just a "\# PAGE TITLE" at the top. The YAML header for the entire book can be found in the `index.Rmd`.
 
 4.  **Rendering the page/book.** Throughout the writing of your page, you can check how it looks in the context of the book through either pressing the `Knit` button on the top left of RStudio. This will give a preview of your new page. If you want to re-render the entire book, then first create a new Rproject in the root of your local `bookdown` repository. Then after opening the `.Rproj` you should see a build panel on the top-right (shown below). Clicking the `Build Book` option will knit/render the entire book \@ref(fig:build-book). It's recommended that you continuously run these checks as you update the book, to ensure it looks as you expect and doesn't break anything. 
 
@@ -38,13 +38,9 @@ git clone https://github.com/rytenlab/ryten_induction.git
 knitr::include_graphics('figures/01-Contributing/Screenshot 2020-10-27 at 12.32.29.png')
 ```
 
-5.  **Publishing the book.** The public version of this book sits at <https://bookdown.org/rytenlab/ryten_induction/> hosted by "R Studio Connect". You will first need to have to create an account at <https://bookdown.org/connect/> (this requires a \@gmail.com account) . Then, ask for someone (currently David) to add you as a collaborator on the book, so you can edit and publish changes. Make sure you've run `Build Book` locally (see **Step 4.** above), to check whether your changes render as intended. Finally, you can run the below to publish your changes. Go through the authentication process on the browser the first time around, then next time you should be able to publish freely. 
+5.  **Publishing the book.** The public version of this book sits at https://rytenlab.github.io/ryten_induction/ hosted by GitHub pages. This is updated every time you make a `git push` to the repository via GitHub Actions (GHA). The GHA workflow will automatically render this book and push the changes to the branch `gh-pages`, which is then deployed at https://rytenlab.github.io/ryten_induction/. Therefore, if your book fails to render on GHA, it won't update. You can see if it's failed (red X) or succeeded (green tick) on the GiHub repo a few minutes after pushing. It's important to try rendering the book locally to ensure your changes operate as intended. If all the changes look good and you're happy with it, then push the change from your local repository back to `rytenlab/ryten_induction`. 
 
-```{r publish-book, eval = FALSE}
-bookdown::publish_book(name = "ryten_induction", account = "rytenlab", render = "local")
-```
-
-6. **Push changes to GitHub** If all the changes look good and you're happy with it, then push the change from your local repository back to `rytenlab/ryten_induction`. This is important, as otherwise the next contributor may end up with merge conflicting which can be a pain to resolve. 
+> Note: If you are using other R packages (outside of bookdown and rmarkdown) in your newly added pages, then this might break the GHA workflow. Don't worry! We just need to make sure the necessary packages are installed as GHA runs on a fresh-ish install of Ubuntu. If this is the case, then speak to David (will try to automate the package installation in future).
 
 ```{bash git_push, eval = FALSE}
 # make sure you're in your local repo
@@ -54,7 +50,7 @@ cd ryten_induction
 git status
 
 git add YOUR_CHANGES
-git commit -m "message" YOUR_CHANGES
+git commit -m "message"
 git push
 ```
 
