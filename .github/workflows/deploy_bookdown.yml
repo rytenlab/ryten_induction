@@ -27,7 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-         install.packages(c("bookdown", "rmarkdown", "lobstr"))
+         install.packages(c("bookdown", "rmarkdown"))
         shell: Rscript {0}
 
       - name: Render book
