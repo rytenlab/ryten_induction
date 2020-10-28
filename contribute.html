@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Contributing guide | Ryten lab induction book</title>
+  <meta name="description" content="Induction bookdown for all things Ryten lab" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Contributing guide | Ryten lab induction book" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Induction bookdown for all things Ryten lab" />
+  <meta name="github-repo" content="rytenlab/ryten_induction" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Contributing guide | Ryten lab induction book" />
+  
+  <meta name="twitter:description" content="Induction bookdown for all things Ryten lab" />
+  
+
+<meta name="author" content="David Zhang" />
+<meta name="author" content="Regina Reynolds" />
+
+
+<meta name="date" content="2020-10-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome!</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i><b>1.1</b> Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> Contributing guide</a><ul>
+<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-contribute"><i class="fa fa-check"></i><b>2.1</b> Why contribute?</a></li>
+<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#what-should-i-contribute"><i class="fa fa-check"></i><b>2.2</b> What should I contribute?</a></li>
+<li class="chapter" data-level="2.3" data-path="contribute.html"><a href="contribute.html#how-should-i-contribute"><i class="fa fa-check"></i><b>2.3</b> How should I contribute?</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="contribute.html"><a href="contribute.html#basics"><i class="fa fa-check"></i><b>2.3.1</b> Basics</a></li>
+<li class="chapter" data-level="2.3.2" data-path="contribute.html"><a href="contribute.html#adding-references"><i class="fa fa-check"></i><b>2.3.2</b> Adding References</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>3</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ryten lab induction book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="contribute" class="section level1">
+<h1><span class="header-section-number">2</span> Contributing guide</h1>
+<div id="why-contribute" class="section level2">
+<h2><span class="header-section-number">2.1</span> Why contribute?</h2>
+<p>Given that we work on similar topics and share a similar infrastructure, we also have a lot of common tasks. For example, every new member will have to learn how to use the Ryten server, or <code>R</code> in general, or potentially run RNA-seq alignment/QC. This can be daunting at first and this book aims to ease that transition. The more comprehensive this book is, the better the experience of future or existing Ryten lab members will be. Thus, we would encourage all Ryten Lab members to contribute.</p>
+</div>
+<div id="what-should-i-contribute" class="section level2">
+<h2><span class="header-section-number">2.2</span> What should I contribute?</h2>
+<p>If you have a workflow that you’ve been asked from a colleague more than once to explain or share code, then it’s worth considering whether it should be part of this book. The more common the task, the more useful it will be when sitting in this book. From experience, the easiest time to add new workflows/instructions is during the time you actually conduct that workflow yourself so when you’re next asked to run that gene-set enrichment analysis, consider documenting that run here, even if it’s just a page with links to your code on GitHub/the server.</p>
+</div>
+<div id="how-should-i-contribute" class="section level2">
+<h2><span class="header-section-number">2.3</span> How should I contribute?</h2>
+<p>This book is built using the R package <code>bookdown</code> <span class="citation">(Xie <a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span>. A brilliant guide for the comprehensive functionality of <code>bookdown</code> is written by the author of the package Yihui Xie <a href="https://bookdown.org/yihui/bookdown/">here</a>. If you’re interested in writing your own book, we’d suggest checking it out.</p>
+<p>However, below is a small guide to get you started if you want to contribute to this book.</p>
+<div id="basics" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Basics</h3>
+<ol style="list-style-type: decimal">
+<li><strong>Prerequisites.</strong> Install the <code>bookdown</code> R package. And also the package <code>rsconnect</code> if you want to publish this book to <a href="https://bookdown.org/rytenlab/ryten_induction/" class="uri">https://bookdown.org/rytenlab/ryten_induction/</a>.</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="contribute.html#cb2-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>, <span class="st">&quot;rsconnect&quot;</span>)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Clone the repository containing this book.</strong> If you’re unfamiliar with GitHub or <code>git</code>, check out this <a href="https://happygitwithr.com/">guide</a>.</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="contribute.html#cb3-1"></a><span class="fu">git</span> clone https://github.com/rytenlab/ryten_induction.git</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Adding a new page.</strong> Familiarize yourself with the structure of the book. The <a href="https://bookdown.org/yihui/bookdown/usage.html">usage</a> page of the bookdown guide gives a nice overview. In brief, <code>.Rmd</code> docs are the pages of the book. The <code>index.Rmd</code> serves as the header/preface/first page of the book. The remainder of the <code>.Rmd</code> files are labeled with “01-PAGE-NAME” and form the pages of this book. To create a new page, just make a new <code>.Rmd</code> and name it with an informative title. Bear in mind that the pages will be ordered by their alphanumerical name (01, 02, 03…). The contents of each <code>.Rmd</code> (except <code>index.Rmd</code>) is expected to have one “#” prefixed title, which will be the title of the page. If you want to include subsections, then use “##” or “###” etc. The rest of the page structure follows the traditional <code>.Rmd</code> syntax.</li>
+</ol>
+<blockquote>
+<p>By default, <code>.Rmd</code> files have a YAML header at the top contained within the “—”s. If you are making a new page please remove these, leaving just a “# PAGE TITLE” at the top. The YAML header for the entire book can be found in the <code>index.Rmd</code>.</p>
+</blockquote>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Rendering the page/book.</strong> Throughout the writing of your page, you can check how it looks in the context of the book through either pressing the <code>Knit</code> button on the top left of RStudio. This will give a preview of your new page. If you want to re-render the entire book, then first create a new Rproject in the root of your local <code>bookdown</code> repository. Then after opening the <code>.Rproj</code> you should see a build panel on the top-right (shown below). Clicking the <code>Build Book</code> option will knit/render the entire book <a href="contribute.html#fig:build-book">2.1</a>. It’s recommended that you continuously run these checks as you update the book, to ensure it looks as you expect and doesn’t break anything.</li>
+</ol>
+<div class="figure"><span id="fig:build-book"></span>
+<img src="figures/01-Contributing/Screenshot%202020-10-27%20at%2012.32.29.png" alt="Screen of how to build a book"  />
+<p class="caption">
+Figure 2.1: Screen of how to build a book
+</p>
+</div>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Publishing the book.</strong> The public version of this book sits at <a href="https://bookdown.org/rytenlab/ryten_induction/" class="uri">https://bookdown.org/rytenlab/ryten_induction/</a> hosted by “R Studio Connect”. You will first need to have to create an account at <a href="https://bookdown.org/connect/" class="uri">https://bookdown.org/connect/</a> (this requires a @gmail.com account) . Then, ask for someone (currently David) to add you as a collaborator on the book, so you can edit and publish changes. Make sure you’ve run <code>Build Book</code> locally (see <strong>Step 4.</strong> above), to check whether your changes render as intended. Finally, you can run the below to publish your changes. Go through the authentication process on the browser the first time around, then next time you should be able to publish freely.</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="contribute.html#cb4-1"></a>bookdown<span class="op">::</span><span class="kw">publish_book</span>(<span class="dt">name =</span> <span class="st">&quot;ryten_induction&quot;</span>, <span class="dt">account =</span> <span class="st">&quot;rytenlab&quot;</span>, <span class="dt">render =</span> <span class="st">&quot;local&quot;</span>)</span></code></pre></div>
+<ol start="6" style="list-style-type: decimal">
+<li><strong>Push changes to GitHub</strong> If all the changes look good and you’re happy with it, then push the change from your local repository back to <code>rytenlab/ryten_induction</code>. This is important, as otherwise the next contributor may end up with merge conflicting which can be a pain to resolve.</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="contribute.html#cb5-1"></a><span class="co"># make sure you&#39;re in your local repo</span></span>
+<span id="cb5-2"><a href="contribute.html#cb5-2"></a><span class="bu">cd</span> ryten_induction</span>
+<span id="cb5-3"><a href="contribute.html#cb5-3"></a></span>
+<span id="cb5-4"><a href="contribute.html#cb5-4"></a><span class="co"># you can check this via git status</span></span>
+<span id="cb5-5"><a href="contribute.html#cb5-5"></a><span class="fu">git</span> status</span>
+<span id="cb5-6"><a href="contribute.html#cb5-6"></a></span>
+<span id="cb5-7"><a href="contribute.html#cb5-7"></a><span class="fu">git</span> add YOUR_CHANGES</span>
+<span id="cb5-8"><a href="contribute.html#cb5-8"></a><span class="fu">git</span> commit -m <span class="st">&quot;message&quot;</span> YOUR_CHANGES</span>
+<span id="cb5-9"><a href="contribute.html#cb5-9"></a><span class="fu">git</span> push</span></code></pre></div>
+<p>That’s it! You’re done! Thank you for contributing to making our future lives easier :)</p>
+</div>
+<div id="adding-references" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Adding References</h3>
+<p>References can be added in two ways:</p>
+<ol style="list-style-type: decimal">
+<li>Add a package to the code chunk in <code>index.Rmd</code> labeled “r_package_references”. Then, refer it in the text via <code>[@R-package_name]</code>.</li>
+<li>Add a bibtex entry to book.bib then refer to in via <code>[@key]</code>. Eg. <span class="citation">(Wickham <a href="#ref-advancedR" role="doc-biblioref">2014</a>)</span>.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<h3> References</h3>
+<div id="refs" class="references">
+<div id="ref-advancedR">
+<p>Wickham, Hadley. 2014. <em>Advanced R</em>. 2nd ed. <a href="https://adv-r.hadley.nz/">https://adv-r.hadley.nz/</a>.</p>
+</div>
+<div id="ref-R-bookdown">
+<p>Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
