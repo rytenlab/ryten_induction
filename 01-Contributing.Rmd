@@ -16,7 +16,7 @@ However, below is a small guide to get you started if you want to contribute to 
 
 ### Basics
 
-1.  **Prerequisites.** Install the `bookdown` R package. And also the package `rsconnect` if you want to publish this book to <https://bookdown.org/rytenlab/ryten_induction/>.
+1.  **Prerequisites.** Install the `bookdown` R package.
 
 ```{r install-bookdown, eval = FALSE}
 install.packages("bookdown", "rsconnect")
