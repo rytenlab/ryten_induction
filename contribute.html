@@ -190,7 +190,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Adding a new page.</strong> Familiarize yourself with the structure of the book. The <a href="https://bookdown.org/yihui/bookdown/usage.html">usage</a> page of the bookdown guide gives a nice overview. In brief, <code>.Rmd</code> docs are the pages of the book. The <code>index.Rmd</code> serves as the header/preface/first page of the book. The remainder of the <code>.Rmd</code> files are labeled with “01-PAGE-NAME” and form the pages of this book. To create a new page, just make a new <code>.Rmd</code> and name it with an informative title. Bear in mind that the pages will be ordered by their alphanumerical name (01, 02, 03…). The contents of each <code>.Rmd</code> (except <code>index.Rmd</code>) is expected to have one “#” prefixed title, which will be the title of the page. If you want to include subsections, then use “##” or “###” etc. The rest of the page structure follows the traditional <code>.Rmd</code> syntax.</li>
 </ol>
 <blockquote>
-<p>By default, <code>.Rmd</code> files have a YAML header at the top contained within the “—”s. If you are making a new page please remove these, leaving just a “# PAGE TITLE” at the top. The YAML header for the entire book can be found in the <code>index.Rmd</code>.</p>
+<p>Note: By default, <code>.Rmd</code> files have a YAML header at the top contained within the “—”s. If you are making a new page please remove these, leaving just a “# PAGE TITLE” at the top. The YAML header for the entire book can be found in the <code>index.Rmd</code>.</p>
 </blockquote>
 <ol start="4" style="list-style-type: decimal">
 <li><strong>Rendering the page/book.</strong> Throughout the writing of your page, you can check how it looks in the context of the book through either pressing the <code>Knit</code> button on the top left of RStudio. This will give a preview of your new page. If you want to re-render the entire book, then first create a new Rproject in the root of your local <code>bookdown</code> repository. Then after opening the <code>.Rproj</code> you should see a build panel on the top-right (shown below). Clicking the <code>Build Book</code> option will knit/render the entire book <a href="contribute.html#fig:build-book">2.1</a>. It’s recommended that you continuously run these checks as you update the book, to ensure it looks as you expect and doesn’t break anything.</li>
@@ -202,21 +202,20 @@ Figure 2.1: Screen of how to build a book
 </p>
 </div>
 <ol start="5" style="list-style-type: decimal">
-<li><strong>Publishing the book.</strong> The public version of this book sits at <a href="https://bookdown.org/rytenlab/ryten_induction/" class="uri">https://bookdown.org/rytenlab/ryten_induction/</a> hosted by “R Studio Connect”. You will first need to have to create an account at <a href="https://bookdown.org/connect/" class="uri">https://bookdown.org/connect/</a> (this requires a @gmail.com account) . Then, ask for someone (currently David) to add you as a collaborator on the book, so you can edit and publish changes. Make sure you’ve run <code>Build Book</code> locally (see <strong>Step 4.</strong> above), to check whether your changes render as intended. Finally, you can run the below to publish your changes. Go through the authentication process on the browser the first time around, then next time you should be able to publish freely.</li>
+<li><strong>Publishing the book.</strong> The public version of this book sits at <a href="https://rytenlab.github.io/ryten_induction/" class="uri">https://rytenlab.github.io/ryten_induction/</a> hosted by GitHub pages. This is updated every time you make a <code>git push</code> to the repository via GitHub Actions (GHA). The GHA workflow will automatically render this book and push the changes to the branch <code>gh-pages</code>, which is then deployed at <a href="https://rytenlab.github.io/ryten_induction/" class="uri">https://rytenlab.github.io/ryten_induction/</a>. Therefore, if your book fails to render on GHA, it won’t update. You can see if it’s failed (red X) or succeeded (green tick) on the GiHub repo a few minutes after pushing. It’s important to try rendering the book locally to ensure your changes operate as intended. If all the changes look good and you’re happy with it, then push the change from your local repository back to <code>rytenlab/ryten_induction</code>.</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="contribute.html#cb4-1"></a>bookdown<span class="op">::</span><span class="kw">publish_book</span>(<span class="dt">name =</span> <span class="st">&quot;ryten_induction&quot;</span>, <span class="dt">account =</span> <span class="st">&quot;rytenlab&quot;</span>, <span class="dt">render =</span> <span class="st">&quot;local&quot;</span>)</span></code></pre></div>
-<ol start="6" style="list-style-type: decimal">
-<li><strong>Push changes to GitHub</strong> If all the changes look good and you’re happy with it, then push the change from your local repository back to <code>rytenlab/ryten_induction</code>. This is important, as otherwise the next contributor may end up with merge conflicting which can be a pain to resolve.</li>
-</ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="contribute.html#cb5-1"></a><span class="co"># make sure you&#39;re in your local repo</span></span>
-<span id="cb5-2"><a href="contribute.html#cb5-2"></a><span class="bu">cd</span> ryten_induction</span>
-<span id="cb5-3"><a href="contribute.html#cb5-3"></a></span>
-<span id="cb5-4"><a href="contribute.html#cb5-4"></a><span class="co"># you can check this via git status</span></span>
-<span id="cb5-5"><a href="contribute.html#cb5-5"></a><span class="fu">git</span> status</span>
-<span id="cb5-6"><a href="contribute.html#cb5-6"></a></span>
-<span id="cb5-7"><a href="contribute.html#cb5-7"></a><span class="fu">git</span> add YOUR_CHANGES</span>
-<span id="cb5-8"><a href="contribute.html#cb5-8"></a><span class="fu">git</span> commit -m <span class="st">&quot;message&quot;</span> YOUR_CHANGES</span>
-<span id="cb5-9"><a href="contribute.html#cb5-9"></a><span class="fu">git</span> push</span></code></pre></div>
+<blockquote>
+<p>Note: If you are using other R packages (outside of bookdown and rmarkdown) in your newly added pages, then this might break the GHA workflow. Don’t worry! We just need to make sure the necessary packages are installed as GHA runs on a fresh-ish install of Ubuntu. If this is the case, then speak to David (will try to automate the package installation in future).</p>
+</blockquote>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="contribute.html#cb4-1"></a><span class="co"># make sure you&#39;re in your local repo</span></span>
+<span id="cb4-2"><a href="contribute.html#cb4-2"></a><span class="bu">cd</span> ryten_induction</span>
+<span id="cb4-3"><a href="contribute.html#cb4-3"></a></span>
+<span id="cb4-4"><a href="contribute.html#cb4-4"></a><span class="co"># you can check this via git status</span></span>
+<span id="cb4-5"><a href="contribute.html#cb4-5"></a><span class="fu">git</span> status</span>
+<span id="cb4-6"><a href="contribute.html#cb4-6"></a></span>
+<span id="cb4-7"><a href="contribute.html#cb4-7"></a><span class="fu">git</span> add YOUR_CHANGES</span>
+<span id="cb4-8"><a href="contribute.html#cb4-8"></a><span class="fu">git</span> commit -m <span class="st">&quot;message&quot;</span></span>
+<span id="cb4-9"><a href="contribute.html#cb4-9"></a><span class="fu">git</span> push</span></code></pre></div>
 <p>That’s it! You’re done! Thank you for contributing to making our future lives easier :)</p>
 </div>
 <div id="adding-references" class="section level3">
