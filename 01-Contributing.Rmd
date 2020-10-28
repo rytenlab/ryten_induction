@@ -19,7 +19,7 @@ However, below is a small guide to get you started if you want to contribute to 
 1.  **Prerequisites.** Install the `bookdown` R package.
 
 ```{r install-bookdown, eval = FALSE}
-install.packages("bookdown", "rsconnect")
+install.packages("bookdown")
 ```
 
 2.  **Clone the repository containing this book.** If you're unfamiliar with GitHub or `git`, check out this [guide](https://happygitwithr.com/).
