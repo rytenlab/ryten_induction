@@ -1,0 +1,43 @@
+name: Deploy-bookdown
+
+# set when you want to trigger the GHA workflow
+# here, whenever a change is made to master
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# ubuntu-latest - running on GHA provided ubuntu runner
+# actions/checkout@v2 - checkouts to repo so you have it locally on the runner
+# r-lib/actions/setup-r@v1/r-lib/actions/setup-pandoc@v1 - these I've taken from
+# https://ropenscilabs.github.io/actions_sandbox/websites-using-pkgdown-bookdown-and-blogdown.html#ghpages-setup
+# but actually not sure exactly what they do. If I don't have them, install.packages()
+# fails due to permission error due to no write access on the .libpath
+# no write access on the .libpath (https://github.com/dzhang32/advanced_R/actions/runs/332432023)
+jobs:
+  deploy-bookdown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
+
+      - name: Install dependencies
+        run: |
+         install.packages(c("bookdown", "rmarkdown", "lobstr"))
+        shell: Rscript {0}
+
+      - name: Render book
+        run: "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+        shell: Rscript {0}
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: _book # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
