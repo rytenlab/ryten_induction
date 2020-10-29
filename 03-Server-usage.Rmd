@@ -1,0 +1,12 @@
+# Server usage {#server}
+
+## Why use the Ryten server?
+
+Remote servers are useful for a few reasons: 
+
+1. They enable a common environment for all members of the area to work on. You can easily share results without duplication or data that's too large to sit on your personal computers by sharing the path to the directory/file on Ryten server. 
+2. They allow you to conduct analysis that exceeds the computational resources of (or take extremely long on) your local computer. The Ryten server has >20Tb of storage space, ~256Gb of RAM and 112 CPUs, though at times, even this will feel too small! 
+
+## How to connect to the Ryten server?
+
+TO BE ADDED - maybe will do it when it next needs to be done
