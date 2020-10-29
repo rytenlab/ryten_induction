@@ -1,8 +1,6 @@
 --- 
 title: "Ryten lab induction book"
 author: 
-    - David Zhang^[UCL, david.zhang.12@ucl.ac.uk]
-    - Regina Reynolds^[UCL, regina.reynolds.16@ucl.ac.uk]
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -18,17 +16,22 @@ description: "Induction bookdown for all things Ryten lab"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-> The goal of this book is to provide instructions to that you'll need to get started in the Ryten lab as well as 
+> The goal of this book is to provide a guide for your Ryten lab journey
 
 # Welcome!
 
-We hope you enjoy your time in the Ryten lab! Some description about the book... **TO BE ADDED**
+We hope you enjoy your time in the Ryten lab! The goal of this book is to capture the tasks we share as a team and document the things we would have liked to have known when beginning in the Ryten lab. 
+
+# Useful links
+
+- The Ryten lab [website](https://rytenlab.com/)
+- The Ryten lab [GitHub](https://github.com/rytenlab)
 
 ## Acknowledgements
 
-For example, this book was made possible thanks to the R package `bookdown` [@R-bookdown].
+This book was made possible thanks to the R package `bookdown` [@R-bookdown].
 
-The below code automatically generates the `packages.bib`, a `bibtex` format for all the packages listed. If you contribute to this book and include a particular R package in your guide (as with `bookdown` above), consider adding it to the code chunk and citing it via including `[@R-package_name]` in the text.
+The below code automatically generates `packages.bib`, a `bibtex` format for all the packages listed. If you contribute to this book and include a particular R package in your guide (as with `bookdown` above), consider adding it to the code chunk and citing it via including `[@R-package_name]` in the text.
 
 ```{r r_package_references, include = TRUE}
 knitr::write_bib(c(
