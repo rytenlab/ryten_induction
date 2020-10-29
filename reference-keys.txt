@@ -1,5 +1,6 @@
 fig:build-book
 welcome
+useful-links
 acknowledgements
 contribute
 why-contribute
@@ -7,4 +8,7 @@ what-should-i-contribute
 how-should-i-contribute
 basics
 adding-references
+server
+why-use-the-ryten-server
+how-to-connect-to-the-ryten-server
 references
