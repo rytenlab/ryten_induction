@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 We hope you enjoy your time in the Ryten lab! The goal of this book is to capture the tasks we share as a team and document the things we would have liked to have known when beginning in the Ryten lab. 
 
-# Useful links
+## Useful links
 
 - The Ryten lab [website](https://rytenlab.com/)
 - The Ryten lab [GitHub](https://github.com/rytenlab)

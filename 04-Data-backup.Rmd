@@ -144,7 +144,7 @@ The key's randomart image is:
 |   EXAMPLE       |
 |    EXAMPLE      |
 |    EXAMPLE      |
-|     EXAMPLE     |
+|      EXAMPLE    |
 +----[SHA256]-----+
 
 ```
