@@ -24,7 +24,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2020-10-29" />
+<meta name="date" content="2020-11-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -139,7 +139,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>3</b> Contributing guide</a><ul>
 <li class="chapter" data-level="3.1" data-path="contribute.html"><a href="contribute.html#why-contribute"><i class="fa fa-check"></i><b>3.1</b> Why contribute?</a></li>
 <li class="chapter" data-level="3.2" data-path="contribute.html"><a href="contribute.html#what-should-i-contribute"><i class="fa fa-check"></i><b>3.2</b> What should I contribute?</a></li>
-<li class="chapter" data-level="3.3" data-path="contribute.html"><a href="contribute.html#how-should-i-contribute"><i class="fa fa-check"></i><b>3.3</b> How should I contribute?</a><ul>
+<li class="chapter" data-level="3.3" data-path="contribute.html"><a href="contribute.html#contribute-how"><i class="fa fa-check"></i><b>3.3</b> How should I contribute?</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="contribute.html"><a href="contribute.html#basics"><i class="fa fa-check"></i><b>3.3.1</b> Basics</a></li>
 <li class="chapter" data-level="3.3.2" data-path="contribute.html"><a href="contribute.html#adding-references"><i class="fa fa-check"></i><b>3.3.2</b> Adding References</a></li>
 </ul></li>
@@ -148,7 +148,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="server.html"><a href="server.html#why-use-the-ryten-server"><i class="fa fa-check"></i><b>4.1</b> Why use the Ryten server?</a></li>
 <li class="chapter" data-level="4.2" data-path="server.html"><a href="server.html#how-to-connect-to-the-ryten-server"><i class="fa fa-check"></i><b>4.2</b> How to connect to the Ryten server?</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
+<li class="chapter" data-level="5" data-path="data-backup.html"><a href="data-backup.html"><i class="fa fa-check"></i><b>5</b> Data backup</a><ul>
+<li class="chapter" data-level="5.1" data-path="data-backup.html"><a href="data-backup.html#why-backup-your-data-stored-on-the-ryten-server"><i class="fa fa-check"></i><b>5.1</b> Why backup your data stored on the Ryten server?</a></li>
+<li class="chapter" data-level="5.2" data-path="data-backup.html"><a href="data-backup.html#what-options-are-available-to-you-as-ryten-server-user"><i class="fa fa-check"></i><b>5.2</b> What options are available to you as Ryten server user?</a></li>
+<li class="chapter" data-level="5.3" data-path="data-backup.html"><a href="data-backup.html#what-are-good-practices-for-data-backup"><i class="fa fa-check"></i><b>5.3</b> What are good practices for data backup?</a></li>
+<li class="chapter" data-level="5.4" data-path="data-backup.html"><a href="data-backup.html#aws"><i class="fa fa-check"></i><b>5.4</b> AWS</a></li>
+<li class="chapter" data-level="5.5" data-path="data-backup.html"><a href="data-backup.html#github"><i class="fa fa-check"></i><b>5.5</b> Github</a></li>
+<li class="chapter" data-level="5.6" data-path="data-backup.html"><a href="data-backup.html#ucl-rds"><i class="fa fa-check"></i><b>5.6</b> UCL RDS</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="data-backup.html"><a href="data-backup.html#registering-a-project"><i class="fa fa-check"></i><b>5.6.1</b> Registering a project</a></li>
+<li class="chapter" data-level="5.6.2" data-path="data-backup.html"><a href="data-backup.html#accessing-your-project-space"><i class="fa fa-check"></i><b>5.6.2</b> Accessing your project space</a></li>
+<li class="chapter" data-level="5.6.3" data-path="data-backup.html"><a href="data-backup.html#using-rsync-to-backup-to-ucl-rds"><i class="fa fa-check"></i><b>5.6.3</b> Using <code>rsync</code> to backup to UCL RDS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>6</b> References</a></li>
 </ul>
 
       </nav>
@@ -176,7 +188,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.2</span> What should I contribute?</h2>
 <p>If you have a workflow that you’ve been asked from a colleague more than once to explain or share code, then it’s worth considering whether it should be part of this book. The more common the task, the more useful it will be when sitting in this book. From experience, the easiest time to add new workflows/instructions is during the time you actually conduct that workflow yourself so when you’re next asked to run that gene-set enrichment analysis, consider documenting that run here, even if it’s just a page with links to your code on GitHub/the server.</p>
 </div>
-<div id="how-should-i-contribute" class="section level2">
+<div id="contribute-how" class="section level2">
 <h2><span class="header-section-number">3.3</span> How should I contribute?</h2>
 <p>This book is built using the R package <code>bookdown</code> <span class="citation">(Xie <a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span>. A brilliant guide for the comprehensive functionality of <code>bookdown</code> is written by the author of the package Yihui Xie <a href="https://bookdown.org/yihui/bookdown/">here</a>. If you’re interested in writing your own book, we’d suggest checking it out.</p>
 <p>However, below is a small guide to get you started if you want to contribute to this book.</p>
