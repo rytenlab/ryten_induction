@@ -26,6 +26,7 @@ We hope you enjoy your time in the Ryten lab! The goal of this book is to captur
 
 - The Ryten lab [website](https://rytenlab.com/)
 - The Ryten lab [GitHub](https://github.com/rytenlab)
+- The Ryten lab [Sharepoint](https://liveuclac.sharepoint.com/sites/rytenlab/Shared Documents/). To access this, you must be a member of rytenlab (if you are receiving e-mails from rytenlab@live.ucl.ac.uk, then you are a member). If you are a not a member, let one of the existing members know and we'll add you.
 
 ## Acknowledgements
 

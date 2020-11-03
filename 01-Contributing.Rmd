@@ -8,7 +8,7 @@ Given that we work on similar topics and share a similar infrastructure, we also
 
 If you have a workflow that you've been asked from a colleague more than once to explain or share code, then it's worth considering whether it should be part of this book. The more common the task, the more useful it will be when sitting in this book. From experience, the easiest time to add new workflows/instructions is during the time you actually conduct that workflow yourself so when you're next asked to run that gene-set enrichment analysis, consider documenting that run here, even if it's just a page with links to your code on GitHub/the server.
 
-## How should I contribute?
+## How should I contribute?{#contribute-how}
 
 This book is built using the R package `bookdown` [@R-bookdown]. A brilliant guide for the comprehensive functionality of `bookdown` is written by the author of the package Yihui Xie [here](https://bookdown.org/yihui/bookdown/). If you're interested in writing your own book, we'd suggest checking it out.
 
