@@ -23,7 +23,7 @@ Luckily, there are plenty of options available to you, including:
     - Git is a version control system (think "Track Changes" in Word), while GitHub is a cloud-based hosting service for Git-based projects (think OneDrive). 
     - We primarily use this to store functions, scripts and workflows for our analyses. 
     - Importantly, as a student/researcher you can access a free/discounted version of GitHub Pro, which allows users to have private repositories. Private repositories are useful for ongoing projects that are not ready for publication just yet. Upon publication, these private repositories can be made public. 
-    - If you're unfamiliar with GitHub or `git`, please refer to this handy [guide](https://happygitwithr.com/), also mentioned in \@ref(contribute-how).
+    - If you're unfamiliar with GitHub or `git`, please refer to this handy [guide](https://happygitwithr.com/), also mentioned in Section \@ref(contribute-how).
 - [**UCL RDS**](https://www.ucl.ac.uk/isd/services/research-it/research-data-storage-service)
     - This is a UCL-based service, while allows UCL staff to store research data while projects are ongoing.
     - We primarily use this to store processed intermediate files. 
@@ -53,7 +53,7 @@ TO BE ADDED. Link worth adding: https://www.makeareadme.com/
 ### Accessing your project space
 
 - When the project was generated, researchdata-support@ucl.ac.uk will send you an e-mail with important details about the location of your storage area (an example is: `/mnt/gpfs/live/rd01__/ritd-ag-project-rd010p-sgarc61/`)
-- From the Ryten server, this project space be accessed by using the following command, and substituting your UCL username into the command below, instead of `ucl_username`. 
+- From the Ryten server, this project space can be accessed using the following command, and substituting your UCL username into the command below, instead of `ucl_username`. 
 ```{bash ssh-ucl-rds, eval = FALSE}
 ssh ucl_username@live.rd.ucl.ac.uk 
 
@@ -100,8 +100,8 @@ As you have probably noticed if you have been using `rsync` to transfer files fr
 1. Set up an SSH key pair, which allows automated user authentication.
 2. Write a script, which you can add to everytime you have another location to backup from/to.
 
-##### Step 1: Set up SSH keys for authentication
-I used this [guide](Used this guide: )https://upcloud.com/community/tutorials/use-ssh-keys-authentication/) to help me set this up.
+##### Step 1: Set up SSH keys for authentication {#ssh-agent}
+I used this [guide](https://upcloud.com/community/tutorials/use-ssh-keys-authentication/) to help me set this up.
 
 **Preparing the remote server (e.g. UCL RDS)**
 
@@ -156,7 +156,7 @@ The key's randomart image is:
 ssh-copy-id -i ~/.ssh/rds_rsa.pub skgtrhr@live.rd.ucl.ac.uk
 ```
 
-4. Set up SSH Agent to store the keys to avoid having to re-enter passphrase at every login. **If you close the Ryten server terminal, you will have to repeat the above command when you open up a new terminal.**
+4. Set up SSH Agent to store the keys to avoid having to re-enter passphrase at every login. **If you close the Ryten server terminal, you will have to repeat the command below when you open up a new terminal.**
 ```{bash ssh-agent, eval = F}
 ssh-agent $BASH
 ssh-add ~/.ssh/rds_rsa
@@ -228,3 +228,5 @@ The script can then be run with the follow command. It is a good idea to keep a 
 bash ./path_to_script/RDS_backup.sh > ./path_to_log_directory/20201102_RDSbackup.log
 
 ```
+
+Finally, remember that prior to running your backup script you will have to set up SSH Agent to store the keys (as mentioned in Section \@ref(ssh-agent), step 4), if you have not already done so.
