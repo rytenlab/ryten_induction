@@ -1,0 +1,6 @@
+# Resources {#resources}
+
+Here, sits any general useful resources that cover topics across the spectrum of science.
+
+- [JEFworks](https://jef.works/lab/) has a some sections for writing an abstract, reviewing papers and giving a poster presentation. 
+- [Jeff Leeks book](https://leanpub.com/modernscientist) is free and outlines the core principles behind being a scientist in a open source way. 
