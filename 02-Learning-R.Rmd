@@ -46,7 +46,7 @@ The world of coding can be tough at times and [admitting that fact by asking for
 2.  The Ryten lab has a Slack workspace (ask to be added if not already) and either the channels `#programming` or `#general` are great places to reach us. If that's intimidating, also feel free to message any of us directly.
 3.  If neither Google or our lab has provided an answer to your issue, it might be that your problem is unique or specific. For these sorts of question it's best to try and direct your query to the experts in the relevant field. For example, if your issue is targeted at a usage of an `R` package, then the issues page on the associated GitHub repository is the best place to get in touch with the maintainers of that package. Or, if it's more of a broad question (e.g. what covariates should I correct for when run a differential splicing analysis) the [Bioconductor support site](https://support.bioconductor.org/) provides a catalog of questions surrounding how to use it's packages.
 
-### How to ask for help? 
+### How to ask for help?
 
 Given that the people which you are asking (as we all) are busy and have limited time, it's important to help make it as easy as possible to answer your query. Below, in order of importance, are the steps we'd recommend thinking about before reaching out:
 
@@ -57,10 +57,10 @@ Given that the people which you are asking (as we all) are busy and have limited
 
 If you've reached a point where you're comfortable with `R`, you might consider teaching it. Here are some reasons we've taught in the past:
 
--   It's rewarding as usually students are really grateful.
--   It looks good on the `CV`.
--   Networking with companies and academic groups that you may be interested in working with/for in the future.
--   You can earn some extra £££.
--   It's a great refresher of the basics of `R`.
+-   It's **rewarding** as usually students are really grateful.
+-   It looks good on your **CV**.
+-   **Networking** with companies and academic groups that you may be interested in working with/for in the future.
+-   You can earn some extra **£££**.
+-   It's a great **refresher** of the basics of `R`.
 
 The Ryten lab has a existing connection with [Clinician Coders](https://github.com/ClinicianCoders/ClinicianCoders), a group at UCL that aims at teaching `R` to clinicians. If this is of interest to you, then let Mina know and she'll put you in touch with the right lab members involved at the time.
