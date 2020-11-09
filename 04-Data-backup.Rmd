@@ -1,65 +1,79 @@
 # Data backup {#data_backup}
 
-The purpose of this chapter is to guide you through the available options for backup of data stored on the Ryten server. For backup of data on your personal/work computers, we recommend making use of cloud solutions, such as OneDrive for Business, available to [UCL staff and students](https://www.ucl.ac.uk/isd/services/communicate-collaborate/remote-working/file-storage). 
+The purpose of this chapter is to guide you through the available options for backup of data stored on the Ryten server. For backup of data on your personal/work computers, we recommend making use of cloud solutions, such as OneDrive for Business, available to [UCL staff and students](https://www.ucl.ac.uk/isd/services/communicate-collaborate/remote-working/file-storage).
 
 > Note: **data backup is the responsibility of each Ryten server user**. We do not currently have any automated systems in place, so it is really important that you take the time to ensure you have all the proper backups in place.
 
 ## Why backup your data stored on the Ryten server?
+
 There are several good reasons to backup your data stored on the Ryten server, including:
 
-- As with all other servers, the Ryten server can also be affected by server failure (this has not happened to us, \*touch wood\*, but it certainly can). 
-- There may be occasions when you cannot access the server (e.g. VPN does not permit access).
-- Other users may accidentally delete or modify one of your files (yes, this has happened in the past).
+-   As with all other servers, the Ryten server can also be affected by server failure (this has not happened to us, \*touch wood\*, but it certainly can).
+-   There may be occasions when you cannot access the server (e.g. VPN does not permit access).
+-   Other users may accidentally delete or modify one of your files (yes, this has happened in the past).
 
-In short, a lot of things can happen, which might mean you need to access your files via other means. Thus, it is important to have a backup of the raw files you use, any processed intermediate files, and the scripts you use both for data processing and analysis. 
+In short, a lot of things can happen, which might mean you need to access your files via other means. Thus, it is important to have a backup of the raw files you use, any processed intermediate files, and the scripts you use both for data processing and analysis.
 
 ## What options are available to you as Ryten server user?
+
 Luckily, there are plenty of options available to you, including:
 
-- **Amazon Web Services (AWS)** 
-    - The Ryten lab has an account on AWS where it is possible to store data.
-    - We primarily use this for unprocessed data (e.g. RNA-sequencing FASTQs), although it can also be useful to store processed files (e.g. BAMs) that collaborators may ask to access. 
-- [**GitHub**](https://github.com/)
-    - Git is a version control system (think "Track Changes" in Word), while GitHub is a cloud-based hosting service for Git-based projects (think OneDrive). 
-    - We primarily use this to store functions, scripts and workflows for our analyses. 
-    - Importantly, as a student/researcher you can access a free/discounted version of GitHub Pro, which allows users to have private repositories. Private repositories are useful for ongoing projects that are not ready for publication just yet. Upon publication, these private repositories can be made public. 
-    - If you're unfamiliar with GitHub or `git`, please refer to this handy [guide](https://happygitwithr.com/), also mentioned in Section \@ref(contribute-how).
-- [**UCL RDS**](https://www.ucl.ac.uk/isd/services/research-it/research-data-storage-service)
-    - This is a UCL-based service, while allows UCL staff to store research data while projects are ongoing.
-    - We primarily use this to store processed intermediate files. 
+-   **Amazon Web Services (AWS)**
+
+    -   The Ryten lab has an account on AWS where it is possible to store data.
+    -   We primarily use this for unprocessed data (e.g. RNA-sequencing FASTQs), although it can also be useful to store processed files (e.g. BAMs) that collaborators may ask to access.
+
+-   [**GitHub**](https://github.com/)
+
+    -   Git is a version control system (think "Track Changes" in Word), while GitHub is a cloud-based hosting service for Git-based projects (think OneDrive).
+    -   We primarily use this to store functions, scripts and workflows for our analyses.
+    -   Importantly, as a student/researcher you can access a free/discounted version of GitHub Pro, which allows users to have private repositories. Private repositories are useful for ongoing projects that are not ready for publication just yet. Upon publication, these private repositories can be made public.
+    -   If you're unfamiliar with GitHub or `git`, please refer to this handy [guide](https://happygitwithr.com/), also mentioned in Section \@ref(contribute-how).
+
+-   [**UCL RDS**](https://www.ucl.ac.uk/isd/services/research-it/research-data-storage-service)
+
+    -   This is a UCL-based service, while allows UCL staff to store research data while projects are ongoing.
+    -   We primarily use this to store processed intermediate files.
 
 ## What are good practices for data backup?
-- It is a good idea to ensure that **really important** files that cannot be regenerated (e.g. raw sequencing files) or alternatively would take days/weeks to re-generate are stored in **two** backup locations. 
-- Make sure the scripts you need to re-generate analyses/files are on GitHub.
-- Ensure that you have an easily accessible record of what you are backing up and where. 
-- Most importantly, make sure you regularly backup to these locations. E.g. ongoing projects should be backed up to UCL RDS at least once a month, while scripts/workflows should preferably be committed to GitHub daily/weekly. 
+
+-   It is a good idea to ensure that **really important** files that cannot be regenerated (e.g. raw sequencing files) or alternatively would take days/weeks to re-generate are stored in **two** backup locations.
+-   Make sure the scripts you need to re-generate analyses/files are on GitHub.
+-   Ensure that you have an easily accessible record of what you are backing up and where.
+-   Most importantly, make sure you regularly backup to these locations. E.g. ongoing projects should be backed up to UCL RDS at least once a month, while scripts/workflows should preferably be committed to GitHub daily/weekly.
 
 ## AWS
-**Sonia Garcia Ruiz** is our AWS guru. You will need to get in contact with Sonia to arrange access to our AWS account. Thereafter, here are some useful links, also generated by Sonia. These links are hosted on the Ryten lab [Sharepoint](https://liveuclac.sharepoint.com/sites/rytenlab/Shared Documents/), which you can access provided you are a member.
 
-- [Accessing AWS using the AWS Command Line Interface](https://liveuclac.sharepoint.com/:w:/r/sites/rytenlab/Shared%20Documents/Amazon/AWS_CONFIGURATION.docx?d=w6195a43440b04e8cbff82e369e73befa&csf=1&web=1&e=G0jGbp)
-- [Checking AWS file integrity](https://liveuclac.sharepoint.com/:w:/r/sites/rytenlab/Shared%20Documents/Amazon/AWS_ETag_MD5.docx?d=we739c02ec69947b6b4044e60204cc90b&csf=1&web=1&e=fTLLE7)
-- [Information about existing AWS buckets](https://liveuclac.sharepoint.com/:w:/r/sites/rytenlab/Shared%20Documents/Amazon/Buckets%20info.docx?d=w3f931f44bea54aef98c08eb359fef169&csf=1&web=1&e=CzTYog)
+**Sonia Garcia Ruiz** is our AWS guru. You will need to get in contact with Sonia to arrange access to our AWS account. Thereafter, here are some useful links, also generated by Sonia. These links are hosted on the Ryten lab [Sharepoint](https://liveuclac.sharepoint.com/sites/rytenlab/Shared%20Documents/), which you can access provided you are a member.
+
+-   [Accessing AWS using the AWS Command Line Interface](https://liveuclac.sharepoint.com/:w:/r/sites/rytenlab/Shared%20Documents/Amazon/AWS_CONFIGURATION.docx?d=w6195a43440b04e8cbff82e369e73befa&csf=1&web=1&e=G0jGbp)
+-   [Checking AWS file integrity](https://liveuclac.sharepoint.com/:w:/r/sites/rytenlab/Shared%20Documents/Amazon/AWS_ETag_MD5.docx?d=we739c02ec69947b6b4044e60204cc90b&csf=1&web=1&e=fTLLE7)
+-   [Information about existing AWS buckets](https://liveuclac.sharepoint.com/:w:/r/sites/rytenlab/Shared%20Documents/Amazon/Buckets%20info.docx?d=w3f931f44bea54aef98c08eb359fef169&csf=1&web=1&e=CzTYog)
 
 ## Github
-TO BE ADDED. Link worth adding: https://www.makeareadme.com/
+
+A good explanation of how to get started with `git` using RStudio can be in the book "Happy Git with R" linked [here](#beginner-r).
+
+TO BE ADDED (MAYBE A SEPARATE PAGE WITH GITHUB TUTORIAL?). Link worth adding: <https://www.makeareadme.com/>
 
 ## UCL RDS
 
 ### Registering a project
-- Prior to using UCL RDS, you need to ensure that you have a project space allocated to you. This can be done [here](https://www.ucl.ac.uk/isd/services/research-it/research-data-storage-service).
-- If you are not UCL staff, you will not be able to register your own project. If that is the case, reach out to one of us that is, and we can register a project on your behalf and add you as a project member.
+
+-   Prior to using UCL RDS, you need to ensure that you have a project space allocated to you. This can be done [here](https://www.ucl.ac.uk/isd/services/research-it/research-data-storage-service).
+-   If you are not UCL staff, you will not be able to register your own project. If that is the case, reach out to one of us that is, and we can register a project on your behalf and add you as a project member.
 
 ### Accessing your project space
 
-- When the project was generated, researchdata-support@ucl.ac.uk will send you an e-mail with important details about the location of your storage area (an example is: `/mnt/gpfs/live/rd01__/ritd-ag-project-rd010p-sgarc61/`)
-- From the Ryten server, this project space can be accessed using the following command, and substituting your UCL username into the command below, instead of `ucl_username`. 
+-   When the project was generated, [researchdata-support\@ucl.ac.uk](mailto:researchdata-support@ucl.ac.uk){.email} will send you an e-mail with important details about the location of your storage area (an example is: `/mnt/gpfs/live/rd01__/ritd-ag-project-rd010p-sgarc61/`)
+-   From the Ryten server, this project space can be accessed using the following command, and substituting your UCL username into the command below, instead of `ucl_username`.
+
 ```{bash ssh-ucl-rds, eval = FALSE}
 ssh ucl_username@live.rd.ucl.ac.uk 
 
 ```
 
-- You will be prompted for a password, and upon entering this you will be re-directed to your home space on UCL RDS. You can then move to your project area using the following command, and substituting in the path to your storage area. 
+-   You will be prompted for a password, and upon entering this you will be re-directed to your home space on UCL RDS. You can then move to your project area using the following command, and substituting in the path to your storage area.
 
 ```{bash cd-storage-area, eval = FALSE}
 cd /mnt/gpfs/live/path_to_storage_area/
@@ -67,14 +81,17 @@ cd /mnt/gpfs/live/path_to_storage_area/
 ```
 
 ### Using `rsync` to backup to UCL RDS
-- `rsync` (remote sync), as the name suggests, permits file transfer across systems (e.g. from the Ryten server to UCL RDS).
-- While the initial backup will take a while, `rsync` is a super handy tool for regular backups, as it will only transfer files that have been changed after the initial backup.
-- Furthermore, with the correct flags enabled, you can ensure that any files that have been deleted on the local server (Ryten server) are not deleted on the remote server (UCL RDS) when running `rsync` again.
+
+-   `rsync` (remote sync), as the name suggests, permits file transfer across systems (e.g. from the Ryten server to UCL RDS).
+-   While the initial backup will take a while, `rsync` is a super handy tool for regular backups, as it will only transfer files that have been changed after the initial backup.
+-   Furthermore, with the correct flags enabled, you can ensure that any files that have been deleted on the local server (Ryten server) are not deleted on the remote server (UCL RDS) when running `rsync` again.
 
 #### Simple use case
+
 Google is a great resource, so feel free to read up a bit more on `rsync`. Also, you can always run the command `rsync --help` to see what options there are.
 
 Below is a simple use case, with the various flags explained with the \#.
+
 ```{bash rsync-simple, eval = FALSE}
 # -a preserve access times etc
 # -r recursive 
@@ -89,18 +106,19 @@ rsync -arvhe ssh --progress --relative /path_to_files/ ucl_username@live.rd.ucl.
 
 ```
 
-- Notice that the "source" location (`/path_to_files/`) is written first followed by the "target" location (`ucl_username@live.rd.ucl.ac.uk:/mnt/gpfs/live/path_to_storage_area/`).
-
+-   Notice that the "source" location (`/path_to_files/`) is written first followed by the "target" location (`ucl_username@live.rd.ucl.ac.uk:/mnt/gpfs/live/path_to_storage_area/`).
 
 #### Backing up multiple files across multiple UCL RDS spaces
-We all have multiple ongoing projects, which cannot all be stored in the same UCL RDS project space (which are typically restricted to 5 Tb). Thus, there will come a time when you have to backup to multiple locations. With this in mind, it can be helpful to write a script to automate (or at least partially automate) some of this. Below is a bare-bones guide of how you might do this. 
+
+We all have multiple ongoing projects, which cannot all be stored in the same UCL RDS project space (which are typically restricted to 5 Tb). Thus, there will come a time when you have to backup to multiple locations. With this in mind, it can be helpful to write a script to automate (or at least partially automate) some of this. Below is a bare-bones guide of how you might do this.
 
 As you have probably noticed if you have been using `rsync` to transfer files from the Ryten server to UCL RDS, every time you use this command you are prompted for a password. Thus, partial automation requires that you:
 
-1. Set up an SSH key pair, which allows automated user authentication.
-2. Write a script, which you can add to everytime you have another location to backup from/to.
+1.  Set up an SSH key pair, which allows automated user authentication.
+2.  Write a script, which you can add to everytime you have another location to backup from/to.
 
 ##### Step 1: Set up SSH keys for authentication {#ssh-agent}
+
 I used this [guide](https://upcloud.com/community/tutorials/use-ssh-keys-authentication/) to help me set this up.
 
 **Preparing the remote server (e.g. UCL RDS)**
@@ -119,7 +137,8 @@ chmod 700 ~/.ssh
 
 > This is done in user's home directory on the Ryten server where files will be transferred from e.g. `/home/rreynolds/`.
 
-1. To generate the key pair, enter the command below. Don’t enter a passphrase when prompted, if you would like to setup fully password-less login. 
+1.  To generate the key pair, enter the command below. Don't enter a passphrase when prompted, if you would like to setup fully password-less login.
+
 ```{bash generate-key-pair, eval = F}
 # Command to generate key pair
 ssh-keygen -t rsa
@@ -149,14 +168,16 @@ The key's randomart image is:
 
 ```
 
-2. If no different file name entered, the command will generate two files: `~/.ssh/id_rsa` (private key) and `~/.ssh/id_rsa.pub` (public key).
-3. Copy the public half of the key pair to your cloud server using the following command. Replace the user and server with your username and the server address you wish to use the key authentication on. **This assumes you saved the key pair using the default file name and location. If not, just replace the key path `~/.ssh/id_rsa.pub` your own key name (as I did below)**.
+2.  If no different file name entered, the command will generate two files: `~/.ssh/id_rsa` (private key) and `~/.ssh/id_rsa.pub` (public key).
+3.  Copy the public half of the key pair to your cloud server using the following command. Replace the user and server with your username and the server address you wish to use the key authentication on. **This assumes you saved the key pair using the default file name and location. If not, just replace the key path `~/.ssh/id_rsa.pub` your own key name (as I did below)**.
+
 ```{bash cp-ssh-key, eval = F}
 # Command
 ssh-copy-id -i ~/.ssh/rds_rsa.pub skgtrhr@live.rd.ucl.ac.uk
 ```
 
-4. Set up SSH Agent to store the keys to avoid having to re-enter passphrase at every login. **If you close the Ryten server terminal, you will have to repeat the command below when you open up a new terminal.**
+4.  Set up SSH Agent to store the keys to avoid having to re-enter passphrase at every login. **If you close the Ryten server terminal, you will have to repeat the command below when you open up a new terminal.**
+
 ```{bash ssh-agent, eval = F}
 ssh-agent $BASH
 ssh-add ~/.ssh/rds_rsa
@@ -164,14 +185,15 @@ ssh-add ~/.ssh/rds_rsa
 ```
 
 ##### Step 2: Write a script for *your* data backup
+
 > The author of this script, Regina, is hoping to make this a more generalised script at some point, but for now, feel free to copy and modify the skeleton below.
 
 Key arguments to modify include:
 
-- `rserver`: change to your UCL username.
-- `lbackuploc_*`: change to your local backup locations. *Note: because I am using the `--relative` flag with `rsync`, I add a `/./` to indicate from what point I want `rsync` to copy the directory structure on the Ryten server.*
-- `rbackuploc_*`: change to your remote backup locations.
-- Main body of backup text to suit your purposes.
+-   `rserver`: change to your UCL username.
+-   `lbackuploc_*`: change to your local backup locations. *Note: because I am using the `--relative` flag with `rsync`, I add a `/./` to indicate from what point I want `rsync` to copy the directory structure on the Ryten server.*
+-   `rbackuploc_*`: change to your remote backup locations.
+-   Main body of backup text to suit your purposes.
 
 ```{bash backup-script, eval = F}
 #!/bin/bash
@@ -215,6 +237,7 @@ echo "Backup finished!"
 ```
 
 ##### Step 3: Running your script
+
 After creating script, remember to set an executable permission to the script. Substitute `RDS_backup.sh` for the name of your script.
 
 ```{bash chmod-script, eval = F}
@@ -222,7 +245,8 @@ After creating script, remember to set an executable permission to the script. S
 chmod +x RDS_backup.sh
 ```
 
-The script can then be run with the follow command. It is a good idea to keep a log of your backups to see if any errors have been returned during the process. For this reason, the output of the backup script is re-directed into a new log file named `20201102_RDSbackup.log`, with the date of transfer. 
+The script can then be run with the follow command. It is a good idea to keep a log of your backups to see if any errors have been returned during the process. For this reason, the output of the backup script is re-directed into a new log file named `20201102_RDSbackup.log`, with the date of transfer.
+
 ```{bash run-script, eval = F}
 # Run script and save log file
 bash ./path_to_script/RDS_backup.sh > ./path_to_log_directory/20201102_RDSbackup.log
