@@ -11,7 +11,7 @@ adding-references
 learning-r
 why-r
 r-resources
-beginner
+beginner-r
 intermediate
 advanced
 asking-for-help
