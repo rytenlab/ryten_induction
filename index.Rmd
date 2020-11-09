@@ -20,12 +20,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Welcome!
 
-We hope you enjoy your time in the Ryten lab! The goal of this book is to capture the tasks we share as a team and document the things we would have liked to have known when beginning in the Ryten lab. 
+We hope you enjoy your time in the Ryten lab! The goal of this book is to capture the tasks we share as a team and document the things we would have liked to have known throughout our time in the Ryten lab. 
 
 ## Useful links
 
-- The Ryten lab [website](https://rytenlab.com/)
-- The Ryten lab [GitHub](https://github.com/rytenlab)
+- The Ryten lab [website](https://rytenlab.com/) has all of our backgrounds, developed tools, publications and baby photos. 
+- The Ryten lab [GitHub](https://github.com/rytenlab) currently is only used to host this book, however in future will hold any other repositories that are common to the Ryten lab. 
 - The Ryten lab [Sharepoint](https://liveuclac.sharepoint.com/sites/rytenlab/Shared Documents/). To access this, you must be a member of rytenlab (if you are receiving e-mails from rytenlab@live.ucl.ac.uk, then you are a member). If you are a not a member, let one of the existing members know and we'll add you.
 
 ## Acknowledgements
