@@ -157,9 +157,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="learning-r.html"><a href="learning-r.html#teaching-r"><i class="fa fa-check"></i><b>3.4</b> Teaching R</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="server.html"><a href="server.html"><i class="fa fa-check"></i><b>4</b> Server usage</a><ul>
-<li class="chapter" data-level="4.1" data-path="server.html"><a href="server.html#why-use-the-ryten-server"><i class="fa fa-check"></i><b>4.1</b> Why use the Ryten server?</a></li>
-<li class="chapter" data-level="4.2" data-path="server.html"><a href="server.html#how-to-connect-to-the-ryten-server"><i class="fa fa-check"></i><b>4.2</b> How to connect to the Ryten server?</a></li>
+<li class="chapter" data-level="4" data-path="server-usage.html"><a href="server-usage.html"><i class="fa fa-check"></i><b>4</b> Server usage</a><ul>
+<li class="chapter" data-level="4.1" data-path="server-usage.html"><a href="server-usage.html#why-use-the-ryten-server"><i class="fa fa-check"></i><b>4.1</b> Why use the Ryten server?</a></li>
+<li class="chapter" data-level="4.2" data-path="server-usage.html"><a href="server-usage.html#usage-guide"><i class="fa fa-check"></i><b>4.2</b> Usage guide</a></li>
+<li class="chapter" data-level="4.3" data-path="server-usage.html"><a href="server-usage.html#how-to-connect-to-a-remote-server"><i class="fa fa-check"></i><b>4.3</b> How to connect to a remote server?</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="server-usage.html"><a href="server-usage.html#setup-ucl-vpn"><i class="fa fa-check"></i><b>4.3.1</b> Setup UCL VPN</a></li>
+<li class="chapter" data-level="4.3.2" data-path="server-usage.html"><a href="server-usage.html#are-you-a-windows-user"><i class="fa fa-check"></i><b>4.3.2</b> Are you a Windows user?</a></li>
+<li class="chapter" data-level="4.3.3" data-path="server-usage.html"><a href="server-usage.html#connect-rserver"><i class="fa fa-check"></i><b>4.3.3</b> Connecting via RStudio Server</a></li>
+<li class="chapter" data-level="4.3.4" data-path="server-usage.html"><a href="server-usage.html#connecting-via-a-shell-session"><i class="fa fa-check"></i><b>4.3.4</b> Connecting via a shell session</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-backup.html"><a href="data-backup.html"><i class="fa fa-check"></i><b>5</b> Data backup</a><ul>
 <li class="chapter" data-level="5.1" data-path="data-backup.html"><a href="data-backup.html#why-backup-your-data-stored-on-the-ryten-server"><i class="fa fa-check"></i><b>5.1</b> Why backup your data stored on the Ryten server?</a></li>
@@ -192,20 +198,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="server" class="section level1">
+<div id="server-usage" class="section level1">
 <h1><span class="header-section-number">4</span> Server usage</h1>
 <div id="why-use-the-ryten-server" class="section level2">
 <h2><span class="header-section-number">4.1</span> Why use the Ryten server?</h2>
-<p>Remote servers are useful for a few reasons:</p>
+<p>The Ryten server is useful for a couple of reasons:</p>
 <ol style="list-style-type: decimal">
-<li>They enable a common environment for all members of the area to work on. You can easily share results without duplication or data that’s too large to sit on your personal computers by sharing the path to the directory/file on Ryten server.</li>
+<li>They enable a common environment for all members of the Ryten lab to work on. You can easily share results without duplication or data that’s too large to sit on your personal computers by sharing the path to the directory/file on the Ryten server. And data that lies in the server will extend beyond your time at the Ryten lab for future members to access.</li>
 <li>They allow you to conduct analysis that exceeds the computational resources of (or take extremely long on) your local computer. The Ryten server has &gt;20Tb of storage space, ~256Gb of RAM and 112 CPUs, though at times, even this will feel too small!</li>
 </ol>
 </div>
-<div id="how-to-connect-to-the-ryten-server" class="section level2">
-<h2><span class="header-section-number">4.2</span> How to connect to the Ryten server?</h2>
-<p>TO BE ADDED - maybe will do it when it next needs to be done</p>
+<div id="usage-guide" class="section level2">
+<h2><span class="header-section-number">4.2</span> Usage guide</h2>
+<p>The Ryten server is a shared between all Ryten lab members and we’d like to keep the experience of all user’s as smooth and enjoyable as it can be. For this reason, we’ve set out a few guidelines you should follow when using the Ryten server:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Deleting files</strong>: Especially for those just starting out with programming, be aware that when you connect to Ryten server you have access to all the data and scripts owned by other Ryten lab members. Some of these can be easily regenerated, however for others regeneration will be near impossible (e.g. raw RNA-seq data) or time-consuming. There are fail-safe measures in place to prevent deletion accidents such as setting permissions to read-only and <a href="data-backup.html#data_backup">backing up our data</a>. But <strong>please take care when removing files</strong>.</li>
+<li><strong>Shared directories</strong>: The <code>/data</code> directory is where you should save common files that you expect will be used by others members of the lab. If you need to access something that seems general purpose (e.g. <code>GTF</code> files lie in <code>/data/references</code>) then it’s possible that it exists already. If you’ve checked and it doesn’t, then please add it in <code>/data</code>. Alternatively, if the data is project-specific then place it in your home directory (each user will have a <code>home</code> at the path <code>/home/user_name</code>).</li>
+<li><strong>Big jobs</strong>: There’s a possibility that you’ll need run a process that will consume a large amount of memory and/or CPUs (potentially rendering the server unusable by others for a duration). This kind of run should be saved for jobs that are urgent (deadline fast approaching) or can <strong>only</strong> be run in such a way (e.g. requires loading in a huge object). If you’re planning to run something that fits this criteria, please give a heads up to the others in the lab and try to miminize the server outage time (run over weekends).</li>
+</ol>
+</div>
+<div id="how-to-connect-to-a-remote-server" class="section level2">
+<h2><span class="header-section-number">4.3</span> How to connect to a remote server?</h2>
+<p>There are two main ways to connect to the Ryten server, both involving the Secure Socket Shell (<code>ssh</code>) protocol. <code>ssh</code> is a popular method of connecting securely to a remote server using the command line.</p>
+<p>For the Ryten server, we either directly <code>ssh</code> in (for a shell/bash session) or tunnel in using <code>ssh</code> (to use RStudio Server). Both of these methods are detailed below. These require the input of a user name and the host’s IP address (referred to as <code>user_name</code> and <code>ryten_server_IP</code> respectively below). If you don’t have either of these, please ask one of the existing members.</p>
+<blockquote>
+<p>Note: If you do run into issues during this process, it’s also most likely a problem with this guide (which we a still finalizing) rather than you. We’d really prefer if you ask rather than experiment as this helps us know which areas still need to be clarified and means we don’t run into any unintentional server crashes.</p>
+</blockquote>
+<div id="setup-ucl-vpn" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Setup UCL VPN</h3>
+<p>If you want to connect to the Ryten server whilst you’re at home, in a coffee shop or anywhere outside of UCL (i.e. not connected to <a href="https://www.ucl.ac.uk/isd/services/get-connected/wi-fi-wireless-networks/eduroam-wi-fi-ucl">eduroam</a>) then you need to first login to UCL’s virtual private network each time you reconnect to the Ryten server. The official guide on how to do so can be found <a href="https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn">here</a>. The username and password for this are your UCL credentials (e.g. those you would use for Portico).</p>
+</div>
+<div id="are-you-a-windows-user" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Are you a Windows user?</h3>
+<p>If the answer is no and you’re on a Mac or linux operating system, then skip ahead to the <a href="server-usage.html#connect-rserver">next section</a>. The <code>ssh</code> commands are required to be run on a local <code>terminal</code>, which isn’t available by default on Windows.</p>
+<p>To access a local <code>terminal</code> on Windows, we use the <code>ssh</code> client <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>. Please download this and install it. To configure this to access the Ryten server… TO BE ADDED.</p>
+</div>
+<div id="connect-rserver" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Connecting via RStudio Server</h3>
+<p>The Ryten server has a continuously running, free version of <a href="https://rstudio.com/products/rstudio/download-server/">RStudio Server</a> installed. This allows you to use the nice interface of RStudio, whilst accessing the computing infrastructure of the Ryten Server. This is most commonly what you’ll be using when you want to write <code>R</code> code.</p>
+<p>The Ryten server’s RStudio Server is available via <code>localhost:8787</code>. In order to access this on our own machines, we link <code>localhost:8787</code> on the server to the same address on our local machines. This can be achieved by running the the command below in your <strong>local</strong> terminal:</p>
+<blockquote>
+<p>Note: make sure you run this from your <strong>local</strong> terminal and <strong>NOT</strong> from inside the server.</p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="server-usage.html#cb5-1"></a><span class="fu">ssh</span> -X -N -f -L localhost:8787:localhost:8787 user_name@ryten_server_IP</span></code></pre></div>
+<p>The easiest way to run this would be to copy the command above and replace <code>user_name</code> with your own and <code>ryten_server_IP</code> with the correct IP (ask one of the existing members if you don’t have either). After you have run this command successfully (you’ll be asked to enter your credentials the first time) then you can access the <code>RStudio Server</code> session via typing <code>localhost:8787</code> in the address bar on your internet browser. You will see a RStudio theme’d credential screen the first time round where you should enter your Ryten server <code>user_name</code> and password. After which, you should be all set! Enjoy :)</p>
+</div>
+<div id="connecting-via-a-shell-session" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> Connecting via a shell session</h3>
+<p>The second method to connect to the Ryten server is via an interactive shell/bash session. This is often used for things such as exploring the files/directories that exist on the server, checking what’s currently running on the server using <code>top</code>, running non-<code>R</code> processes and setting up big runs that can continue even after you close your connection to server.</p>
+<p>To do this use the command below from your <strong>local</strong> <code>terminal</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="server-usage.html#cb6-1"></a>ssh user_name<span class="op">@</span>ryten_server_IP</span></code></pre></div>
+<p>This will open another <code>terminal</code>, on which you can do anything you would in your local <code>terminal</code>, however instead you’ll be using the infrastructure of the Ryten server.</p>
 
+</div>
 </div>
 </div>
             </section>

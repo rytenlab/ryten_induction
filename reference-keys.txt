@@ -18,9 +18,14 @@ asking-for-help
 where-to-ask-for-help
 how-to-ask-for-help
 teaching-r
-server
+server-usage
 why-use-the-ryten-server
-how-to-connect-to-the-ryten-server
+usage-guide
+how-to-connect-to-a-remote-server
+setup-ucl-vpn
+are-you-a-windows-user
+connect-rserver
+connecting-via-a-shell-session
 data_backup
 why-backup-your-data-stored-on-the-ryten-server
 what-options-are-available-to-you-as-ryten-server-user
