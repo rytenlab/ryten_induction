@@ -8,6 +8,16 @@ what-should-i-contribute
 contribute-how
 basics
 adding-references
+learning-r
+why-r
+r-resources
+beginner
+intermediate
+advanced
+asking-for-help
+where-to-ask-for-help
+how-to-ask-for-help
+teaching-r
 server
 why-use-the-ryten-server
 how-to-connect-to-the-ryten-server
