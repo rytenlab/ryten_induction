@@ -3,10 +3,11 @@
 Here, sits any general useful resources that cover topics across the spectrum of science.
 
 ## How-tos
-- [JEFworks](https://jef.works/lab/) has a some sections for writing an abstract, reviewing papers and giving a poster presentation. 
+- [JEFworks](https://jef.works/lab/) - has some sections for writing an abstract, reviewing papers and giving a poster presentation. 
 
 ## Reproducible science
 - [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510) - article with good computing practices that every researcher can adopt, regardless of their current level of computational skill 
+- [Improve your workflow for reproducible science](https://www.youtube.com/watch?v=JA-vLsN-sic&feature=youtu.be) - video from a 2-hour workshop on using R, R Markdown, Git, and GitHub to improve reproducibility. **This is an excellent primer for new starters on good practices to apply to every research project.** Slides from the workshop are available [here](https://mine-cetinkaya-rundel.github.io/improve-repro-workflow-reproducibilitea-2020/).
 
 ## Books
-- [Jeff Leeks book](https://leanpub.com/modernscientist) is free and outlines the core principles behind being a scientist in a open source way. 
+- [Jeff Leeks book](https://leanpub.com/modernscientist) - free and outlines the core principles behind being a scientist in a open source way. 
