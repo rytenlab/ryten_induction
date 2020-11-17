@@ -65,7 +65,7 @@ TO BE ADDED (MAYBE A SEPARATE PAGE WITH GITHUB TUTORIAL?). Link worth adding: <h
 
 ### Accessing your project space
 
--   When the project was generated, [researchdata-support\@ucl.ac.uk](mailto:researchdata-support@ucl.ac.uk){.email} will send you an e-mail with important details about the location of your storage area (an example is: `/mnt/gpfs/live/rd01__/ritd-ag-project-rd010p-sgarc61/`)
+-   When the project was generated, [researchdata-support\@ucl.ac.uk](mailto:researchdata-support@ucl.ac.uk){.email} will send you an e-mail with important details about the location of your storage area (an example is: `/mnt/gpfs/live/rd01__/path_to_storage_area/`)
 -   From the Ryten server, this project space can be accessed using the following command, and substituting your UCL username into the command below, instead of `ucl_username`.
 
 ```{bash ssh-ucl-rds, eval = FALSE}
@@ -123,7 +123,7 @@ I used this [guide](https://upcloud.com/community/tutorials/use-ssh-keys-authent
 
 **Preparing the remote server (e.g. UCL RDS)**
 
-> Do this in your home directory on UCL RDS e.g. `/mnt/gpfs/home/skgtrhr/`
+> Do this in your home directory on UCL RDS e.g. `/mnt/gpfs/home/ucl_username/`
 
 ```{bash generate-ssh-folder, eval = F}
 # Create hidden folder in home directory
@@ -173,7 +173,7 @@ The key's randomart image is:
 
 ```{bash cp-ssh-key, eval = F}
 # Command
-ssh-copy-id -i ~/.ssh/rds_rsa.pub skgtrhr@live.rd.ucl.ac.uk
+ssh-copy-id -i ~/.ssh/rds_rsa.pub ucl_username@live.rd.ucl.ac.uk
 ```
 
 4.  Set up SSH Agent to store the keys to avoid having to re-enter passphrase at every login. **If you close the Ryten server terminal, you will have to repeat the command below when you open up a new terminal.**
@@ -199,15 +199,15 @@ Key arguments to modify include:
 #!/bin/bash
 
 # Remote RDS server
-rserver=skgtrhr@live.rd.ucl.ac.uk
+rserver=ucl_username@live.rd.ucl.ac.uk
 
 # Local backup location
 lbackuploc_data=/data/
-lbackuploc_user=/home/./rreynolds/
+lbackuploc_user=/home/./ryten_username/
 
 # Remote RDS backup locations
-rbackuploc_GWAS=/mnt/gpfs/live/rd01__/ritd-ag-project-rd010p-sgarc61/
-rbackuploc_PDseq=/mnt/gpfs/live/ritd-ag-project-rd00v5-sgarc61/
+rbackuploc_GWAS=/mnt/gpfs/live/rd01__/path_to_GWAS_backup/
+rbackuploc_PDseq=/mnt/gpfs/live/path_to_PD_backup/
 
 #---Backups to $rbackuploc_GWAS---------------
 
