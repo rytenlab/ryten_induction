@@ -31,7 +31,23 @@ If you want to connect to the Ryten server whilst you're at home, in a coffee sh
 
 If the answer is no and you're on a Mac or linux operating system, then skip ahead to the [next section](#connect-rserver). The `ssh` commands are required to be run on a local `terminal`, which isn't available by default on Windows.
 
-To access a local `terminal` on Windows, we use the `ssh` client [MobaXterm](https://mobaxterm.mobatek.net/). Please download this and install it. To configure this to access the Ryten server... TO BE ADDED.
+To access a local `terminal` on Windows, we use the `ssh` client [mobaXterm](https://mobaxterm.mobatek.net/). Please download this and install it. To configure this to access the Ryten server, do the following:
+
+1. Click on the "Sessions" button to start a new session.
+
+```{r session-button, fig.cap = "Screenshot of mobaXterm 'Sessions' button", echo = FALSE}
+knitr::include_graphics('figures/03-Server-usage/session-button.png')
+```
+
+2. Click on the SSH button in order to create a new SSH session. Every session you start will be automatically saved, so you will only have to do this once.
+
+3. In the "Remote host" field, enter the `ryten_server_IP` (ask one of the existing members if you don't this). You can optionally also specify your username (all this will mean is that you are not prompted for it when you access the server). Once done, click okay.
+
+```{r session-screen, fig.cap = "Screenshot of mobaXterm 'Session settings' screen.", echo = FALSE}
+knitr::include_graphics('figures/03-Server-usage/network-sessions-manager.png')
+```
+
+4. The server will now appear in your saved sessions. Anytime you wish to access the server, simply double click on the saved session.  
 
 ### Connecting via RStudio Server {#connect-rserver}
 
@@ -39,7 +55,7 @@ The Ryten server has a continuously running, free version of [RStudio Server](ht
 
 The Ryten server's RStudio Server is available via `localhost:8787`. In order to access this on our own machines, we link `localhost:8787` on the server to the same address on our local machines. This can be achieved by running the the command below in your **local** terminal:
 
-> Note: make sure you run this from your **local** terminal and **NOT** from inside the server.
+> Note: make sure you run this from your **local** terminal and **NOT** from inside the server. If you are a Windows user, you can open a local terminal within mobaXterm.
 
 ```{bash connect-rserver, eval = FALSE}
 ssh -X -N -f -L localhost:8787:localhost:8787 user_name@ryten_server_IP
