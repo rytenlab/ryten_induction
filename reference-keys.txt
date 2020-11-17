@@ -1,4 +1,6 @@
 fig:build-book
+fig:session-button
+fig:session-screen
 welcome
 useful-links
 acknowledgements

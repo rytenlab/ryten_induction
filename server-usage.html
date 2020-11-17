@@ -24,7 +24,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2020-11-11" />
+<meta name="date" content="2020-11-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -235,14 +235,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="are-you-a-windows-user" class="section level3">
 <h3><span class="header-section-number">4.3.2</span> Are you a Windows user?</h3>
 <p>If the answer is no and you’re on a Mac or linux operating system, then skip ahead to the <a href="server-usage.html#connect-rserver">next section</a>. The <code>ssh</code> commands are required to be run on a local <code>terminal</code>, which isn’t available by default on Windows.</p>
-<p>To access a local <code>terminal</code> on Windows, we use the <code>ssh</code> client <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>. Please download this and install it. To configure this to access the Ryten server… TO BE ADDED.</p>
+<p>To access a local <code>terminal</code> on Windows, we use the <code>ssh</code> client <a href="https://mobaxterm.mobatek.net/">mobaXterm</a>. Please download this and install it. To configure this to access the Ryten server, do the following:</p>
+<ol style="list-style-type: decimal">
+<li>Click on the “Sessions” button to start a new session.</li>
+</ol>
+<div class="figure"><span id="fig:session-button"></span>
+<img src="figures/03-Server-usage/session-button.png" alt="Screenshot of mobaXterm 'Sessions' button"  />
+<p class="caption">
+Figure 4.1: Screenshot of mobaXterm ‘Sessions’ button
+</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Click on the SSH button in order to create a new SSH session. Every session you start will be automatically saved, so you will only have to do this once.</p></li>
+<li><p>In the “Remote host” field, enter the <code>ryten_server_IP</code> (ask one of the existing members if you don’t this). You can optionally also specify your username (all this will mean is that you are not prompted for it when you access the server). Once done, click okay.</p></li>
+</ol>
+<div class="figure"><span id="fig:session-screen"></span>
+<img src="figures/03-Server-usage/network-sessions-manager.png" alt="Screenshot of mobaXterm 'Session settings' screen."  />
+<p class="caption">
+Figure 4.2: Screenshot of mobaXterm ‘Session settings’ screen.
+</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>The server will now appear in your saved sessions. Anytime you wish to access the server, simply double click on the saved session.</li>
+</ol>
 </div>
 <div id="connect-rserver" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Connecting via RStudio Server</h3>
 <p>The Ryten server has a continuously running, free version of <a href="https://rstudio.com/products/rstudio/download-server/">RStudio Server</a> installed. This allows you to use the nice interface of RStudio, whilst accessing the computing infrastructure of the Ryten Server. This is most commonly what you’ll be using when you want to write <code>R</code> code.</p>
 <p>The Ryten server’s RStudio Server is available via <code>localhost:8787</code>. In order to access this on our own machines, we link <code>localhost:8787</code> on the server to the same address on our local machines. This can be achieved by running the the command below in your <strong>local</strong> terminal:</p>
 <blockquote>
-<p>Note: make sure you run this from your <strong>local</strong> terminal and <strong>NOT</strong> from inside the server.</p>
+<p>Note: make sure you run this from your <strong>local</strong> terminal and <strong>NOT</strong> from inside the server. If you are a Windows user, you can open a local terminal within mobaXterm.</p>
 </blockquote>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="server-usage.html#cb5-1"></a><span class="fu">ssh</span> -X -N -f -L localhost:8787:localhost:8787 user_name@ryten_server_IP</span></code></pre></div>
 <p>The easiest way to run this would be to copy the command above and replace <code>user_name</code> with your own and <code>ryten_server_IP</code> with the correct IP (ask one of the existing members if you don’t have either). After you have run this command successfully (you’ll be asked to enter your credentials the first time) then you can access the <code>RStudio Server</code> session via typing <code>localhost:8787</code> in the address bar on your internet browser. You will see a RStudio theme’d credential screen the first time round where you should enter your Ryten server <code>user_name</code> and password. After which, you should be all set! Enjoy :)</p>
