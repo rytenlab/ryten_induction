@@ -276,7 +276,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="accessing-your-project-space" class="section level3">
 <h3><span class="header-section-number">5.6.2</span> Accessing your project space</h3>
 <ul>
-<li>When the project was generated, <a href="mailto:researchdata-support@ucl.ac.uk" class="email">researchdata-support@ucl.ac.uk</a> will send you an e-mail with important details about the location of your storage area (an example is: <code>/mnt/gpfs/live/rd01__/ritd-ag-project-rd010p-sgarc61/</code>)</li>
+<li>When the project was generated, <a href="mailto:researchdata-support@ucl.ac.uk" class="email">researchdata-support@ucl.ac.uk</a> will send you an e-mail with important details about the location of your storage area (an example is: <code>/mnt/gpfs/live/rd01__/path_to_storage_area/</code>)</li>
 <li>From the Ryten server, this project space can be accessed using the following command, and substituting your UCL username into the command below, instead of <code>ucl_username</code>.</li>
 </ul>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="data-backup.html#cb7-1"></a><span class="fu">ssh</span> ucl_username@live.rd.ucl.ac.uk </span></code></pre></div>
@@ -323,7 +323,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>I used this <a href="https://upcloud.com/community/tutorials/use-ssh-keys-authentication/">guide</a> to help me set this up.</p>
 <p><strong>Preparing the remote server (e.g. UCL RDS)</strong></p>
 <blockquote>
-<p>Do this in your home directory on UCL RDS e.g. <code>/mnt/gpfs/home/skgtrhr/</code></p>
+<p>Do this in your home directory on UCL RDS e.g. <code>/mnt/gpfs/home/ucl_username/</code></p>
 </blockquote>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="data-backup.html#cb10-1"></a><span class="co"># Create hidden folder in home directory</span></span>
 <span id="cb10-2"><a href="data-backup.html#cb10-2"></a><span class="fu">mkdir</span> -p ~/.ssh</span>
@@ -367,7 +367,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Copy the public half of the key pair to your cloud server using the following command. Replace the user and server with your username and the server address you wish to use the key authentication on. <strong>This assumes you saved the key pair using the default file name and location. If not, just replace the key path <code>~/.ssh/id_rsa.pub</code> your own key name (as I did below)</strong>.</li>
 </ol>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="data-backup.html#cb12-1"></a><span class="co"># Command</span></span>
-<span id="cb12-2"><a href="data-backup.html#cb12-2"></a><span class="ex">ssh-copy-id</span> -i ~/.ssh/rds_rsa.pub skgtrhr@live.rd.ucl.ac.uk</span></code></pre></div>
+<span id="cb12-2"><a href="data-backup.html#cb12-2"></a><span class="ex">ssh-copy-id</span> -i ~/.ssh/rds_rsa.pub ucl_username@live.rd.ucl.ac.uk</span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>Set up SSH Agent to store the keys to avoid having to re-enter passphrase at every login. <strong>If you close the Ryten server terminal, you will have to repeat the command below when you open up a new terminal.</strong></li>
 </ol>
@@ -389,15 +389,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="data-backup.html#cb14-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb14-2"><a href="data-backup.html#cb14-2"></a></span>
 <span id="cb14-3"><a href="data-backup.html#cb14-3"></a><span class="co"># Remote RDS server</span></span>
-<span id="cb14-4"><a href="data-backup.html#cb14-4"></a><span class="va">rserver=</span>skgtrhr<span class="ex">@live.rd.ucl.ac.uk</span></span>
+<span id="cb14-4"><a href="data-backup.html#cb14-4"></a><span class="va">rserver=</span>ucl_username<span class="ex">@live.rd.ucl.ac.uk</span></span>
 <span id="cb14-5"><a href="data-backup.html#cb14-5"></a></span>
 <span id="cb14-6"><a href="data-backup.html#cb14-6"></a><span class="co"># Local backup location</span></span>
 <span id="cb14-7"><a href="data-backup.html#cb14-7"></a><span class="va">lbackuploc_data=</span>/data/</span>
-<span id="cb14-8"><a href="data-backup.html#cb14-8"></a><span class="va">lbackuploc_user=</span>/home/./rreynolds/</span>
+<span id="cb14-8"><a href="data-backup.html#cb14-8"></a><span class="va">lbackuploc_user=</span>/home/./ryten_username/</span>
 <span id="cb14-9"><a href="data-backup.html#cb14-9"></a></span>
 <span id="cb14-10"><a href="data-backup.html#cb14-10"></a><span class="co"># Remote RDS backup locations</span></span>
-<span id="cb14-11"><a href="data-backup.html#cb14-11"></a><span class="va">rbackuploc_GWAS=</span>/mnt/gpfs/live/rd01__/ritd-ag-project-rd010p-sgarc61/</span>
-<span id="cb14-12"><a href="data-backup.html#cb14-12"></a><span class="va">rbackuploc_PDseq=</span>/mnt/gpfs/live/ritd-ag-project-rd00v5-sgarc61/</span>
+<span id="cb14-11"><a href="data-backup.html#cb14-11"></a><span class="va">rbackuploc_GWAS=</span>/mnt/gpfs/live/rd01__/path_to_GWAS_backup/</span>
+<span id="cb14-12"><a href="data-backup.html#cb14-12"></a><span class="va">rbackuploc_PDseq=</span>/mnt/gpfs/live/path_to_PD_backup/</span>
 <span id="cb14-13"><a href="data-backup.html#cb14-13"></a></span>
 <span id="cb14-14"><a href="data-backup.html#cb14-14"></a><span class="co">#---Backups to $rbackuploc_GWAS---------------</span></span>
 <span id="cb14-15"><a href="data-backup.html#cb14-15"></a></span>
