@@ -27,27 +27,35 @@ For the Ryten server, we either directly `ssh` in (for a shell/bash session) or 
 
 If you want to connect to the Ryten server whilst you're at home, in a coffee shop or anywhere outside of UCL (i.e. not connected to [eduroam](https://www.ucl.ac.uk/isd/services/get-connected/wi-fi-wireless-networks/eduroam-wi-fi-ucl)) then you need to first login to UCL's virtual private network each time you reconnect to the Ryten server. The official guide on how to do so can be found [here](https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn). The username and password for this are your UCL credentials (e.g. those you would use for Portico).
 
-### Are you a Windows user?
+> Note: make sure your inputted vpn address is "vpn.ucl.ac.uk". There are other ucl vpn addresses such as "ucl-lmcb.ucl.ac.uk", however these will not grant you access to the Ryten server's IP.
+
+Once you've successfully connected you should see the following:
+
+```{r ucl-vpn-success, fig.cap = "Successful VPN connection example", echo = FALSE}
+knitr::include_graphics('figures/03-Server-usage/ucl-vpn-success.png')
+```
+
+### Are you a Windows user? {#windows-mobaxterm}
 
 If the answer is no and you're on a Mac or linux operating system, then skip ahead to the [next section](#connect-rserver). The `ssh` commands are required to be run on a local `terminal`, which isn't available by default on Windows.
 
 To access a local `terminal` on Windows, we use the `ssh` client [mobaXterm](https://mobaxterm.mobatek.net/). Please download this and install it. To configure this to access the Ryten server, do the following:
 
-1. Click on the "Sessions" button to start a new session.
+1.  Click on the "Sessions" button to start a new session.
 
 ```{r session-button, fig.cap = "Screenshot of mobaXterm 'Sessions' button", echo = FALSE}
 knitr::include_graphics('figures/03-Server-usage/session-button.png')
 ```
 
-2. Click on the SSH button in order to create a new SSH session. Every session you start will be automatically saved, so you will only have to do this once.
+2.  Click on the SSH button in order to create a new SSH session. Every session you start will be automatically saved, so you will only have to do this once.
 
-3. In the "Remote host" field, enter the `ryten_server_IP` (ask one of the existing members if you don't this). You can optionally also specify your username (all this will mean is that you are not prompted for it when you access the server). Once done, click okay.
+3.  In the "Remote host" field, enter the `ryten_server_IP` (ask one of the existing members if you don't this). You can optionally also specify your username (all this will mean is that you are not prompted for it when you access the server). Once done, click okay.
 
 ```{r session-screen, fig.cap = "Screenshot of mobaXterm 'Session settings' screen.", echo = FALSE}
 knitr::include_graphics('figures/03-Server-usage/network-sessions-manager.png')
 ```
 
-4. The server will now appear in your saved sessions. Anytime you wish to access the server, simply double click on the saved session.  
+4.  The server will now appear in your saved sessions. Anytime you wish to access the server, simply double click on the saved session.
 
 ### Connecting via RStudio Server {#connect-rserver}
 
@@ -65,7 +73,9 @@ The easiest way to run this would be to copy the command above and replace `user
 
 ### Connecting via a shell session
 
-The second method to connect to the Ryten server is via an interactive shell/bash session. This is often used for things such as exploring the files/directories that exist on the server, checking what's currently running on the server using `top`, running non-`R` processes and setting up big runs that can continue even after you close your connection to server.
+The second method to connect to the Ryten server is via an interactive shell/bash session. If you are using [mobaXterm on Windows](#windows-mobaxterm), it's advised you use their `sessions` feature rather than manually calling `ssh` from your local terminal.
+
+This method is often used for things such as exploring the files/directories that exist on the server, checking what's currently running on the server using `top`, running non-`R` processes and setting up big runs that can continue even after you close your connection to server.
 
 To do this use the command below from your **local** `terminal`:
 
