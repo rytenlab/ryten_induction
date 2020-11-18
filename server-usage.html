@@ -24,7 +24,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2020-11-17" />
+<meta name="date" content="2020-11-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -162,7 +162,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="server-usage.html"><a href="server-usage.html#usage-guide"><i class="fa fa-check"></i><b>4.2</b> Usage guide</a></li>
 <li class="chapter" data-level="4.3" data-path="server-usage.html"><a href="server-usage.html#how-to-connect-to-a-remote-server"><i class="fa fa-check"></i><b>4.3</b> How to connect to a remote server?</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="server-usage.html"><a href="server-usage.html#setup-ucl-vpn"><i class="fa fa-check"></i><b>4.3.1</b> Setup UCL VPN</a></li>
-<li class="chapter" data-level="4.3.2" data-path="server-usage.html"><a href="server-usage.html#are-you-a-windows-user"><i class="fa fa-check"></i><b>4.3.2</b> Are you a Windows user?</a></li>
+<li class="chapter" data-level="4.3.2" data-path="server-usage.html"><a href="server-usage.html#windows-mobaxterm"><i class="fa fa-check"></i><b>4.3.2</b> Are you a Windows user?</a></li>
 <li class="chapter" data-level="4.3.3" data-path="server-usage.html"><a href="server-usage.html#connect-rserver"><i class="fa fa-check"></i><b>4.3.3</b> Connecting via RStudio Server</a></li>
 <li class="chapter" data-level="4.3.4" data-path="server-usage.html"><a href="server-usage.html#connecting-via-a-shell-session"><i class="fa fa-check"></i><b>4.3.4</b> Connecting via a shell session</a></li>
 </ul></li>
@@ -231,8 +231,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="setup-ucl-vpn" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Setup UCL VPN</h3>
 <p>If you want to connect to the Ryten server whilst you’re at home, in a coffee shop or anywhere outside of UCL (i.e. not connected to <a href="https://www.ucl.ac.uk/isd/services/get-connected/wi-fi-wireless-networks/eduroam-wi-fi-ucl">eduroam</a>) then you need to first login to UCL’s virtual private network each time you reconnect to the Ryten server. The official guide on how to do so can be found <a href="https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn">here</a>. The username and password for this are your UCL credentials (e.g. those you would use for Portico).</p>
+<blockquote>
+<p>Note: make sure your inputted vpn address is “vpn.ucl.ac.uk”. There are other ucl vpn addresses such as “ucl-lmcb.ucl.ac.uk”, however these will not grant you access to the Ryten server’s IP.</p>
+</blockquote>
+<p>Once you’ve successfully connected you should see the following:</p>
+<div class="figure"><span id="fig:ucl-vpn-success"></span>
+<img src="figures/03-Server-usage/ucl-vpn-success.png" alt="Successful VPN connection example"  />
+<p class="caption">
+Figure 4.1: Successful VPN connection example
+</p>
 </div>
-<div id="are-you-a-windows-user" class="section level3">
+</div>
+<div id="windows-mobaxterm" class="section level3">
 <h3><span class="header-section-number">4.3.2</span> Are you a Windows user?</h3>
 <p>If the answer is no and you’re on a Mac or linux operating system, then skip ahead to the <a href="server-usage.html#connect-rserver">next section</a>. The <code>ssh</code> commands are required to be run on a local <code>terminal</code>, which isn’t available by default on Windows.</p>
 <p>To access a local <code>terminal</code> on Windows, we use the <code>ssh</code> client <a href="https://mobaxterm.mobatek.net/">mobaXterm</a>. Please download this and install it. To configure this to access the Ryten server, do the following:</p>
@@ -242,7 +252,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="figure"><span id="fig:session-button"></span>
 <img src="figures/03-Server-usage/session-button.png" alt="Screenshot of mobaXterm 'Sessions' button"  />
 <p class="caption">
-Figure 4.1: Screenshot of mobaXterm ‘Sessions’ button
+Figure 4.2: Screenshot of mobaXterm ‘Sessions’ button
 </p>
 </div>
 <ol start="2" style="list-style-type: decimal">
@@ -252,7 +262,7 @@ Figure 4.1: Screenshot of mobaXterm ‘Sessions’ button
 <div class="figure"><span id="fig:session-screen"></span>
 <img src="figures/03-Server-usage/network-sessions-manager.png" alt="Screenshot of mobaXterm 'Session settings' screen."  />
 <p class="caption">
-Figure 4.2: Screenshot of mobaXterm ‘Session settings’ screen.
+Figure 4.3: Screenshot of mobaXterm ‘Session settings’ screen.
 </p>
 </div>
 <ol start="4" style="list-style-type: decimal">
@@ -271,7 +281,8 @@ Figure 4.2: Screenshot of mobaXterm ‘Session settings’ screen.
 </div>
 <div id="connecting-via-a-shell-session" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Connecting via a shell session</h3>
-<p>The second method to connect to the Ryten server is via an interactive shell/bash session. This is often used for things such as exploring the files/directories that exist on the server, checking what’s currently running on the server using <code>top</code>, running non-<code>R</code> processes and setting up big runs that can continue even after you close your connection to server.</p>
+<p>The second method to connect to the Ryten server is via an interactive shell/bash session. If you are using <a href="server-usage.html#windows-mobaxterm">mobaXterm on Windows</a>, it’s advised you use their <code>sessions</code> feature rather than manually calling <code>ssh</code> from your local terminal.</p>
+<p>This method is often used for things such as exploring the files/directories that exist on the server, checking what’s currently running on the server using <code>top</code>, running non-<code>R</code> processes and setting up big runs that can continue even after you close your connection to server.</p>
 <p>To do this use the command below from your <strong>local</strong> <code>terminal</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="server-usage.html#cb6-1"></a>ssh user_name<span class="op">@</span>ryten_server_IP</span></code></pre></div>
 <p>This will open another <code>terminal</code>, on which you can do anything you would in your local <code>terminal</code>, however instead you’ll be using the infrastructure of the Ryten server.</p>
