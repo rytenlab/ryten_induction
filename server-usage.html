@@ -24,7 +24,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2020-11-18" />
+<meta name="date" content="2020-12-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -274,7 +274,7 @@ Figure 4.3: Screenshot of mobaXterm ‘Session settings’ screen.
 <p>The Ryten server has a continuously running, free version of <a href="https://rstudio.com/products/rstudio/download-server/">RStudio Server</a> installed. This allows you to use the nice interface of RStudio, whilst accessing the computing infrastructure of the Ryten Server. This is most commonly what you’ll be using when you want to write <code>R</code> code.</p>
 <p>The Ryten server’s RStudio Server is available via <code>localhost:8787</code>. In order to access this on our own machines, we link <code>localhost:8787</code> on the server to the same address on our local machines. This can be achieved by running the the command below in your <strong>local</strong> terminal:</p>
 <blockquote>
-<p>Note: make sure you run this from your <strong>local</strong> terminal and <strong>NOT</strong> from inside the server. If you are a Windows user, you can open a local terminal within mobaXterm.</p>
+<p>Note: make sure you run this from your <strong>local</strong> terminal and <strong>NOT</strong> from inside the server. If you are a Windows user, you can open a local terminal within mobaXterm. If you do accidentally run this from inside the server, do not fear, the problem can be resolved. Simply run <code>pkill -u user_name ssh</code> (where <code>user_name</code> represents your Ryten server <code>user_name</code>). This will kill all ssh commands run by you.</p>
 </blockquote>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="server-usage.html#cb5-1"></a><span class="fu">ssh</span> -X -N -f -L localhost:8787:localhost:8787 user_name@ryten_server_IP</span></code></pre></div>
 <p>The easiest way to run this would be to copy the command above and replace <code>user_name</code> with your own and <code>ryten_server_IP</code> with the correct IP (ask one of the existing members if you don’t have either). After you have run this command successfully (you’ll be asked to enter your credentials the first time) then you can access the <code>RStudio Server</code> session via typing <code>localhost:8787</code> in the address bar on your internet browser. You will see a RStudio theme’d credential screen the first time round where you should enter your Ryten server <code>user_name</code> and password. After which, you should be all set! Enjoy :)</p>
