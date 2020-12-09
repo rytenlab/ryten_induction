@@ -63,7 +63,7 @@ The Ryten server has a continuously running, free version of [RStudio Server](ht
 
 The Ryten server's RStudio Server is available via `localhost:8787`. In order to access this on our own machines, we link `localhost:8787` on the server to the same address on our local machines. This can be achieved by running the the command below in your **local** terminal:
 
-> Note: make sure you run this from your **local** terminal and **NOT** from inside the server. If you are a Windows user, you can open a local terminal within mobaXterm.
+> Note: make sure you run this from your **local** terminal and **NOT** from inside the server. If you are a Windows user, you can open a local terminal within mobaXterm. If you do accidentally run this from inside the server, do not fear, the problem can be resolved. Simply run `pkill -u user_name ssh` (where `user_name` represents your Ryten server `user_name`). This will kill all ssh commands run by you.
 
 ```{bash connect-rserver, eval = FALSE}
 ssh -X -N -f -L localhost:8787:localhost:8787 user_name@ryten_server_IP
