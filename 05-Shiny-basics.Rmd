@@ -1,12 +1,10 @@
 # Integrating remote AWS data storage with Shiny via the AWS API"
 
-**Aim\:** This markdown aims to demonstrate how to utilise the AWS API to load data from an AWS bucket into the R environment. It then shows how to use this data in a Shiny web application.  
+This section aims to demonstrate how to utilise the Amazon Web Service (AWS) API to load data from an AWS bucket into the R environment. It then provides an example of how to use this protocol within a Shiny web application.  
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+## Basics 
 
-### 1. Install the `aws.s3` package  
+### Install the `aws.s3` package  
 
 ```{r eval=FALSE, include=TRUE}
 
@@ -18,14 +16,15 @@ library(aws.s3)
 
 ```
 
-### 2. Getting your unique AWS access keys - refer to Sonia for help with this step  
+### Getting your unique AWS access keys - refer to Sonia for help with this step  
+
   * From https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html:  
     * AWS access keys allow you to sign programmatic requests to the AWS CLI or AWS API.  
     * Access keys consist of two parts: an access key ID (for example, AKIAIOSFODNN7EXAMPLE) and a secret access key (for example, wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY).  
     * Like a user name and password, you must use both the access key ID and secret access key together to authenticate your requests.  
     * Manage your access keys as securely as you do your user name and password (i.e. include the `.Renviron` file in your `.gitignore` file if this is a project you will be storing in a GitHub repository).  
 
-### 3. Setting up your `.Renviron` file  
+### Setting up your `.Renviron` file  
   * Once you have your access key, secret access key and AWS default region (see step 1), this is the file that will store this information.  
   * Assuming that you are in your working directory/ same directory as your Shiny `app.R` file, run the command `touch ./.Renviron` from the command line to generate the `.Renviron` file.   
   * Then open this file, either on the command line, `vi .Renviron`, or interactively on Rstudio.  
@@ -36,7 +35,7 @@ library(aws.s3)
 
   * Save and close the `.Renviron` file.  
 
-### 4. Loading AWS objects  
+### Loading AWS objects  
   * The following command will load your access keys from your `.Renviron` file in an anonymised format, meaning you can put this in the body of your Shiny `app.R` file.  
   
 ```{r eval=FALSE, include=TRUE}
@@ -61,7 +60,9 @@ obj1 <- aws.s3::s3read_using(read.csv, object = "s3://your-bucket/dataframe.csv"
 
 ```
 
-### 5. Loading data from AWS in a Shiny `app.R` file  
+## Shiny/AWS example
+
+Loading data from AWS in a Shiny `app.R` file  
   * `app.R` is the core server/UI file you will have if you are building a Shiny app.  
   * This example `app.R` file includes all the necessary code to load data from an AWS bucket  
 
@@ -94,10 +95,5 @@ ui <- fluidPage(
 # run shinyApp function 
 shinyApp(ui = ui, server = server)
 
-```
-
-### 6. Session info  
-```{r}
-sessionInfo()
 ```
 
