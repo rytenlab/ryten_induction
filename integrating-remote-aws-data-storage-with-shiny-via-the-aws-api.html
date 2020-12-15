@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Learning R | Ryten lab induction book</title>
+  <title>6 Integrating remote AWS data storage with Shiny via the AWS API" | Ryten lab induction book</title>
   <meta name="description" content="Induction bookdown for all things Ryten lab" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Learning R | Ryten lab induction book" />
+  <meta property="og:title" content="6 Integrating remote AWS data storage with Shiny via the AWS API" | Ryten lab induction book" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rytenlab/ryten_induction" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Learning R | Ryten lab induction book" />
+  <meta name="twitter:title" content="6 Integrating remote AWS data storage with Shiny via the AWS API" | Ryten lab induction book" />
   
   <meta name="twitter:description" content="Induction bookdown for all things Ryten lab" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="contribute.html"/>
-<link rel="next" href="server-usage.html"/>
+<link rel="prev" href="data-backup.html"/>
+<link rel="next" href="resources.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -209,76 +209,108 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="learning-r" class="section level1">
-<h1><span class="header-section-number">3</span> Learning R</h1>
-<p><code>R</code> is used by anyone in the Ryten lab looking to do bioinformatics analyses. Chances are, if you’ve joined to do bioinformatics you’ve come across or will come across using <code>R</code>. There’s a steep learning curve to start programming and it’s easy to become stumped before you become familiar, and miss out on all of the joy programming with <code>R</code> can give. This page is dedicated to help you get you started by pointing you to the resources that we’ve found useful no matter what stage of learning <code>R</code> you fall into.</p>
-<div id="why-r" class="section level2">
-<h2><span class="header-section-number">3.1</span> Why R?</h2>
-<p>This <a href="https://adv-r.hadley.nz/introduction.html#why-r">page</a> from Hadley Wickham’s book lays out what makes <code>R</code> unique and why many are fond of <code>R</code>. Below, are the 3 key reasons we think <code>R</code> is great for our bioinformatics use-case:</p>
-<ol style="list-style-type: decimal">
-<li><code>R</code> is <strong>free</strong> and <strong>open source</strong>. This makes your analyses more reproducible if you use <code>R</code> and means there’s a huge community of <code>R</code> users. Importantly, a large proportion of this community is addressing similar questions you are, relating to genetics/bioinformatics. <a href="https://www.bioconductor.org/">Bioconductor</a>, for example, is specifically aimed at developing tools applied to all things biology. This makes our lives easier as if we run into questions that we can’t answer in the lab or via google, there might already be an <a href="https://bioconductor.org/packages/devel/bioc/">R package</a> that addresses it and if not, there are forums to <a href="learning-r.html#asking-for-help">ask for help</a>.</li>
-<li><code>R</code> is a high-level, functional programming language. These properties make it suited for <strong>data science</strong> and day-to-day bioinformatics analysis, where most often the leading metric is speed from data to results, rather than developing robust software. This aspect of <code>R</code> has inspired the development of set of packages termed the <a href="https://www.tidyverse.org/">tidyverse</a>, which makes mastering data wrangling, analysis and plotting significantly easier.</li>
-<li><code>R</code> comes with one of the most easy-to-use integrated development environments (IDEs) <a href="https://rstudio.com/">RStudio</a> and it’s own language for creating reproducible analyses <code>Rmarkdown</code>. RStudio makes the entry point into getting started with <code>R</code> significantly lower with the ability to manage projects, inspect objects and version control with <code>git</code> (+ many more). Together with <code>Rmarkdown</code>, a language that allows you combine <code>R</code> code and prose in the same document, this facilitates the creation of reproducible analyses.</li>
-</ol>
+<div id="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api" class="section level1">
+<h1><span class="header-section-number">6</span> Integrating remote AWS data storage with Shiny via the AWS API"</h1>
+<p>This section aims to demonstrate how to utilise the Amazon Web Service (AWS) API to load data from an AWS bucket into the R environment. It then provides an example of how to use this protocol within a Shiny web application.</p>
+<div id="basics-1" class="section level2">
+<h2><span class="header-section-number">6.1</span> Basics</h2>
+<div id="install-the-aws.s3-package" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Install the <code>aws.s3</code> package</h3>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb17-1"></a><span class="co"># install package</span></span>
+<span id="cb17-2"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb17-2"></a><span class="kw">install.packages</span>(<span class="st">&#39;aws.s3&#39;</span>)</span>
+<span id="cb17-3"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb17-3"></a></span>
+<span id="cb17-4"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb17-4"></a><span class="co"># load package</span></span>
+<span id="cb17-5"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb17-5"></a><span class="kw">library</span>(aws.s3)</span></code></pre></div>
 </div>
-<div id="r-resources" class="section level2">
-<h2><span class="header-section-number">3.2</span> R resources</h2>
-<p>Whether you’ve never touched a programming language before, or you’re an expert in a different programming language, or you’re confident with conducting analyses in <code>R</code>, we hope that you find something useful in below.</p>
-<div id="beginner-r" class="section level3">
-<h3><span class="header-section-number">3.2.1</span> Beginner</h3>
+<div id="getting-your-unique-aws-access-keys---refer-to-sonia-for-help-with-this-step" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> Getting your unique AWS access keys - refer to Sonia for help with this step</h3>
 <ul>
-<li><p>Not technically a resource, but one which arguably is more important. Learning <code>R</code> is typically easiest when you have a project to work on from the outset. This helps to keep you motivated, means you’ll cover “real” data issues and learn how to debug. It’s likely that you’ll already have an application in mind if you’re reading this, but if not, we’d encourage you to find one. One great place to start could be to ask the Mina/lab whether any of us has something we need doing.</p></li>
-<li><p><a href="https://www.datacamp.com/?utm_source=adwords_ppc&amp;utm_campaignid=805200711&amp;utm_adgroupid=39268379982&amp;utm_device=c&amp;utm_keyword=datacamp&amp;utm_matchtype=e&amp;utm_network=g&amp;utm_adpostion=&amp;utm_creative=340731356548&amp;utm_targetid=kwd-297372810188&amp;utm_loc_interest_ms=&amp;utm_loc_physical_ms=9045906&amp;gclid=Cj0KCQiA7qP9BRCLARIsABDaZziaBxYZlLNWXXZmKSeK_0wWjAPg_JVUIy49dwAfACQMIInjumNYUCYaAr4ZEALw_wcB">DataCamp</a> and <a href="https://www.codecademy.com/">codeacademy</a> host online, interactive courses to learn <code>R</code> from the basics. These have been used by other’s in the Ryten Lab in the past and are a fun way to take you through the basic foundations of <code>R</code>.</p></li>
-<li><p><a href="https://rstudio.github.io/learnr/">learnr</a> is an interactive <code>R</code> package designed to get you started with <code>R</code>. As far as I’m aware, I don’t think any of us has started <code>R</code> through this route, however does look to be a solid resource.</p></li>
+<li>From <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html" class="uri">https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html</a>:
+<ul>
+<li>AWS access keys allow you to sign programmatic requests to the AWS CLI or AWS API.<br />
+</li>
+<li>Access keys consist of two parts: an access key ID (for example, AKIAIOSFODNN7EXAMPLE) and a secret access key (for example, wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY).<br />
+</li>
+<li>Like a user name and password, you must use both the access key ID and secret access key together to authenticate your requests.<br />
+</li>
+<li>Manage your access keys as securely as you do your user name and password (i.e. include the <code>.Renviron</code> file in your <code>.gitignore</code> file if this is a project you will be storing in a GitHub repository).</li>
+</ul></li>
 </ul>
 </div>
-<div id="intermediate" class="section level3">
-<h3><span class="header-section-number">3.2.2</span> Intermediate</h3>
+<div id="setting-up-your-.renviron-file" class="section level3">
+<h3><span class="header-section-number">6.1.3</span> Setting up your <code>.Renviron</code> file</h3>
 <ul>
-<li><p><a href="https://r4ds.had.co.nz/">R for data science</a> has pretty much all you need to know in terms of the <code>tidyverse</code> set of tools.</p></li>
-<li><p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/">R Markdown Cookbook</a> is written by one of the authors of <code>R Markdown</code>, Yihui Xie, and is a good place to find the comprehensive overview of the functionality of <code>R Markdown</code> or look up if there’s something you’d like to do but aren’t sure how or whether it’s possible.</p></li>
-<li><p><a href="https://happygitwithr.com/">Happy Git with R</a> is a nicely written book on how to interface into <code>git</code> and GitHub from RStudio. If you haven’t heard of or used <code>git</code> for version controlling your scripts before, this is highly recommended and has all you need to know.</p></li>
+<li>Once you have your access key, secret access key and AWS default region (see step 1), this is the file that will store this information.<br />
+</li>
+<li>Assuming that you are in your working directory/ same directory as your Shiny <code>app.R</code> file, run the command <code>touch ./.Renviron</code> from the command line to generate the <code>.Renviron</code> file.<br />
+</li>
+<li>Then open this file, either on the command line, <code>vi .Renviron</code>, or interactively on Rstudio.<br />
+</li>
+<li>To edit on the command line, use hit <code>ESC</code> followed by <code>i</code> to insert text, then to save and close, <code>ESC</code> followed by <code>:wq</code>.<br />
+</li>
+<li>Add your access key, secret access key and AWS default region, for example:</li>
+</ul>
+<div class="figure">
+<img src="/home/abrowne/rytenlab_induction/images/access_key_example.png" alt="" />
+<p class="caption">Figure 1: <code>.Renviron</code> file example</p>
+</div>
+<ul>
+<li>Save and close the <code>.Renviron</code> file.</li>
 </ul>
 </div>
-<div id="advanced" class="section level3">
-<h3><span class="header-section-number">3.2.3</span> Advanced</h3>
+<div id="loading-aws-objects" class="section level3">
+<h3><span class="header-section-number">6.1.4</span> Loading AWS objects</h3>
 <ul>
-<li><p><a href="https://adv-r.hadley.nz/">Advanced R</a> is for those wondering what goes on behind the scenes in <code>R</code>. It covers topics from how to use object orientated programming in <code>R</code>, how to run benchmarks on your code to find time-limiting steps and how to speed these up using <code>R</code>’s interface into <code>C++</code> ?</p></li>
-<li><p><a href="https://r-pkgs.org/">R packages</a> details the good practices for creating an <code>R</code> package. Packages are the best way to allow others to use your <code>R</code> code. You may consider packaging up your code if you want to release your functions to be used by others (either others in the lab or more widely).</p></li>
+<li>The following command will load your access keys from your <code>.Renviron</code> file in an anonymised format, meaning you can put this in the body of your Shiny <code>app.R</code> file.</li>
 </ul>
-</div>
-</div>
-<div id="asking-for-help" class="section level2">
-<h2><span class="header-section-number">3.3</span> Asking for help</h2>
-<p>The world of coding can be tough at times and <a href="https://lcolladotor.github.io/2018/11/12/asking-for-help-is-challenging-but-is-typically-worth-it/#.X6k_X1P7RhE">admitting that fact by asking for help</a> can be even harder. But trust us, we’ve all been there. The 3 hour debug before noticing the misplaced “,”, the package that never installs, the frustrating <code>git</code> conflict - all too familiar. Whichever stage of your coding journey you’re at, you will always run into bugs and knowing how to efficiently find solutions is a major part of the battle. Here, we list to most common places we would ask for help from the trusty Google companion to more specific forums where you will reach experts or <code>R</code> package maintainers.</p>
-<div id="where-to-ask-for-help" class="section level3">
-<h3><span class="header-section-number">3.3.1</span> Where to ask for help?</h3>
-<ol style="list-style-type: decimal">
-<li>Google is often the best place to start and many issues you face won’t be a first and will be answered by forums such as <code>Stack Overflow</code>.</li>
-<li>The Ryten lab has a Slack workspace (ask to be added if not already) and either the channels <code>#programming</code> or <code>#general</code> are great places to reach us. If that’s intimidating, also feel free to message any of us directly.</li>
-<li>If neither Google or our lab has provided an answer to your issue, it might be that your problem is unique or specific. For these sorts of question it’s best to try and direct your query to the experts in the relevant field. For example, if your issue is targeted at a usage of an <code>R</code> package, then the issues page on the associated GitHub repository is the best place to get in touch with the maintainers of that package. Or, if it’s more of a broad question (e.g. what covariates should I correct for when run a differential splicing analysis) the <a href="https://support.bioconductor.org/">Bioconductor support site</a> provides a catalog of questions surrounding how to use it’s packages.</li>
-</ol>
-</div>
-<div id="how-to-ask-for-help" class="section level3">
-<h3><span class="header-section-number">3.3.2</span> How to ask for help?</h3>
-<p>Given that the people which you are asking (as we all) are busy and have limited time, it’s important to help make it as easy as possible to answer your query. Below, in order of importance, are the steps we’d recommend thinking about before reaching out:</p>
-<ol style="list-style-type: decimal">
-<li>If it’s appropriate (i.e. not a general question) then include, at minimum, the <strong>error message</strong> and <strong>command</strong> you have run as part of your question. It’s most likely, the code will be more effective at directing your query than a text based explanation.</li>
-<li>If the question is about a bug or quite a specific situation, it’s best if you include a minimum reproducible example (reprex). This consists of setting up a small section of code that can be used to replicate your error including a <code>sessionInfo()</code> call (that details the versions of <code>R</code> packages in your environment. The <a href="https://reprex.tidyverse.org/reference/reprex.html">reprex</a> package provides a great way to capture both the code and it’s output in different formats e.g. an R script, markdown or html.</li>
-</ol>
-</div>
-</div>
-<div id="teaching-r" class="section level2">
-<h2><span class="header-section-number">3.4</span> Teaching R</h2>
-<p>If you’ve reached a point where you’re comfortable with <code>R</code>, you might consider teaching it. Here are some reasons we’ve taught in the past:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb18-1"></a><span class="kw">Sys.setenv</span>(<span class="st">&quot;AWS_ACCESS_KEY_ID&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_ACCESS_KEY_ID&quot;</span>),</span>
+<span id="cb18-2"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb18-2"></a>           <span class="st">&quot;AWS_SECRET_ACCESS_KEY&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_SECRET_ACCESS_KEY&quot;</span>),</span>
+<span id="cb18-3"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb18-3"></a>           <span class="st">&quot;AWS_DEFAULT_REGION&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span>))</span></code></pre></div>
 <ul>
-<li>It’s <strong>rewarding</strong> as usually students are really grateful.</li>
-<li>It looks good on your <strong>CV</strong>.</li>
-<li><strong>Networking</strong> with companies and academic groups that you may be interested in working with/for in the future.</li>
-<li>You can earn some extra <strong>£££</strong>.</li>
-<li>It’s a great <strong>refresher</strong> of the basics of <code>R</code>.</li>
+<li>Now you can use the AWS API to access remote files using the <code>aws.s3</code> package.<br />
+</li>
+<li>The following example uses the <code>s3read_using</code> function and calls <code>read.csv</code> on the object specified by the <code>object</code> argument.<br />
+</li>
+<li>Other reader functions can be used, such as <code>readr::read_csv</code> or <code>fst::read.fst</code>.</li>
 </ul>
-<p>The Ryten lab has a existing connection with <a href="https://github.com/ClinicianCoders/ClinicianCoders">Clinician Coders</a>, a group at UCL that aims at teaching <code>R</code> to clinicians. If this is of interest to you, then let Mina know and she’ll put you in touch with the right lab members involved at the time.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb19-1"></a><span class="co"># load aws.s3 library</span></span>
+<span id="cb19-2"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb19-2"></a><span class="kw">library</span>(aws.s3)</span>
+<span id="cb19-3"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb19-3"></a></span>
+<span id="cb19-4"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb19-4"></a><span class="co"># read in csv from AWS s3 bucket </span></span>
+<span id="cb19-5"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb19-5"></a>obj1 &lt;-<span class="st"> </span>aws.s3<span class="op">::</span><span class="kw">s3read_using</span>(read.csv, <span class="dt">object =</span> <span class="st">&quot;s3://your-bucket/dataframe.csv&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="shinyaws-example" class="section level2">
+<h2><span class="header-section-number">6.2</span> Shiny/AWS example</h2>
+<p>Loading data from AWS in a Shiny <code>app.R</code> file<br />
+* <code>app.R</code> is the core server/UI file you will have if you are building a Shiny app.<br />
+* This example <code>app.R</code> file includes all the necessary code to load data from an AWS bucket</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-1"></a><span class="co">## app.R ##</span></span>
+<span id="cb20-2"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-2"></a></span>
+<span id="cb20-3"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-3"></a><span class="co"># load libraries</span></span>
+<span id="cb20-4"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-4"></a><span class="kw">library</span>(shiny)</span>
+<span id="cb20-5"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-5"></a><span class="kw">library</span>(aws.s3)</span>
+<span id="cb20-6"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-6"></a></span>
+<span id="cb20-7"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-7"></a><span class="co"># load access keys</span></span>
+<span id="cb20-8"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-8"></a><span class="kw">Sys.setenv</span>(<span class="st">&quot;AWS_ACCESS_KEY_ID&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_ACCESS_KEY_ID&quot;</span>),</span>
+<span id="cb20-9"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-9"></a>           <span class="st">&quot;AWS_SECRET_ACCESS_KEY&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_SECRET_ACCESS_KEY&quot;</span>),</span>
+<span id="cb20-10"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-10"></a>           <span class="st">&quot;AWS_DEFAULT_REGION&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span>))</span>
+<span id="cb20-11"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-11"></a></span>
+<span id="cb20-12"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-12"></a><span class="co"># load data from AWS bucket, assign to global </span></span>
+<span id="cb20-13"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-13"></a>obj1 &lt;&lt;-<span class="st"> </span>aws.s3<span class="op">::</span><span class="kw">s3read_using</span>(read.csv, <span class="dt">object =</span> <span class="st">&quot;s3://your-bucket/dataframe.csv&quot;</span>)</span>
+<span id="cb20-14"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-14"></a></span>
+<span id="cb20-15"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-15"></a><span class="co"># define server function</span></span>
+<span id="cb20-16"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-16"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</span>
+<span id="cb20-17"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-17"></a>  <span class="co"># server code</span></span>
+<span id="cb20-18"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-18"></a>}</span>
+<span id="cb20-19"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-19"></a></span>
+<span id="cb20-20"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-20"></a><span class="co"># define UI function</span></span>
+<span id="cb20-21"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-21"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb20-22"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-22"></a>  <span class="co"># UI code</span></span>
+<span id="cb20-23"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-23"></a>)</span>
+<span id="cb20-24"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-24"></a></span>
+<span id="cb20-25"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-25"></a><span class="co"># run shinyApp function </span></span>
+<span id="cb20-26"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-26"></a><span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</span></code></pre></div>
 
 </div>
 </div>
@@ -287,8 +319,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="contribute.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="server-usage.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data-backup.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
