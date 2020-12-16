@@ -45,8 +45,8 @@ backing-up-multiple-files-across-multiple-ucl-rds-spaces
 ssh-agent
 step-2-write-a-script-for-your-data-backup
 step-3-running-your-script
-integrating-remote-aws-data-storage-with-shiny-via-the-aws-api
-basics-1
+shiny-basics
+integrating-shiny-and-aws-data-storage
 install-the-aws.s3-package
 getting-your-unique-aws-access-keys---refer-to-sonia-for-help-with-this-step
 setting-up-your-.renviron-file
