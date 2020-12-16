@@ -32,7 +32,7 @@ library(aws.s3)
   * Add your access key, secret access key and AWS default region, for example:  
 
 ```{r Renviron-example, fig.cap = ".Renviron file example", echo = FALSE}
-knitr::include_graphics('figures/05-Shiny-basics/fig1_access_key_example')
+knitr::include_graphics('figures/05-Shiny-basics/fig1_access_key_example.png')
 ```
 
   * Save and close the `.Renviron` file.  
