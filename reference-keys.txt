@@ -54,5 +54,6 @@ shinyaws-example
 resources
 how-tos
 reproducible-science
+heritability-and-ld-score-regression
 books
 references
