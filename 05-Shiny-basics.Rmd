@@ -1,5 +1,7 @@
 # Shiny basics  
 
+The purpose of this chapter is to guide you through various processes that you might need to go through to develop a Shiny R application.  
+
 ## Integrating Shiny and AWS data storage  
 
 This section aims to demonstrate how to utilise the Amazon Web Service (AWS) API to load data from an AWS bucket into the R environment. It then provides an example of how to use this protocol within a Shiny web application.  
