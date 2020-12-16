@@ -12,11 +12,11 @@ This [page](https://adv-r.hadley.nz/introduction.html#why-r) from Hadley Wickham
 
 ## R resources
 
-Whether you've never touched a programming language before, or you're an expert in a different programming language, or you're confident with conducting analyses in `R`, we hope that you find something useful in below.
+Whether you've never touched a programming language before, or you're an expert in a different programming language, or you're confident with conducting analyses in `R`, we hope that you find something useful below.
 
 ### Beginner {#beginner-r}
 
--   Not technically a resource, but one which arguably is more important. Learning `R` is typically easiest when you have a project to work on from the outset. This helps to keep you motivated, means you'll cover "real" data issues and learn how to debug. It's likely that you'll already have an application in mind if you're reading this, but if not, we'd encourage you to find one. One great place to start could be to ask the Mina/lab whether any of us has something we need doing.
+-   Not technically a resource, but one which arguably is more important. Learning `R` is typically easiest when you have a project to work on from the outset. This helps to keep you motivated, means you'll cover "real" data issues and learn how to debug. It's likely that you'll already have an application in mind if you're reading this, but if not, we'd encourage you to find one. One great place to start could be to ask Mina or other lab members whether any of us has something we need doing.
 
 -   [DataCamp](https://www.datacamp.com/?utm_source=adwords_ppc&utm_campaignid=805200711&utm_adgroupid=39268379982&utm_device=c&utm_keyword=datacamp&utm_matchtype=e&utm_network=g&utm_adpostion=&utm_creative=340731356548&utm_targetid=kwd-297372810188&utm_loc_interest_ms=&utm_loc_physical_ms=9045906&gclid=Cj0KCQiA7qP9BRCLARIsABDaZziaBxYZlLNWXXZmKSeK_0wWjAPg_JVUIy49dwAfACQMIInjumNYUCYaAr4ZEALw_wcB) and [codeacademy](https://www.codecademy.com/) host online, interactive courses to learn `R` from the basics. These have been used by other's in the Ryten Lab in the past and are a fun way to take you through the basic foundations of `R`.
 
@@ -35,6 +35,8 @@ Whether you've never touched a programming language before, or you're an expert 
 -   [Advanced R](https://adv-r.hadley.nz/) is for those wondering what goes on behind the scenes in `R`. It covers topics from how to use object orientated programming in `R`, how to run benchmarks on your code to find time-limiting steps and how to speed these up using `R`'s interface into `C++` ?
 
 -   [R packages](https://r-pkgs.org/) details the good practices for creating an `R` package. Packages are the best way to allow others to use your `R` code. You may consider packaging up your code if you want to release your functions to be used by others (either others in the lab or more widely).
+
+- Workshops on how to make Bioconductor packages can be found [here](https://github.com/dzhang32/biocthis_workshop) and [here](https://saskiafreytag.github.io/making_bioconductor_pkg/articles/workshop.html). If you have developed a method/package associated with a publication, you may want to submit it to Bioconductor. 
 
 ## Asking for help {#asking-for-help}
 
