@@ -21,7 +21,7 @@ There are two main ways to connect to the Ryten server, both involving the Secur
 
 For the Ryten server, we either directly `ssh` in (for a shell/bash session) or tunnel in using `ssh` (to use RStudio Server). Both of these methods are detailed below. These require the input of a user name and the host's IP address (referred to as `user_name` and `ryten_server_IP` respectively below). If you don't have either of these, please ask one of the existing members.
 
-> Note: If you do run into issues during this process, it's also most likely a problem with this guide (which we a still finalizing) rather than you. We'd really prefer if you ask rather than experiment as this helps us know which areas still need to be clarified and means we don't run into any unintentional server crashes.
+> Note: If you do run into issues during this process, it's also most likely a problem with this guide (which we are still finalizing) rather than you. We'd really prefer if you ask rather than experiment as this helps us know which areas still need to be clarified and means we don't run into any unintentional server crashes.
 
 ### Setup UCL VPN
 
@@ -63,7 +63,7 @@ The Ryten server has a continuously running, free version of [RStudio Server](ht
 
 The Ryten server's RStudio Server is available via `localhost:8787`. In order to access this on our own machines, we link `localhost:8787` on the server to the same address on our local machines. This can be achieved by running the the command below in your **local** terminal:
 
-> Note: make sure you run this from your **local** terminal and **NOT** from inside the server. If you are a Windows user, you can open a local terminal within mobaXterm.
+> Note: make sure you run this from your **local** terminal and **NOT** from inside the server. If you are a Windows user, you can open a local terminal within mobaXterm. If you do accidentally run this from inside the server, do not fear, the problem can be resolved. Simply run `pkill -u user_name ssh` (where `user_name` represents your Ryten server `user_name`). This will kill all ssh commands run by you.
 
 ```{bash connect-rserver, eval = FALSE}
 ssh -X -N -f -L localhost:8787:localhost:8787 user_name@ryten_server_IP
