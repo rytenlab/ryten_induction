@@ -25,13 +25,15 @@ library(aws.s3)
     * Manage your access keys as securely as you do your user name and password (i.e. include the `.Renviron` file in your `.gitignore` file if this is a project you will be storing in a GitHub repository).  
 
 ### Setting up your `.Renviron` file  
-  * Once you have your access key, secret access key and AWS default region (see step 1), this is the file that will store this information.  
+  * Once you have your access key, secret access key and AWS default region (see step 1), this is the file that will store this information.
   * Assuming that you are in your working directory/ same directory as your Shiny `app.R` file, run the command `touch ./.Renviron` from the command line to generate the `.Renviron` file.   
   * Then open this file, either on the command line, `vi .Renviron`, or interactively on Rstudio.  
   * To edit on the command line, use hit `ESC` followed by `i` to insert text, then to save and close, `ESC` followed by `:wq`.  
   * Add your access key, secret access key and AWS default region, for example:  
 
-![Figure 1: `.Renviron` file example](/home/abrowne/rytenlab_induction/images/access_key_example.png)
+```{r Renviron-example, fig.cap = ".Renviron file example", echo = FALSE}
+knitr::include_graphics('figures/05-Shiny-basics/fig1_access_key_example.png')
+```
 
   * Save and close the `.Renviron` file.  
 
@@ -62,7 +64,8 @@ obj1 <- aws.s3::s3read_using(read.csv, object = "s3://your-bucket/dataframe.csv"
 
 ### Shiny/AWS example
 
-Loading data from AWS in a Shiny `app.R` file  
+Loading data from AWS in a Shiny `app.R` file
+
   * `app.R` is the core server/UI file you will have if you are building a Shiny app.  
   * This example `app.R` file includes all the necessary code to load data from an AWS bucket  
 
