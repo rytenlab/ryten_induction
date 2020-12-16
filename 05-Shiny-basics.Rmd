@@ -1,8 +1,8 @@
-# Integrating remote AWS data storage with Shiny via the AWS API"
+# Shiny basics  
+
+## Integrating Shiny and AWS data storage  
 
 This section aims to demonstrate how to utilise the Amazon Web Service (AWS) API to load data from an AWS bucket into the R environment. It then provides an example of how to use this protocol within a Shiny web application.  
-
-## Basics 
 
 ### Install the `aws.s3` package  
 
@@ -60,7 +60,7 @@ obj1 <- aws.s3::s3read_using(read.csv, object = "s3://your-bucket/dataframe.csv"
 
 ```
 
-## Shiny/AWS example
+### Shiny/AWS example
 
 Loading data from AWS in a Shiny `app.R` file  
   * `app.R` is the core server/UI file you will have if you are building a Shiny app.  
