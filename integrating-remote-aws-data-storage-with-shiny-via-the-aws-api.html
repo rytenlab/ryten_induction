@@ -241,8 +241,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="setting-up-your-.renviron-file" class="section level3">
 <h3><span class="header-section-number">6.1.3</span> Setting up your <code>.Renviron</code> file</h3>
 <ul>
-<li>Once you have your access key, secret access key and AWS default region (see step 1), this is the file that will store this information.<br />
-</li>
+<li>Once you have your access key, secret access key and AWS default region (see step 1), this is the file that will store this information.</li>
 <li>Assuming that you are in your working directory/ same directory as your Shiny <code>app.R</code> file, run the command <code>touch ./.Renviron</code> from the command line to generate the <code>.Renviron</code> file.<br />
 </li>
 <li>Then open this file, either on the command line, <code>vi .Renviron</code>, or interactively on Rstudio.<br />
@@ -251,9 +250,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 <li>Add your access key, secret access key and AWS default region, for example:</li>
 </ul>
-<div class="figure">
-<img src="/home/abrowne/rytenlab_induction/images/access_key_example.png" alt="" />
-<p class="caption">Figure 1: <code>.Renviron</code> file example</p>
+<div class="figure"><span id="fig:Renviron-example"></span>
+<img src="figures/05-Shiny-basics/fig1_access_key_example.png" alt=".Renviron file example"  />
+<p class="caption">
+Figure 6.1: .Renviron file example
+</p>
 </div>
 <ul>
 <li>Save and close the <code>.Renviron</code> file.</li>
@@ -283,9 +284,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="shinyaws-example" class="section level2">
 <h2><span class="header-section-number">6.2</span> Shiny/AWS example</h2>
-<p>Loading data from AWS in a Shiny <code>app.R</code> file<br />
-* <code>app.R</code> is the core server/UI file you will have if you are building a Shiny app.<br />
-* This example <code>app.R</code> file includes all the necessary code to load data from an AWS bucket</p>
+<p>Loading data from AWS in a Shiny <code>app.R</code> file</p>
+<ul>
+<li><code>app.R</code> is the core server/UI file you will have if you are building a Shiny app.<br />
+</li>
+<li>This example <code>app.R</code> file includes all the necessary code to load data from an AWS bucket</li>
+</ul>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-1"></a><span class="co">## app.R ##</span></span>
 <span id="cb20-2"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-2"></a></span>
 <span id="cb20-3"><a href="integrating-remote-aws-data-storage-with-shiny-via-the-aws-api.html#cb20-3"></a><span class="co"># load libraries</span></span>

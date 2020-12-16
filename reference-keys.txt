@@ -2,6 +2,7 @@ fig:build-book
 fig:ucl-vpn-success
 fig:session-button
 fig:session-screen
+fig:Renviron-example
 welcome
 useful-links
 acknowledgements
