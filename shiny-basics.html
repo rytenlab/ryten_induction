@@ -24,7 +24,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2020-12-16" />
+<meta name="date" content="2021-01-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -169,7 +169,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="data-backup.html"><a href="data-backup.html#why-backup-your-data-stored-on-the-ryten-server"><i class="fa fa-check"></i><b>5.1</b> Why backup your data stored on the Ryten server?</a></li>
 <li class="chapter" data-level="5.2" data-path="data-backup.html"><a href="data-backup.html#what-options-are-available-to-you-as-ryten-server-user"><i class="fa fa-check"></i><b>5.2</b> What options are available to you as Ryten server user?</a></li>
 <li class="chapter" data-level="5.3" data-path="data-backup.html"><a href="data-backup.html#what-are-good-practices-for-data-backup"><i class="fa fa-check"></i><b>5.3</b> What are good practices for data backup?</a></li>
-<li class="chapter" data-level="5.4" data-path="data-backup.html"><a href="data-backup.html#aws"><i class="fa fa-check"></i><b>5.4</b> AWS</a></li>
+<li class="chapter" data-level="5.4" data-path="data-backup.html"><a href="data-backup.html#aws"><i class="fa fa-check"></i><b>5.4</b> AWS</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="data-backup.html"><a href="data-backup.html#accessing-aws-using-the-aws-command-line-interface"><i class="fa fa-check"></i><b>5.4.1</b> Accessing AWS using the AWS Command Line Interface</a></li>
+<li class="chapter" data-level="5.4.2" data-path="data-backup.html"><a href="data-backup.html#checking-aws-file-integrity"><i class="fa fa-check"></i><b>5.4.2</b> Checking AWS file integrity</a></li>
+<li class="chapter" data-level="5.4.3" data-path="data-backup.html"><a href="data-backup.html#creating-a-new-aws-bucket"><i class="fa fa-check"></i><b>5.4.3</b> Creating a new AWS bucket</a></li>
+<li class="chapter" data-level="5.4.4" data-path="data-backup.html"><a href="data-backup.html#further-info"><i class="fa fa-check"></i><b>5.4.4</b> Further info</a></li>
+</ul></li>
 <li class="chapter" data-level="5.5" data-path="data-backup.html"><a href="data-backup.html#github"><i class="fa fa-check"></i><b>5.5</b> Github</a></li>
 <li class="chapter" data-level="5.6" data-path="data-backup.html"><a href="data-backup.html#ucl-rds"><i class="fa fa-check"></i><b>5.6</b> UCL RDS</a><ul>
 <li class="chapter" data-level="5.6.1" data-path="data-backup.html"><a href="data-backup.html#registering-a-project"><i class="fa fa-check"></i><b>5.6.1</b> Registering a project</a></li>
@@ -218,11 +223,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This section aims to demonstrate how to utilise the Amazon Web Service (AWS) API to load data from an AWS bucket into the R environment. It then provides an example of how to use this protocol within a Shiny web application.</p>
 <div id="install-the-aws.s3-package" class="section level3">
 <h3><span class="header-section-number">6.1.1</span> Install the <code>aws.s3</code> package</h3>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="shiny-basics.html#cb17-1"></a><span class="co"># install package</span></span>
-<span id="cb17-2"><a href="shiny-basics.html#cb17-2"></a><span class="kw">install.packages</span>(<span class="st">&#39;aws.s3&#39;</span>)</span>
-<span id="cb17-3"><a href="shiny-basics.html#cb17-3"></a></span>
-<span id="cb17-4"><a href="shiny-basics.html#cb17-4"></a><span class="co"># load package</span></span>
-<span id="cb17-5"><a href="shiny-basics.html#cb17-5"></a><span class="kw">library</span>(aws.s3)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="shiny-basics.html#cb29-1"></a><span class="co"># install package</span></span>
+<span id="cb29-2"><a href="shiny-basics.html#cb29-2"></a><span class="kw">install.packages</span>(<span class="st">&#39;aws.s3&#39;</span>)</span>
+<span id="cb29-3"><a href="shiny-basics.html#cb29-3"></a></span>
+<span id="cb29-4"><a href="shiny-basics.html#cb29-4"></a><span class="co"># load package</span></span>
+<span id="cb29-5"><a href="shiny-basics.html#cb29-5"></a><span class="kw">library</span>(aws.s3)</span></code></pre></div>
 </div>
 <div id="getting-your-unique-aws-access-keys---refer-to-sonia-for-help-with-this-step" class="section level3">
 <h3><span class="header-section-number">6.1.2</span> Getting your unique AWS access keys - refer to Sonia for help with this step</h3>
@@ -266,9 +271,9 @@ Figure 6.1: .Renviron file example
 <ul>
 <li>The following command will load your access keys from your <code>.Renviron</code> file in an anonymised format, meaning you can put this in the body of your Shiny <code>app.R</code> file.</li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="shiny-basics.html#cb18-1"></a><span class="kw">Sys.setenv</span>(<span class="st">&quot;AWS_ACCESS_KEY_ID&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_ACCESS_KEY_ID&quot;</span>),</span>
-<span id="cb18-2"><a href="shiny-basics.html#cb18-2"></a>           <span class="st">&quot;AWS_SECRET_ACCESS_KEY&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_SECRET_ACCESS_KEY&quot;</span>),</span>
-<span id="cb18-3"><a href="shiny-basics.html#cb18-3"></a>           <span class="st">&quot;AWS_DEFAULT_REGION&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="shiny-basics.html#cb30-1"></a><span class="kw">Sys.setenv</span>(<span class="st">&quot;AWS_ACCESS_KEY_ID&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_ACCESS_KEY_ID&quot;</span>),</span>
+<span id="cb30-2"><a href="shiny-basics.html#cb30-2"></a>           <span class="st">&quot;AWS_SECRET_ACCESS_KEY&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_SECRET_ACCESS_KEY&quot;</span>),</span>
+<span id="cb30-3"><a href="shiny-basics.html#cb30-3"></a>           <span class="st">&quot;AWS_DEFAULT_REGION&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span>))</span></code></pre></div>
 <ul>
 <li>Now you can use the AWS API to access remote files using the <code>aws.s3</code> package.<br />
 </li>
@@ -276,11 +281,11 @@ Figure 6.1: .Renviron file example
 </li>
 <li>Other reader functions can be used, such as <code>readr::read_csv</code> or <code>fst::read.fst</code>.</li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="shiny-basics.html#cb19-1"></a><span class="co"># load aws.s3 library</span></span>
-<span id="cb19-2"><a href="shiny-basics.html#cb19-2"></a><span class="kw">library</span>(aws.s3)</span>
-<span id="cb19-3"><a href="shiny-basics.html#cb19-3"></a></span>
-<span id="cb19-4"><a href="shiny-basics.html#cb19-4"></a><span class="co"># read in csv from AWS s3 bucket </span></span>
-<span id="cb19-5"><a href="shiny-basics.html#cb19-5"></a>obj1 &lt;-<span class="st"> </span>aws.s3<span class="op">::</span><span class="kw">s3read_using</span>(read.csv, <span class="dt">object =</span> <span class="st">&quot;s3://your-bucket/dataframe.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="shiny-basics.html#cb31-1"></a><span class="co"># load aws.s3 library</span></span>
+<span id="cb31-2"><a href="shiny-basics.html#cb31-2"></a><span class="kw">library</span>(aws.s3)</span>
+<span id="cb31-3"><a href="shiny-basics.html#cb31-3"></a></span>
+<span id="cb31-4"><a href="shiny-basics.html#cb31-4"></a><span class="co"># read in csv from AWS s3 bucket </span></span>
+<span id="cb31-5"><a href="shiny-basics.html#cb31-5"></a>obj1 &lt;-<span class="st"> </span>aws.s3<span class="op">::</span><span class="kw">s3read_using</span>(read.csv, <span class="dt">object =</span> <span class="st">&quot;s3://your-bucket/dataframe.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="shinyaws-example" class="section level3">
 <h3><span class="header-section-number">6.1.5</span> Shiny/AWS example</h3>
@@ -290,32 +295,32 @@ Figure 6.1: .Renviron file example
 </li>
 <li>This example <code>app.R</code> file includes all the necessary code to load data from an AWS bucket</li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="shiny-basics.html#cb20-1"></a><span class="co">## app.R ##</span></span>
-<span id="cb20-2"><a href="shiny-basics.html#cb20-2"></a></span>
-<span id="cb20-3"><a href="shiny-basics.html#cb20-3"></a><span class="co"># load libraries</span></span>
-<span id="cb20-4"><a href="shiny-basics.html#cb20-4"></a><span class="kw">library</span>(shiny)</span>
-<span id="cb20-5"><a href="shiny-basics.html#cb20-5"></a><span class="kw">library</span>(aws.s3)</span>
-<span id="cb20-6"><a href="shiny-basics.html#cb20-6"></a></span>
-<span id="cb20-7"><a href="shiny-basics.html#cb20-7"></a><span class="co"># load access keys</span></span>
-<span id="cb20-8"><a href="shiny-basics.html#cb20-8"></a><span class="kw">Sys.setenv</span>(<span class="st">&quot;AWS_ACCESS_KEY_ID&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_ACCESS_KEY_ID&quot;</span>),</span>
-<span id="cb20-9"><a href="shiny-basics.html#cb20-9"></a>           <span class="st">&quot;AWS_SECRET_ACCESS_KEY&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_SECRET_ACCESS_KEY&quot;</span>),</span>
-<span id="cb20-10"><a href="shiny-basics.html#cb20-10"></a>           <span class="st">&quot;AWS_DEFAULT_REGION&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span>))</span>
-<span id="cb20-11"><a href="shiny-basics.html#cb20-11"></a></span>
-<span id="cb20-12"><a href="shiny-basics.html#cb20-12"></a><span class="co"># load data from AWS bucket, assign to global </span></span>
-<span id="cb20-13"><a href="shiny-basics.html#cb20-13"></a>obj1 &lt;&lt;-<span class="st"> </span>aws.s3<span class="op">::</span><span class="kw">s3read_using</span>(read.csv, <span class="dt">object =</span> <span class="st">&quot;s3://your-bucket/dataframe.csv&quot;</span>)</span>
-<span id="cb20-14"><a href="shiny-basics.html#cb20-14"></a></span>
-<span id="cb20-15"><a href="shiny-basics.html#cb20-15"></a><span class="co"># define server function</span></span>
-<span id="cb20-16"><a href="shiny-basics.html#cb20-16"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</span>
-<span id="cb20-17"><a href="shiny-basics.html#cb20-17"></a>  <span class="co"># server code</span></span>
-<span id="cb20-18"><a href="shiny-basics.html#cb20-18"></a>}</span>
-<span id="cb20-19"><a href="shiny-basics.html#cb20-19"></a></span>
-<span id="cb20-20"><a href="shiny-basics.html#cb20-20"></a><span class="co"># define UI function</span></span>
-<span id="cb20-21"><a href="shiny-basics.html#cb20-21"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
-<span id="cb20-22"><a href="shiny-basics.html#cb20-22"></a>  <span class="co"># UI code</span></span>
-<span id="cb20-23"><a href="shiny-basics.html#cb20-23"></a>)</span>
-<span id="cb20-24"><a href="shiny-basics.html#cb20-24"></a></span>
-<span id="cb20-25"><a href="shiny-basics.html#cb20-25"></a><span class="co"># run shinyApp function </span></span>
-<span id="cb20-26"><a href="shiny-basics.html#cb20-26"></a><span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="shiny-basics.html#cb32-1"></a><span class="co">## app.R ##</span></span>
+<span id="cb32-2"><a href="shiny-basics.html#cb32-2"></a></span>
+<span id="cb32-3"><a href="shiny-basics.html#cb32-3"></a><span class="co"># load libraries</span></span>
+<span id="cb32-4"><a href="shiny-basics.html#cb32-4"></a><span class="kw">library</span>(shiny)</span>
+<span id="cb32-5"><a href="shiny-basics.html#cb32-5"></a><span class="kw">library</span>(aws.s3)</span>
+<span id="cb32-6"><a href="shiny-basics.html#cb32-6"></a></span>
+<span id="cb32-7"><a href="shiny-basics.html#cb32-7"></a><span class="co"># load access keys</span></span>
+<span id="cb32-8"><a href="shiny-basics.html#cb32-8"></a><span class="kw">Sys.setenv</span>(<span class="st">&quot;AWS_ACCESS_KEY_ID&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_ACCESS_KEY_ID&quot;</span>),</span>
+<span id="cb32-9"><a href="shiny-basics.html#cb32-9"></a>           <span class="st">&quot;AWS_SECRET_ACCESS_KEY&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_SECRET_ACCESS_KEY&quot;</span>),</span>
+<span id="cb32-10"><a href="shiny-basics.html#cb32-10"></a>           <span class="st">&quot;AWS_DEFAULT_REGION&quot;</span>=<span class="kw">Sys.getenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span>))</span>
+<span id="cb32-11"><a href="shiny-basics.html#cb32-11"></a></span>
+<span id="cb32-12"><a href="shiny-basics.html#cb32-12"></a><span class="co"># load data from AWS bucket, assign to global </span></span>
+<span id="cb32-13"><a href="shiny-basics.html#cb32-13"></a>obj1 &lt;&lt;-<span class="st"> </span>aws.s3<span class="op">::</span><span class="kw">s3read_using</span>(read.csv, <span class="dt">object =</span> <span class="st">&quot;s3://your-bucket/dataframe.csv&quot;</span>)</span>
+<span id="cb32-14"><a href="shiny-basics.html#cb32-14"></a></span>
+<span id="cb32-15"><a href="shiny-basics.html#cb32-15"></a><span class="co"># define server function</span></span>
+<span id="cb32-16"><a href="shiny-basics.html#cb32-16"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {</span>
+<span id="cb32-17"><a href="shiny-basics.html#cb32-17"></a>  <span class="co"># server code</span></span>
+<span id="cb32-18"><a href="shiny-basics.html#cb32-18"></a>}</span>
+<span id="cb32-19"><a href="shiny-basics.html#cb32-19"></a></span>
+<span id="cb32-20"><a href="shiny-basics.html#cb32-20"></a><span class="co"># define UI function</span></span>
+<span id="cb32-21"><a href="shiny-basics.html#cb32-21"></a>ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</span>
+<span id="cb32-22"><a href="shiny-basics.html#cb32-22"></a>  <span class="co"># UI code</span></span>
+<span id="cb32-23"><a href="shiny-basics.html#cb32-23"></a>)</span>
+<span id="cb32-24"><a href="shiny-basics.html#cb32-24"></a></span>
+<span id="cb32-25"><a href="shiny-basics.html#cb32-25"></a><span class="co"># run shinyApp function </span></span>
+<span id="cb32-26"><a href="shiny-basics.html#cb32-26"></a><span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</span></code></pre></div>
 
 </div>
 </div>

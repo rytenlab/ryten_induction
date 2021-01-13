@@ -35,6 +35,15 @@ why-backup-your-data-stored-on-the-ryten-server
 what-options-are-available-to-you-as-ryten-server-user
 what-are-good-practices-for-data-backup
 aws
+accessing-aws-using-the-aws-command-line-interface
+configure-the-aws-cli-service
+upload-a-single-file-to-aws
+download-a-single-file-from-aws
+upload-multiple-files-to-aws
+download-multiple-files-from-aws
+checking-aws-file-integrity
+creating-a-new-aws-bucket
+further-info
 github
 ucl-rds
 registering-a-project
