@@ -6,6 +6,7 @@ fig:Renviron-example
 welcome
 useful-links
 acknowledgements
+joining-the-ryten-lab-website
 contribute
 why-contribute
 what-should-i-contribute
