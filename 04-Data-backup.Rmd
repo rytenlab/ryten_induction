@@ -95,7 +95,9 @@ $ aws s3 sync my_local_folder/ s3://my-bucket/
 
 #### Download multiple files from AWS
 
-To download multiple files from an AWS bucket to your local folder, we can also use the **sync** command by changing the order of the parameters:
+To download multiple files from an AWS bucket to your local folder, we can also use the **sync** command by changing the order of the parameters.
+
+***Please, be aware the costs associated with downloading files correspond to $0.090 per GB - first 10 TB / month data transfer out beyond the global free tier.***
 
 ```console
 $ aws s3 sync s3://my-bucket/my_remote_folder/ ./my_local_folder 

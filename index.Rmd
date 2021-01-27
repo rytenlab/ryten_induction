@@ -39,3 +39,9 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+
+## Joining the Ryten lab website
+
+To join the Ryten lab [website](https://rytenlab.com/RytenLab/Team) as a team member, please fill the document you will find on the group [Sharepoint](https://liveuclac.sharepoint.com/:w:/r/sites/rytenlab/Shared%20Documents/Group%20website/Ryten-Lab-Template.docx?d=w5bc10685fb3e491b84e0343b42516f41&csf=1&web=1&e=7QtTRh) site. Please, remember you must be a member of rytenlab to access this file. Once you have completed it, return it back to [Sonia García Ruiz](mailto:s.ruiz@ucl.ac.uk). She will then generate a profile for you on the website.
+
+
