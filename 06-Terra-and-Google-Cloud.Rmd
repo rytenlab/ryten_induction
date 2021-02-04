@@ -1,6 +1,6 @@
 # Terra and Google Cloud  
 
-## Introduction to Terra  
+## Introduction to Terra and Google Cloud
  
 ### General overview  
 
@@ -10,9 +10,7 @@
 
 ### SQL queries  
 
-## Introduction to the AMP-PD data  
-
-## The Terra platform   
+## Using the Terra platform   
 
 ### General structure  
 
@@ -27,3 +25,5 @@
 #### Workflows  
 
 ### Get help
+
+## Introduction to the AMP-PD data  
