@@ -1,0 +1,29 @@
+# Terra and Google Cloud  
+
+## Introduction to Terra  
+ 
+### General overview  
+
+### Your account  
+
+### The billing project  
+
+### SQL queries  
+
+## Introduction to the AMP-PD data  
+
+## The Terra platform   
+
+### General structure  
+
+#### Workspaces
+
+#### Dashboard  
+
+#### Data  
+
+#### Notebooks  
+
+#### Workflows  
+
+### Get help
