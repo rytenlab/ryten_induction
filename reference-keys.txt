@@ -63,13 +63,12 @@ setting-up-your-.renviron-file
 loading-aws-objects
 shinyaws-example
 terra-and-google-cloud
-introduction-to-terra
+introduction-to-terra-and-google-cloud
 general-overview
 your-account
 the-billing-project
 sql-queries
-introduction-to-the-amp-pd-data
-the-terra-platform
+using-the-terra-platform
 general-structure
 workspaces
 dashboard
@@ -77,6 +76,7 @@ data
 notebooks
 workflows
 get-help
+introduction-to-the-amp-pd-data
 resources
 how-tos
 reproducible-science
