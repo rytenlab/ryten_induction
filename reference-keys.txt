@@ -81,5 +81,6 @@ resources
 how-tos
 reproducible-science
 heritability-and-ld-score-regression
+statistics-and-data-visualisation
 books
 references
