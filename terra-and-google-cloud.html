@@ -265,6 +265,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="workflows" class="section level4">
 <h4><span class="header-section-number">7.2.1.5</span> Workflows</h4>
+<div id="why-use-workflows" class="section level5">
+<h5><span class="header-section-number">7.2.1.5.1</span> Why use workflows</h5>
+<p>In comparison to Terra Notebooks in which downstream analysis/processing takes place, the Terra workflow is for doing the heavy lifting aspects of your work. For example, if you need to use samtools to filter 1000 <code>.bam</code> files for properly paired reads, you would use a workflow to do this. Workflows are flexible and as well as the 1000s that are available via the Broad Institute’s ‘Broad Methods Repository’, you can formulate your own pipelines using the intuitive Workflow Description Language (WDL). Implementing your chosen/custom workflow is made relatively simple by integration with the Terra data table structure, making it easy to define sample sets and other inputs, as well as being able to assign computing resources and run processes in parallel.</p>
+<p>In this section, I am not going to try to re-write the excellent Broad Institute -provided tutorials, but instead outline how you might approach using particular elements of Terra workflows, pointing to relevant tutorials along the way.</p>
+</div>
+<div id="the-workflow-view" class="section level5">
+<h5><span class="header-section-number">7.2.1.5.2</span> The workflow view</h5>
+<div class="figure"><span id="fig:Workflow-view"></span>
+<img src="figures/06-Terra-and-Google-Cloud/workflow_view.png" alt="The workflow tab"  />
+<p class="caption">
+Figure 7.1: The workflow tab
+</p>
+</div>
+<p>Here you can see what the workflow tab looks like. This particular workspace has a collection of workflows, some of which are custom, others are imported from a workflow repository.</p>
+<p>To find or create a new workflow, click on ‘Find a Workflow’. A pop-up will suggest some popular workflows, or there is the option to ‘Find additional workflows’. To search for a workflow, select the relevant repository and import the workflow into your workspace. To generate your own, click on ‘Broad Methods Repository’. You may need to sign in with your Google account here. Once you have done this, you will see the option to ‘Create New Method’ in the top right-hand corner. For more detail on how to create your own workflows, see <a href="https://support.terra.bio/hc/en-us/articles/360031366091-Create-edit-and-share-a-new-workflow">this</a> Terra tutorial. Here, the process of workflow generation is covered, but building the actual WDL script that underlies it is not. I will link to some resources for this below.</p>
+<p>Returning to the workflow view, to use a workflow, simply select it’s tile and you will be taken to the input view.</p>
+</div>
 </div>
 </div>
 <div id="get-help" class="section level3">

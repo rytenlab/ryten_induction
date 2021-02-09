@@ -3,6 +3,7 @@ fig:ucl-vpn-success
 fig:session-button
 fig:session-screen
 fig:Renviron-example
+fig:Workflow-view
 welcome
 useful-links
 acknowledgements
@@ -75,6 +76,8 @@ dashboard
 data
 notebooks
 workflows
+why-use-workflows
+the-workflow-view
 get-help
 introduction-to-the-amp-pd-data
 resources
