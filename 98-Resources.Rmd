@@ -13,5 +13,10 @@ Here, sits any general useful resources that cover topics across the spectrum of
 - Beginner guides to [defining heritability](http://www.nealelab.is/blog/2017/9/13/heritability-101-what-is-heritability) and [estimating heritability](http://www.nealelab.is/blog/2017/9/13/heritability-201-types-of-heritability-and-how-we-estimate-it) - these are two excellent blog posts from the Neale lab, which break down the concept of heritability into plain, non-jargon English. 
 - [LD Score Regression, Heritability and Partitioning](https://www.youtube.com/watch?v=dVrF0l9jMgE&list=PLH2ckGEn9kWEkxWkDLkpzQlj8Y1bGM9ZP&index=4) and [Genetic Correlation](https://www.youtube.com/watch?v=QVPNouAbXsY&list=PLH2ckGEn9kWEkxWkDLkpzQlj8Y1bGM9ZP&index=3) - two approximately 1-hour YouTube videos from a summer school covering LD score regression. This is a great place to start understanding the underlying principles and assumptions of LDSC.
 
+## Statistics and data visualisation
+- [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/) - **excellent** book meant as a guide to making visualizations that accurately reflect the data, tell a story, and look professional. Visualisations based on `ggplot2`. A great read no matter what stage of your career you're at.
+- [Tidy Modeling with R](https://www.tmwr.org/software-modeling.html) - nice, short book on using the `tidymodels` packages for model building.
+
 ## Books
 - [Jeff Leeks book](https://leanpub.com/modernscientist) - free and outlines the core principles behind being a scientist in a open source way. 
+
