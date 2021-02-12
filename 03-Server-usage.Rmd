@@ -84,3 +84,19 @@ ssh user_name@ryten_server_IP
 ```
 
 This will open another `terminal`, on which you can do anything you would in your local `terminal`, however instead you'll be using the infrastructure of the Ryten server.
+
+## Adding new users 
+
+If you would like to add a new user to the ryten lab server, please use the following commands. Importantly, you must use the `-s` flag to set the default shell to `/bin/bash`, otherwise new user's will not have [autocompletion enabled by default](https://www.digitalocean.com/community/questions/how-to-enable-tab-to-complete-for-new-users-in-ubuntu). 
+
+```{r add-new-user, eval = FALSE}
+
+# -m adds a home directory for the user in /home/username
+# -s sets the default shell /bin/bash 
+sudo useradd -m -s /bin/bash username
+sudo passwd username
+
+```
+
+> Note: In the case that the `-s` flag has been forgotten, you can ask one of the sudo-users to [manually change your shell](https://unix.stackexchange.com/questions/362894/why-am-i-not-able-to-change-the-shell-with-the-chsh-command) using the command `sudo usermod --shell /bin/bash username`.
+
