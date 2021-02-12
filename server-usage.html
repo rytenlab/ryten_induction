@@ -24,7 +24,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2021-02-09" />
+<meta name="date" content="2021-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,6 +165,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.3" data-path="server-usage.html"><a href="server-usage.html#connect-rserver"><i class="fa fa-check"></i><b>4.3.3</b> Connecting via RStudio Server</a></li>
 <li class="chapter" data-level="4.3.4" data-path="server-usage.html"><a href="server-usage.html#connecting-via-a-shell-session"><i class="fa fa-check"></i><b>4.3.4</b> Connecting via a shell session</a></li>
 </ul></li>
+<li class="chapter" data-level="4.4" data-path="server-usage.html"><a href="server-usage.html#adding-new-users"><i class="fa fa-check"></i><b>4.4</b> Adding new users</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-backup.html"><a href="data-backup.html"><i class="fa fa-check"></i><b>5</b> Data backup</a><ul>
 <li class="chapter" data-level="5.1" data-path="data-backup.html"><a href="data-backup.html#why-backup-your-data-stored-on-the-ryten-server"><i class="fa fa-check"></i><b>5.1</b> Why backup your data stored on the Ryten server?</a></li>
@@ -314,8 +315,19 @@ Figure 4.3: Screenshot of mobaXterm ‘Session settings’ screen.
 <p>To do this use the command below from your <strong>local</strong> <code>terminal</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="server-usage.html#cb6-1"></a>ssh user_name<span class="op">@</span>ryten_server_IP</span></code></pre></div>
 <p>This will open another <code>terminal</code>, on which you can do anything you would in your local <code>terminal</code>, however instead you’ll be using the infrastructure of the Ryten server.</p>
-
 </div>
+</div>
+<div id="adding-new-users" class="section level2">
+<h2><span class="header-section-number">4.4</span> Adding new users</h2>
+<p>If you would like to add a new user to the ryten lab server, please use the following commands. Importantly, you must use the <code>-s</code> flag to set the default shell to <code>/bin/bash</code>, otherwise new user’s will not have <a href="https://www.digitalocean.com/community/questions/how-to-enable-tab-to-complete-for-new-users-in-ubuntu">autocompletion enabled by default</a>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="server-usage.html#cb7-1"></a><span class="co"># -m adds a home directory for the user in /home/username</span></span>
+<span id="cb7-2"><a href="server-usage.html#cb7-2"></a><span class="co"># -s sets the default shell /bin/bash </span></span>
+<span id="cb7-3"><a href="server-usage.html#cb7-3"></a>sudo useradd <span class="op">-</span>m <span class="op">-</span>s <span class="op">/</span>bin<span class="op">/</span>bash username</span>
+<span id="cb7-4"><a href="server-usage.html#cb7-4"></a>sudo passwd username</span></code></pre></div>
+<blockquote>
+<p>Note: In the case that the <code>-s</code> flag has been forgotten, you can ask one of the sudo-users to <a href="https://unix.stackexchange.com/questions/362894/why-am-i-not-able-to-change-the-shell-with-the-chsh-command">manually change your shell</a> using the command <code>sudo usermod --shell /bin/bash username</code>.</p>
+</blockquote>
+
 </div>
 </div>
             </section>

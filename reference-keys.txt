@@ -32,6 +32,7 @@ setup-ucl-vpn
 windows-mobaxterm
 connect-rserver
 connecting-via-a-shell-session
+adding-new-users
 data_backup
 why-backup-your-data-stored-on-the-ryten-server
 what-options-are-available-to-you-as-ryten-server-user
