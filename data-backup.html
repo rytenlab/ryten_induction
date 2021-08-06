@@ -24,7 +24,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2021-07-28" />
+<meta name="date" content="2021-08-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -163,10 +163,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="server-usage.html"><a href="server-usage.html#why-use-the-ryten-server"><i class="fa fa-check"></i><b>4.1</b> Why use the Ryten server?</a></li>
 <li class="chapter" data-level="4.2" data-path="server-usage.html"><a href="server-usage.html#usage-guide"><i class="fa fa-check"></i><b>4.2</b> Usage guide</a></li>
 <li class="chapter" data-level="4.3" data-path="server-usage.html"><a href="server-usage.html#how-to-connect-to-a-remote-server"><i class="fa fa-check"></i><b>4.3</b> How to connect to a remote server?</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="server-usage.html"><a href="server-usage.html#setup-ucl-vpn"><i class="fa fa-check"></i><b>4.3.1</b> Setup UCL VPN</a></li>
+<li class="chapter" data-level="4.3.1" data-path="server-usage.html"><a href="server-usage.html#ucl-vpn"><i class="fa fa-check"></i><b>4.3.1</b> Setup UCL VPN</a></li>
 <li class="chapter" data-level="4.3.2" data-path="server-usage.html"><a href="server-usage.html#windows-mobaxterm"><i class="fa fa-check"></i><b>4.3.2</b> Are you a Windows user?</a></li>
-<li class="chapter" data-level="4.3.3" data-path="server-usage.html"><a href="server-usage.html#connect-rserver"><i class="fa fa-check"></i><b>4.3.3</b> Connecting via RStudio Server</a></li>
-<li class="chapter" data-level="4.3.4" data-path="server-usage.html"><a href="server-usage.html#connecting-via-a-shell-session"><i class="fa fa-check"></i><b>4.3.4</b> Connecting via a shell session</a></li>
+<li class="chapter" data-level="4.3.3" data-path="server-usage.html"><a href="server-usage.html#connect-shell"><i class="fa fa-check"></i><b>4.3.3</b> Connecting via a shell session</a></li>
+<li class="chapter" data-level="4.3.4" data-path="server-usage.html"><a href="server-usage.html#tunnel"><i class="fa fa-check"></i><b>4.3.4</b> Tunnelling into the server</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="server-usage.html"><a href="server-usage.html#adding-new-users"><i class="fa fa-check"></i><b>4.4</b> Adding new users</a></li>
 </ul></li>
@@ -238,7 +238,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">5</span> Data backup</h1>
 <p>The purpose of this chapter is to guide you through the available options for backup of data stored on the Ryten server. For backup of data on your personal/work computers, we recommend making use of cloud solutions, such as OneDrive for Business, available to <a href="https://www.ucl.ac.uk/isd/services/communicate-collaborate/remote-working/file-storage">UCL staff and students</a>.</p>
 <blockquote>
-<p>Note: <strong>data backup is the responsibility of each Ryten server user</strong>. We do not currently have any automated systems in place, so it is really important that you take the time to ensure you have all the proper backups in place.</p>
+<p><strong>Data backup is the responsibility of each Ryten server user</strong>. We do not currently have any automated systems in place, so it is really important that you take the time to ensure you have all the proper backups in place.</p>
 </blockquote>
 <div id="why-backup-your-data-stored-on-the-ryten-server" class="section level2">
 <h2><span class="header-section-number">5.1</span> Why backup your data stored on the Ryten server?</h2>
@@ -406,11 +406,11 @@ drwxr-xr-x 2 your_user your_group 4096 date s3md5</code></pre>
 <li>When the project was generated, <a href="mailto:researchdata-support@ucl.ac.uk" class="email">researchdata-support@ucl.ac.uk</a> will send you an e-mail with important details about the location of your storage area (an example is: <code>/mnt/gpfs/live/rd01__/path_to_storage_area/</code>)</li>
 <li>From the Ryten server, this project space can be accessed using the following command, and substituting your UCL username into the command below, instead of <code>ucl_username</code>.</li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="data-backup.html#cb20-1"></a><span class="fu">ssh</span> ucl_username@live.rd.ucl.ac.uk </span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="data-backup.html#cb23-1"></a><span class="fu">ssh</span> ucl_username@live.rd.ucl.ac.uk </span></code></pre></div>
 <ul>
 <li>You will be prompted for a password, and upon entering this you will be re-directed to your home space on UCL RDS. You can then move to your project area using the following command, and substituting in the path to your storage area.</li>
 </ul>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="data-backup.html#cb21-1"></a><span class="bu">cd</span> /mnt/gpfs/live/path_to_storage_area/</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="data-backup.html#cb24-1"></a><span class="bu">cd</span> /mnt/gpfs/live/path_to_storage_area/</span></code></pre></div>
 </div>
 <div id="using-rsync-to-backup-to-ucl-rds" class="section level3">
 <h3><span class="header-section-number">5.6.3</span> Using <code>rsync</code> to backup to UCL RDS</h3>
@@ -423,16 +423,16 @@ drwxr-xr-x 2 your_user your_group 4096 date s3md5</code></pre>
 <h4><span class="header-section-number">5.6.3.1</span> Simple use case</h4>
 <p>Google is a great resource, so feel free to read up a bit more on <code>rsync</code>. Also, you can always run the command <code>rsync --help</code> to see what options there are.</p>
 <p>Below is a simple use case, with the various flags explained with the #.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="data-backup.html#cb22-1"></a><span class="co"># -a preserve access times etc</span></span>
-<span id="cb22-2"><a href="data-backup.html#cb22-2"></a><span class="co"># -r recursive </span></span>
-<span id="cb22-3"><a href="data-backup.html#cb22-3"></a><span class="co"># -v verbose</span></span>
-<span id="cb22-4"><a href="data-backup.html#cb22-4"></a><span class="co"># -h human readable figures</span></span>
-<span id="cb22-5"><a href="data-backup.html#cb22-5"></a><span class="co"># -e select the protocol - ssh used here </span></span>
-<span id="cb22-6"><a href="data-backup.html#cb22-6"></a><span class="co"># --progress display progress bar</span></span>
-<span id="cb22-7"><a href="data-backup.html#cb22-7"></a><span class="co"># --relative preserves directory structure in the local backup location from /./ onwards</span></span>
-<span id="cb22-8"><a href="data-backup.html#cb22-8"></a></span>
-<span id="cb22-9"><a href="data-backup.html#cb22-9"></a><span class="co"># Example</span></span>
-<span id="cb22-10"><a href="data-backup.html#cb22-10"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative /path_to_files/ ucl_username@live.rd.ucl.ac.uk:/mnt/gpfs/live/path_to_storage_area/</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="data-backup.html#cb25-1"></a><span class="co"># -a preserve access times etc</span></span>
+<span id="cb25-2"><a href="data-backup.html#cb25-2"></a><span class="co"># -r recursive </span></span>
+<span id="cb25-3"><a href="data-backup.html#cb25-3"></a><span class="co"># -v verbose</span></span>
+<span id="cb25-4"><a href="data-backup.html#cb25-4"></a><span class="co"># -h human readable figures</span></span>
+<span id="cb25-5"><a href="data-backup.html#cb25-5"></a><span class="co"># -e select the protocol - ssh used here </span></span>
+<span id="cb25-6"><a href="data-backup.html#cb25-6"></a><span class="co"># --progress display progress bar</span></span>
+<span id="cb25-7"><a href="data-backup.html#cb25-7"></a><span class="co"># --relative preserves directory structure in the local backup location from /./ onwards</span></span>
+<span id="cb25-8"><a href="data-backup.html#cb25-8"></a></span>
+<span id="cb25-9"><a href="data-backup.html#cb25-9"></a><span class="co"># Example</span></span>
+<span id="cb25-10"><a href="data-backup.html#cb25-10"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative /path_to_files/ ucl_username@live.rd.ucl.ac.uk:/mnt/gpfs/live/path_to_storage_area/</span></code></pre></div>
 <ul>
 <li>Notice that the “source” location (<code>/path_to_files/</code>) is written first followed by the “target” location (<code>ucl_username@live.rd.ucl.ac.uk:/mnt/gpfs/live/path_to_storage_area/</code>).</li>
 </ul>
@@ -452,11 +452,11 @@ drwxr-xr-x 2 your_user your_group 4096 date s3md5</code></pre>
 <blockquote>
 <p>Do this in your home directory on UCL RDS e.g. <code>/mnt/gpfs/home/ucl_username/</code></p>
 </blockquote>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="data-backup.html#cb23-1"></a><span class="co"># Create hidden folder in home directory</span></span>
-<span id="cb23-2"><a href="data-backup.html#cb23-2"></a><span class="fu">mkdir</span> -p ~/.ssh</span>
-<span id="cb23-3"><a href="data-backup.html#cb23-3"></a></span>
-<span id="cb23-4"><a href="data-backup.html#cb23-4"></a><span class="co"># Restrict permissions</span></span>
-<span id="cb23-5"><a href="data-backup.html#cb23-5"></a><span class="fu">chmod</span> 700 ~/.ssh</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="data-backup.html#cb26-1"></a><span class="co"># Create hidden folder in home directory</span></span>
+<span id="cb26-2"><a href="data-backup.html#cb26-2"></a><span class="fu">mkdir</span> -p ~/.ssh</span>
+<span id="cb26-3"><a href="data-backup.html#cb26-3"></a></span>
+<span id="cb26-4"><a href="data-backup.html#cb26-4"></a><span class="co"># Restrict permissions</span></span>
+<span id="cb26-5"><a href="data-backup.html#cb26-5"></a><span class="fu">chmod</span> 700 ~/.ssh</span></code></pre></div>
 <p><strong>Generating the key pair</strong></p>
 <blockquote>
 <p>This is done in user’s home directory on the Ryten server where files will be transferred from e.g. <code>/home/rreynolds/</code>.</p>
@@ -464,42 +464,42 @@ drwxr-xr-x 2 your_user your_group 4096 date s3md5</code></pre>
 <ol style="list-style-type: decimal">
 <li>To generate the key pair, enter the command below. Don’t enter a passphrase when prompted, if you would like to setup fully password-less login.</li>
 </ol>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="data-backup.html#cb24-1"></a><span class="co"># Command to generate key pair</span></span>
-<span id="cb24-2"><a href="data-backup.html#cb24-2"></a><span class="fu">ssh-keygen</span> -t rsa</span>
-<span id="cb24-3"><a href="data-backup.html#cb24-3"></a></span>
-<span id="cb24-4"><a href="data-backup.html#cb24-4"></a><span class="co"># Output will look like this</span></span>
-<span id="cb24-5"><a href="data-backup.html#cb24-5"></a><span class="ex">Generating</span> public/private rsa key pair.</span>
-<span id="cb24-6"><a href="data-backup.html#cb24-6"></a><span class="ex">Enter</span> file in which to save the key (/home/rreynolds/.ssh/id_rsa)<span class="bu">:</span> /home/rreynolds/.ssh/rds_rsa <span class="co"># press enter, or name accordingly as was done here</span></span>
-<span id="cb24-7"><a href="data-backup.html#cb24-7"></a><span class="ex">Created</span> directory <span class="st">&#39;/home/rreynolds/.ssh&#39;</span>.</span>
-<span id="cb24-8"><a href="data-backup.html#cb24-8"></a><span class="ex">Enter</span> passphrase (empty for no passphrase)<span class="bu">:</span> <span class="co"># press enter</span></span>
-<span id="cb24-9"><a href="data-backup.html#cb24-9"></a><span class="ex">Enter</span> same passphrase again: <span class="co"># press enter</span></span>
-<span id="cb24-10"><a href="data-backup.html#cb24-10"></a><span class="ex">Your</span> identification has been saved in /home/rreynolds/.ssh/rds_rsa.</span>
-<span id="cb24-11"><a href="data-backup.html#cb24-11"></a><span class="ex">Your</span> public key has been saved in /home/rreynolds/.ssh/rds_rsa.pub.</span>
-<span id="cb24-12"><a href="data-backup.html#cb24-12"></a><span class="ex">The</span> key fingerprint is:</span>
-<span id="cb24-13"><a href="data-backup.html#cb24-13"></a><span class="ex">SHA256</span>:EXAMPLE rreynolds@ion-dmn-hpc3</span>
-<span id="cb24-14"><a href="data-backup.html#cb24-14"></a><span class="ex">The</span> key<span class="st">&#39;s randomart image is:</span></span>
-<span id="cb24-15"><a href="data-backup.html#cb24-15"></a><span class="st">+---[RSA 2048]----+</span></span>
-<span id="cb24-16"><a href="data-backup.html#cb24-16"></a><span class="st">|            ..   |</span></span>
-<span id="cb24-17"><a href="data-backup.html#cb24-17"></a><span class="st">|          EXAMPLE|</span></span>
-<span id="cb24-18"><a href="data-backup.html#cb24-18"></a><span class="st">|          EXAMPLE|</span></span>
-<span id="cb24-19"><a href="data-backup.html#cb24-19"></a><span class="st">|     EXAMPLE     |</span></span>
-<span id="cb24-20"><a href="data-backup.html#cb24-20"></a><span class="st">|    EXAMPLE      |</span></span>
-<span id="cb24-21"><a href="data-backup.html#cb24-21"></a><span class="st">|   EXAMPLE       |</span></span>
-<span id="cb24-22"><a href="data-backup.html#cb24-22"></a><span class="st">|    EXAMPLE      |</span></span>
-<span id="cb24-23"><a href="data-backup.html#cb24-23"></a><span class="st">|    EXAMPLE      |</span></span>
-<span id="cb24-24"><a href="data-backup.html#cb24-24"></a><span class="st">|      EXAMPLE    |</span></span>
-<span id="cb24-25"><a href="data-backup.html#cb24-25"></a><span class="st">+----[SHA256]-----+</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="data-backup.html#cb27-1"></a><span class="co"># Command to generate key pair</span></span>
+<span id="cb27-2"><a href="data-backup.html#cb27-2"></a><span class="fu">ssh-keygen</span> -t rsa</span>
+<span id="cb27-3"><a href="data-backup.html#cb27-3"></a></span>
+<span id="cb27-4"><a href="data-backup.html#cb27-4"></a><span class="co"># Output will look like this</span></span>
+<span id="cb27-5"><a href="data-backup.html#cb27-5"></a><span class="ex">Generating</span> public/private rsa key pair.</span>
+<span id="cb27-6"><a href="data-backup.html#cb27-6"></a><span class="ex">Enter</span> file in which to save the key (/home/rreynolds/.ssh/id_rsa)<span class="bu">:</span> /home/rreynolds/.ssh/rds_rsa <span class="co"># press enter, or name accordingly as was done here</span></span>
+<span id="cb27-7"><a href="data-backup.html#cb27-7"></a><span class="ex">Created</span> directory <span class="st">&#39;/home/rreynolds/.ssh&#39;</span>.</span>
+<span id="cb27-8"><a href="data-backup.html#cb27-8"></a><span class="ex">Enter</span> passphrase (empty for no passphrase)<span class="bu">:</span> <span class="co"># press enter</span></span>
+<span id="cb27-9"><a href="data-backup.html#cb27-9"></a><span class="ex">Enter</span> same passphrase again: <span class="co"># press enter</span></span>
+<span id="cb27-10"><a href="data-backup.html#cb27-10"></a><span class="ex">Your</span> identification has been saved in /home/rreynolds/.ssh/rds_rsa.</span>
+<span id="cb27-11"><a href="data-backup.html#cb27-11"></a><span class="ex">Your</span> public key has been saved in /home/rreynolds/.ssh/rds_rsa.pub.</span>
+<span id="cb27-12"><a href="data-backup.html#cb27-12"></a><span class="ex">The</span> key fingerprint is:</span>
+<span id="cb27-13"><a href="data-backup.html#cb27-13"></a><span class="ex">SHA256</span>:EXAMPLE rreynolds@ion-dmn-hpc3</span>
+<span id="cb27-14"><a href="data-backup.html#cb27-14"></a><span class="ex">The</span> key<span class="st">&#39;s randomart image is:</span></span>
+<span id="cb27-15"><a href="data-backup.html#cb27-15"></a><span class="st">+---[RSA 2048]----+</span></span>
+<span id="cb27-16"><a href="data-backup.html#cb27-16"></a><span class="st">|            ..   |</span></span>
+<span id="cb27-17"><a href="data-backup.html#cb27-17"></a><span class="st">|          EXAMPLE|</span></span>
+<span id="cb27-18"><a href="data-backup.html#cb27-18"></a><span class="st">|          EXAMPLE|</span></span>
+<span id="cb27-19"><a href="data-backup.html#cb27-19"></a><span class="st">|     EXAMPLE     |</span></span>
+<span id="cb27-20"><a href="data-backup.html#cb27-20"></a><span class="st">|    EXAMPLE      |</span></span>
+<span id="cb27-21"><a href="data-backup.html#cb27-21"></a><span class="st">|   EXAMPLE       |</span></span>
+<span id="cb27-22"><a href="data-backup.html#cb27-22"></a><span class="st">|    EXAMPLE      |</span></span>
+<span id="cb27-23"><a href="data-backup.html#cb27-23"></a><span class="st">|    EXAMPLE      |</span></span>
+<span id="cb27-24"><a href="data-backup.html#cb27-24"></a><span class="st">|      EXAMPLE    |</span></span>
+<span id="cb27-25"><a href="data-backup.html#cb27-25"></a><span class="st">+----[SHA256]-----+</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>If no different file name entered, the command will generate two files: <code>~/.ssh/id_rsa</code> (private key) and <code>~/.ssh/id_rsa.pub</code> (public key).</li>
 <li>Copy the public half of the key pair to your cloud server using the following command. Replace the user and server with your username and the server address you wish to use the key authentication on. <strong>This assumes you saved the key pair using the default file name and location. If not, just replace the key path <code>~/.ssh/id_rsa.pub</code> your own key name (as I did below)</strong>.</li>
 </ol>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="data-backup.html#cb25-1"></a><span class="co"># Command</span></span>
-<span id="cb25-2"><a href="data-backup.html#cb25-2"></a><span class="ex">ssh-copy-id</span> -i ~/.ssh/rds_rsa.pub ucl_username@live.rd.ucl.ac.uk</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="data-backup.html#cb28-1"></a><span class="co"># Command</span></span>
+<span id="cb28-2"><a href="data-backup.html#cb28-2"></a><span class="ex">ssh-copy-id</span> -i ~/.ssh/rds_rsa.pub ucl_username@live.rd.ucl.ac.uk</span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>Set up SSH Agent to store the keys to avoid having to re-enter passphrase at every login. <strong>If you close the Ryten server terminal, you will have to repeat the command below when you open up a new terminal.</strong></li>
 </ol>
-<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="data-backup.html#cb26-1"></a><span class="fu">ssh-agent</span> <span class="va">$BASH</span></span>
-<span id="cb26-2"><a href="data-backup.html#cb26-2"></a><span class="fu">ssh-add</span> ~/.ssh/rds_rsa</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="data-backup.html#cb29-1"></a><span class="fu">ssh-agent</span> <span class="va">$BASH</span></span>
+<span id="cb29-2"><a href="data-backup.html#cb29-2"></a><span class="fu">ssh-add</span> ~/.ssh/rds_rsa</span></code></pre></div>
 </div>
 <div id="step-2-write-a-script-for-your-data-backup" class="section level5">
 <h5><span class="header-section-number">5.6.3.2.2</span> Step 2: Write a script for <em>your</em> data backup</h5>
@@ -513,52 +513,52 @@ drwxr-xr-x 2 your_user your_group 4096 date s3md5</code></pre>
 <li><code>rbackuploc_*</code>: change to your remote backup locations.</li>
 <li>Main body of backup text to suit your purposes.</li>
 </ul>
-<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="data-backup.html#cb27-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb27-2"><a href="data-backup.html#cb27-2"></a></span>
-<span id="cb27-3"><a href="data-backup.html#cb27-3"></a><span class="co"># Remote RDS server</span></span>
-<span id="cb27-4"><a href="data-backup.html#cb27-4"></a><span class="va">rserver=</span>ucl_username<span class="ex">@live.rd.ucl.ac.uk</span></span>
-<span id="cb27-5"><a href="data-backup.html#cb27-5"></a></span>
-<span id="cb27-6"><a href="data-backup.html#cb27-6"></a><span class="co"># Local backup location</span></span>
-<span id="cb27-7"><a href="data-backup.html#cb27-7"></a><span class="va">lbackuploc_data=</span>/data/</span>
-<span id="cb27-8"><a href="data-backup.html#cb27-8"></a><span class="va">lbackuploc_user=</span>/home/./ryten_username/</span>
-<span id="cb27-9"><a href="data-backup.html#cb27-9"></a></span>
-<span id="cb27-10"><a href="data-backup.html#cb27-10"></a><span class="co"># Remote RDS backup locations</span></span>
-<span id="cb27-11"><a href="data-backup.html#cb27-11"></a><span class="va">rbackuploc_GWAS=</span>/mnt/gpfs/live/rd01__/path_to_GWAS_backup/</span>
-<span id="cb27-12"><a href="data-backup.html#cb27-12"></a><span class="va">rbackuploc_PDseq=</span>/mnt/gpfs/live/path_to_PD_backup/</span>
-<span id="cb27-13"><a href="data-backup.html#cb27-13"></a></span>
-<span id="cb27-14"><a href="data-backup.html#cb27-14"></a><span class="co">#---Backups to $rbackuploc_GWAS---------------</span></span>
-<span id="cb27-15"><a href="data-backup.html#cb27-15"></a></span>
-<span id="cb27-16"><a href="data-backup.html#cb27-16"></a><span class="bu">echo</span> <span class="st">&quot;Starting backup to </span><span class="va">$rserver</span><span class="st">:</span><span class="va">$rbackuploc_GWAS</span><span class="st">&quot;</span> </span>
-<span id="cb27-17"><a href="data-backup.html#cb27-17"></a></span>
-<span id="cb27-18"><a href="data-backup.html#cb27-18"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_user</span>/projects/LDSC_Regression/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
-<span id="cb27-19"><a href="data-backup.html#cb27-19"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_user</span>/data/MAGMA/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
-<span id="cb27-20"><a href="data-backup.html#cb27-20"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_user</span>/misc_projects <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
-<span id="cb27-21"><a href="data-backup.html#cb27-21"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/LDScore/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
-<span id="cb27-22"><a href="data-backup.html#cb27-22"></a></span>
-<span id="cb27-23"><a href="data-backup.html#cb27-23"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/Alasoo2018_MacrophageQTLs/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
-<span id="cb27-24"><a href="data-backup.html#cb27-24"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/Fairfax2014/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
-<span id="cb27-25"><a href="data-backup.html#cb27-25"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/eQTLGen/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
-<span id="cb27-26"><a href="data-backup.html#cb27-26"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/GTEx_eQTLs/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
-<span id="cb27-27"><a href="data-backup.html#cb27-27"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/psychencode/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
-<span id="cb27-28"><a href="data-backup.html#cb27-28"></a></span>
-<span id="cb27-29"><a href="data-backup.html#cb27-29"></a><span class="co">#---Backups to $rbackuploc_PDseq--------------</span></span>
-<span id="cb27-30"><a href="data-backup.html#cb27-30"></a></span>
-<span id="cb27-31"><a href="data-backup.html#cb27-31"></a><span class="bu">echo</span> <span class="st">&quot;Starting backup to </span><span class="va">$rserver</span><span class="st">:</span><span class="va">$rbackuploc_PDseq</span><span class="st">&quot;</span> </span>
-<span id="cb27-32"><a href="data-backup.html#cb27-32"></a></span>
-<span id="cb27-33"><a href="data-backup.html#cb27-33"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/RNAseq_PD/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_PDseq</span></span>
-<span id="cb27-34"><a href="data-backup.html#cb27-34"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_user</span>/projects/Aim2_PDsequencing_wd/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_PDseq</span></span>
-<span id="cb27-35"><a href="data-backup.html#cb27-35"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/recount/SRP058181/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_PDseq</span></span>
-<span id="cb27-36"><a href="data-backup.html#cb27-36"></a></span>
-<span id="cb27-37"><a href="data-backup.html#cb27-37"></a><span class="bu">echo</span> <span class="st">&quot;Backup finished!&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="data-backup.html#cb30-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb30-2"><a href="data-backup.html#cb30-2"></a></span>
+<span id="cb30-3"><a href="data-backup.html#cb30-3"></a><span class="co"># Remote RDS server</span></span>
+<span id="cb30-4"><a href="data-backup.html#cb30-4"></a><span class="va">rserver=</span>ucl_username<span class="ex">@live.rd.ucl.ac.uk</span></span>
+<span id="cb30-5"><a href="data-backup.html#cb30-5"></a></span>
+<span id="cb30-6"><a href="data-backup.html#cb30-6"></a><span class="co"># Local backup location</span></span>
+<span id="cb30-7"><a href="data-backup.html#cb30-7"></a><span class="va">lbackuploc_data=</span>/data/</span>
+<span id="cb30-8"><a href="data-backup.html#cb30-8"></a><span class="va">lbackuploc_user=</span>/home/./ryten_username/</span>
+<span id="cb30-9"><a href="data-backup.html#cb30-9"></a></span>
+<span id="cb30-10"><a href="data-backup.html#cb30-10"></a><span class="co"># Remote RDS backup locations</span></span>
+<span id="cb30-11"><a href="data-backup.html#cb30-11"></a><span class="va">rbackuploc_GWAS=</span>/mnt/gpfs/live/rd01__/path_to_GWAS_backup/</span>
+<span id="cb30-12"><a href="data-backup.html#cb30-12"></a><span class="va">rbackuploc_PDseq=</span>/mnt/gpfs/live/path_to_PD_backup/</span>
+<span id="cb30-13"><a href="data-backup.html#cb30-13"></a></span>
+<span id="cb30-14"><a href="data-backup.html#cb30-14"></a><span class="co">#---Backups to $rbackuploc_GWAS---------------</span></span>
+<span id="cb30-15"><a href="data-backup.html#cb30-15"></a></span>
+<span id="cb30-16"><a href="data-backup.html#cb30-16"></a><span class="bu">echo</span> <span class="st">&quot;Starting backup to </span><span class="va">$rserver</span><span class="st">:</span><span class="va">$rbackuploc_GWAS</span><span class="st">&quot;</span> </span>
+<span id="cb30-17"><a href="data-backup.html#cb30-17"></a></span>
+<span id="cb30-18"><a href="data-backup.html#cb30-18"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_user</span>/projects/LDSC_Regression/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
+<span id="cb30-19"><a href="data-backup.html#cb30-19"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_user</span>/data/MAGMA/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
+<span id="cb30-20"><a href="data-backup.html#cb30-20"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_user</span>/misc_projects <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
+<span id="cb30-21"><a href="data-backup.html#cb30-21"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/LDScore/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
+<span id="cb30-22"><a href="data-backup.html#cb30-22"></a></span>
+<span id="cb30-23"><a href="data-backup.html#cb30-23"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/Alasoo2018_MacrophageQTLs/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
+<span id="cb30-24"><a href="data-backup.html#cb30-24"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/Fairfax2014/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
+<span id="cb30-25"><a href="data-backup.html#cb30-25"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/eQTLGen/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
+<span id="cb30-26"><a href="data-backup.html#cb30-26"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/GTEx_eQTLs/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
+<span id="cb30-27"><a href="data-backup.html#cb30-27"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/psychencode/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_GWAS</span></span>
+<span id="cb30-28"><a href="data-backup.html#cb30-28"></a></span>
+<span id="cb30-29"><a href="data-backup.html#cb30-29"></a><span class="co">#---Backups to $rbackuploc_PDseq--------------</span></span>
+<span id="cb30-30"><a href="data-backup.html#cb30-30"></a></span>
+<span id="cb30-31"><a href="data-backup.html#cb30-31"></a><span class="bu">echo</span> <span class="st">&quot;Starting backup to </span><span class="va">$rserver</span><span class="st">:</span><span class="va">$rbackuploc_PDseq</span><span class="st">&quot;</span> </span>
+<span id="cb30-32"><a href="data-backup.html#cb30-32"></a></span>
+<span id="cb30-33"><a href="data-backup.html#cb30-33"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/RNAseq_PD/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_PDseq</span></span>
+<span id="cb30-34"><a href="data-backup.html#cb30-34"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_user</span>/projects/Aim2_PDsequencing_wd/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_PDseq</span></span>
+<span id="cb30-35"><a href="data-backup.html#cb30-35"></a><span class="fu">rsync</span> -arvhe ssh --progress --relative <span class="va">$lbackuploc_data</span>/recount/SRP058181/ <span class="va">$rserver</span>:<span class="va">$rbackuploc_PDseq</span></span>
+<span id="cb30-36"><a href="data-backup.html#cb30-36"></a></span>
+<span id="cb30-37"><a href="data-backup.html#cb30-37"></a><span class="bu">echo</span> <span class="st">&quot;Backup finished!&quot;</span></span></code></pre></div>
 </div>
 <div id="step-3-running-your-script" class="section level5">
 <h5><span class="header-section-number">5.6.3.2.3</span> Step 3: Running your script</h5>
 <p>After creating script, remember to set an executable permission to the script. Substitute <code>RDS_backup.sh</code> for the name of your script.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="data-backup.html#cb28-1"></a><span class="co"># Command</span></span>
-<span id="cb28-2"><a href="data-backup.html#cb28-2"></a><span class="fu">chmod</span> +x RDS_backup.sh</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="data-backup.html#cb31-1"></a><span class="co"># Command</span></span>
+<span id="cb31-2"><a href="data-backup.html#cb31-2"></a><span class="fu">chmod</span> +x RDS_backup.sh</span></code></pre></div>
 <p>The script can then be run with the follow command. It is a good idea to keep a log of your backups to see if any errors have been returned during the process. For this reason, the output of the backup script is re-directed into a new log file named <code>20201102_RDSbackup.log</code>, with the date of transfer.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="data-backup.html#cb29-1"></a><span class="co"># Run script and save log file</span></span>
-<span id="cb29-2"><a href="data-backup.html#cb29-2"></a><span class="fu">bash</span> ./path_to_script/RDS_backup.sh <span class="op">&gt;</span> ./path_to_log_directory/20201102_RDSbackup.log</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="data-backup.html#cb32-1"></a><span class="co"># Run script and save log file</span></span>
+<span id="cb32-2"><a href="data-backup.html#cb32-2"></a><span class="fu">bash</span> ./path_to_script/RDS_backup.sh <span class="op">&gt;</span> ./path_to_log_directory/20201102_RDSbackup.log</span></code></pre></div>
 <p>Finally, remember that prior to running your backup script you will have to set up SSH Agent to store the keys (as mentioned in Section <a href="data-backup.html#ssh-agent">5.6.3.2.1</a>, step 4), if you have not already done so.</p>
 
 </div>

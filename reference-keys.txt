@@ -28,10 +28,13 @@ server-usage
 why-use-the-ryten-server
 usage-guide
 how-to-connect-to-a-remote-server
-setup-ucl-vpn
+ucl-vpn
 windows-mobaxterm
+connect-shell
+tunnel
 connect-rserver
-connecting-via-a-shell-session
+connecting-to-jupyter-notebooks
+ryten-ports
 adding-new-users
 data_backup
 why-backup-your-data-stored-on-the-ryten-server
