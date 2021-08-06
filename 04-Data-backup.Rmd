@@ -2,7 +2,7 @@
 
 The purpose of this chapter is to guide you through the available options for backup of data stored on the Ryten server. For backup of data on your personal/work computers, we recommend making use of cloud solutions, such as OneDrive for Business, available to [UCL staff and students](https://www.ucl.ac.uk/isd/services/communicate-collaborate/remote-working/file-storage).
 
-> Note: **data backup is the responsibility of each Ryten server user**. We do not currently have any automated systems in place, so it is really important that you take the time to ensure you have all the proper backups in place.
+> **Data backup is the responsibility of each Ryten server user**. We do not currently have any automated systems in place, so it is really important that you take the time to ensure you have all the proper backups in place.
 
 ## Why backup your data stored on the Ryten server?
 
