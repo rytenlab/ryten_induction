@@ -27,7 +27,7 @@ We hope you enjoy your time in the Ryten lab! The goal of this book is to captur
 - The Ryten lab [website](https://rytenlab.com/) has all of our backgrounds, developed tools, publications and baby photos. 
 - The Ryten lab [GitHub](https://github.com/rytenlab) currently is only used to host this book, however in future will hold any other repositories that are common to the Ryten lab. 
 - The Ryten lab [Sharepoint](https://liveuclac.sharepoint.com/sites/rytenlab/Shared Documents/). To access this, you must be a member of rytenlab (if you are receiving e-mails from rytenlab@live.ucl.ac.uk, then you are a member). If you are a not a member, let one of the existing members know and we'll add you.
-- [ICH Laboratory Safety Code](https://liveuclac.sharepoint.com/:b:/r/sites/rytenlab/Shared%20Documents/WetLab/ICH%20Area%20Safety%20Code%20v1-2.pdf?csf=1&web=1&e=dEZwyu). This is hosted on the Ryten lab Sharepoint, thus you must be a member to access it.
+- [ICH Laboratory Safety Code](https://liveuclac.sharepoint.com/:b:/r/sites/rytenlab/Shared%20Documents/Wet%20lab/ICH%20Area%20Safety%20Code%20v1-2.pdf?csf=1&web=1&e=6uON0h). This is hosted on the Ryten lab Sharepoint, thus you must be a member to access it.
 
 ## Acknowledgements
 
@@ -43,6 +43,6 @@ knitr::write_bib(c(
 
 ## Joining the Ryten lab website
 
-To join the Ryten lab [website](https://rytenlab.com/RytenLab/Team) as a team member, please fill the document you will find on the group [Sharepoint](https://liveuclac.sharepoint.com/:w:/r/sites/rytenlab/Shared%20Documents/Group%20website/Ryten-Lab-Template.docx?d=w5bc10685fb3e491b84e0343b42516f41&csf=1&web=1&e=7QtTRh) site. Please, remember you must be a member of rytenlab to access this file. Once you have completed it, return it back to [Sonia García Ruiz](mailto:s.ruiz@ucl.ac.uk). She will then generate a profile for you on the website.
+To join the Ryten lab [website](https://rytenlab.com/RytenLab/Team) as a team member, please fill the document you will find on the group [Sharepoint](https://liveuclac.sharepoint.com/:w:/r/sites/rytenlab/Shared%20Documents/Server%20and%20cloud%20computing/Group%20website/Ryten-Lab-Template.docx?d=w5bc10685fb3e491b84e0343b42516f41&csf=1&web=1&e=ECwWQM) site. Please, remember you must be a member of rytenlab to access this file. Once you have completed it, return it back to [Sonia García Ruiz](mailto:s.ruiz@ucl.ac.uk). She will then generate a profile for you on the website.
 
 
