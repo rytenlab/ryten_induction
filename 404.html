@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 Terra and Google Cloud | Ryten lab induction book</title>
+  <title>Page not found | Ryten lab induction book</title>
   <meta name="description" content="Induction bookdown for all things Ryten lab" />
   <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 Terra and Google Cloud | Ryten lab induction book" />
+  <meta property="og:title" content="Page not found | Ryten lab induction book" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rytenlab/ryten_induction" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 Terra and Google Cloud | Ryten lab induction book" />
+  <meta name="twitter:title" content="Page not found | Ryten lab induction book" />
   
   <meta name="twitter:description" content="Induction bookdown for all things Ryten lab" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="shiny-basics.html"/>
-<link rel="next" href="resources.html"/>
+
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -234,76 +234,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="terra-and-google-cloud" class="section level1">
-<h1><span class="header-section-number">7</span> Terra and Google Cloud</h1>
-<div id="introduction-to-terra-and-google-cloud" class="section level2">
-<h2><span class="header-section-number">7.1</span> Introduction to Terra and Google Cloud</h2>
-<div id="general-overview" class="section level3">
-<h3><span class="header-section-number">7.1.1</span> General overview</h3>
-</div>
-<div id="your-account" class="section level3">
-<h3><span class="header-section-number">7.1.2</span> Your account</h3>
-</div>
-<div id="the-billing-project" class="section level3">
-<h3><span class="header-section-number">7.1.3</span> The billing project</h3>
-</div>
-<div id="sql-queries" class="section level3">
-<h3><span class="header-section-number">7.1.4</span> SQL queries</h3>
-</div>
-</div>
-<div id="using-the-terra-platform" class="section level2">
-<h2><span class="header-section-number">7.2</span> Using the Terra platform</h2>
-<div id="general-structure" class="section level3">
-<h3><span class="header-section-number">7.2.1</span> General structure</h3>
-<div id="workspaces" class="section level4">
-<h4><span class="header-section-number">7.2.1.1</span> Workspaces</h4>
-</div>
-<div id="dashboard" class="section level4">
-<h4><span class="header-section-number">7.2.1.2</span> Dashboard</h4>
-</div>
-<div id="data" class="section level4">
-<h4><span class="header-section-number">7.2.1.3</span> Data</h4>
-</div>
-<div id="notebooks" class="section level4">
-<h4><span class="header-section-number">7.2.1.4</span> Notebooks</h4>
-</div>
-<div id="workflows" class="section level4">
-<h4><span class="header-section-number">7.2.1.5</span> Workflows</h4>
-<div id="why-use-workflows" class="section level5">
-<h5><span class="header-section-number">7.2.1.5.1</span> Why use workflows</h5>
-<p>In comparison to Terra Notebooks in which downstream analysis/processing takes place, the Terra workflow is for doing the heavy lifting aspects of your work. For example, if you need to use samtools to filter 1000 <code>.bam</code> files for properly paired reads, you would use a workflow to do this. Workflows are flexible and as well as the 1000s that are available via the Broad Institute’s ‘Broad Methods Repository’, you can formulate your own pipelines using the intuitive Workflow Description Language (WDL). Implementing your chosen/custom workflow is made relatively simple by integration with the Terra data table structure, making it easy to define sample sets and other inputs, as well as being able to assign computing resources and run processes in parallel.</p>
-<p>In this section, I am not going to try to re-write the excellent Broad Institute -provided tutorials, but instead outline how you might approach using particular elements of Terra workflows, pointing to relevant tutorials along the way.</p>
-</div>
-<div id="the-workflow-view" class="section level5">
-<h5><span class="header-section-number">7.2.1.5.2</span> The workflow view</h5>
-<div class="figure"><span style="display:block;" id="fig:Workflow-view"></span>
-<img src="figures/06-Terra-and-Google-Cloud/workflow_view.png" alt="The workflow tab"  />
-<p class="caption">
-Figure 7.1: The workflow tab
-</p>
-</div>
-<p>Here you can see what the workflow tab looks like. This particular workspace has a collection of workflows, some of which are custom, others are imported from a workflow repository.</p>
-<p>To find or create a new workflow, click on ‘Find a Workflow’. A pop-up will suggest some popular workflows, or there is the option to ‘Find additional workflows’. To search for a workflow, select the relevant repository and import the workflow into your workspace. To generate your own, click on ‘Broad Methods Repository’. You may need to sign in with your Google account here. Once you have done this, you will see the option to ‘Create New Method’ in the top right-hand corner. For more detail on how to create your own workflows, see <a href="https://support.terra.bio/hc/en-us/articles/360031366091-Create-edit-and-share-a-new-workflow">this</a> Terra tutorial. Here, the process of workflow generation is covered, but building the actual WDL script that underlies it is not. I will link to some resources for this below.</p>
-<p>Returning to the workflow view, to use a workflow, simply select it’s tile and you will be taken to the input view.</p>
-</div>
-</div>
-</div>
-<div id="get-help" class="section level3">
-<h3><span class="header-section-number">7.2.2</span> Get help</h3>
-</div>
-</div>
-<div id="introduction-to-the-amp-pd-data" class="section level2">
-<h2><span class="header-section-number">7.3</span> Introduction to the AMP-PD data</h2>
-
-</div>
+<div id="page-not-found" class="section level1">
+<h1>Page not found</h1>
+<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
+<p>You may want to try searching to find the page's new location, or use
+the table of contents to find the page you are looking for.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="shiny-basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
