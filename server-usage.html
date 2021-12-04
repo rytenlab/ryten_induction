@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Server usage | Ryten lab induction book</title>
   <meta name="description" content="Induction bookdown for all things Ryten lab" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Server usage | Ryten lab induction book" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2021-08-24" />
+<meta name="date" content="2021-12-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -34,6 +34,7 @@
 <link rel="prev" href="learning-r.html"/>
 <link rel="next" href="data_backup.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -353,11 +353,11 @@ Figure 4.3: Screenshot of mobaXterm ‘Session settings’ screen.
 </div>
 <div id="ryten-ports" class="section level4">
 <h4><span class="header-section-number">4.3.4.3</span> Ports in use</h4>
-<p>If your name is not on this list, but you are using a port for Jupyter Notebooks, please inform a member of the Ryten lab so the port can be added to this list.</p>
+<p>If your name is not on this list, but you are using a port for e.g. Jupyter Notebooks or R Studio server (via <code>rocker</code>), please inform a member of the Ryten lab so the port can be added to this list.</p>
 <ul>
 <li>RStudio server: 8787</li>
 <li>Aine: 8960</li>
-<li>David: 8932</li>
+<li>David: 8932, 8888</li>
 <li>Karishma: 8965</li>
 <li>Regina: 8990</li>
 <li>Sainath: 8999</li>
@@ -388,7 +388,6 @@ Figure 4.3: Screenshot of mobaXterm ‘Session settings’ screen.
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -429,7 +428,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {
