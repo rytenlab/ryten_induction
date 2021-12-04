@@ -124,11 +124,11 @@ ssh user_name@ryten_server_IP "pkill -u user_name jupyter"
 
 #### Ports in use {#ryten-ports}
 
-If your name is not on this list, but you are using a port for Jupyter Notebooks, please inform a member of the Ryten lab so the port can be added to this list.
+If your name is not on this list, but you are using a port for e.g. Jupyter Notebooks or R Studio server (via `rocker`), please inform a member of the Ryten lab so the port can be added to this list.
 
 - RStudio server: 8787
 - Aine: 8960
-- David: 8932
+- David: 8932, 8888
 - Karishma: 8965
 - Regina: 8990
 - Sainath: 8999
