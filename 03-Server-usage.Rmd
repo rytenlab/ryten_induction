@@ -130,7 +130,7 @@ If your name is not on this list, but you are using a port for e.g. Jupyter Note
 - Aine: 8960
 - David: 8932, 8888
 - Karishma: 8965
-- Regina: 8990
+- Regina: 8990, 8991
 - Sainath: 8999
 
 ## Adding new users 
