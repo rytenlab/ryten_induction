@@ -44,30 +44,55 @@ Luckily, there are plenty of options available to you, including:
 
 ## AWS
 
-**Sonia Garcia Ruiz** is our AWS guru. You will need to get in contact with Sonia to arrange access to our AWS account. 
+### Login on AWS using UCL SSO
+
+Our AWS account is managed under the ICH organisation. To access to our AWS S3 buckets, you first need to login on [UCL Cloud Portal](https://ucl-cloud.awsapps.com/start#/) using your UCL credentials. Once the login has been successful, you will see an interface similar to the one below. 
+
+```{r aws-sso-login, fig.cap = "Login on AWS using UCL SSO", echo = FALSE}
+knitr::include_graphics('figures/04-AWS/aws_sso_login.PNG')
+```
+
+Click, on *"AWS Account --> Rytenlab Storage --> S3 bucket access --> Management console"*, and this should give you access to the list of buckets we have on the AWS S3 service.
+
+In case your don't have access, you will need to get in contact with **Sonia Garcia Ruiz** to arrange access to our AWS account. 
 
 ### Accessing AWS using the AWS Command Line Interface
 
-The AWS Command Line Interface (or AWS CLI) is an open source tool that enables you to interact with the AWS services from your command-line Shell. AWS CLI tool is already installed in our server, and it is very simple to use. Below are described the most commonly used interactions with AWS.
+The AWS Command Line Interface (or AWS CLI) is an open source tool that enables you to interact with the AWS services from your command-line Shell. AWS CLI tool is already installed in our server, and it is very easy to use.
+
+Below are described the most commonly used interactions with AWS.
+
 
 #### Configure the AWS CLI service
 
-1. To configure the service, please type "aws configure" on the console. This command is interactive, so the service will prompt you four times to enter some config information. Below an example (all RytenLab members have to ask me to send them their secret AWS credentials): 
+<!-- To configure this service, you will need your AWS Key and Secret numbers that are unique to you. To obtain that, you will need to login on [UCL Cloud Portal](https://ucl-cloud.awsapps.com/start#/) using your UCL credentials. Once the login has been successful, click, on *"AWS Account > Rytenlab Storage > S3 bucket access > Command line or programmatic access"*. Scroll down until the **Option 3: Use individual values in your AWS service client** section and copy your AWS Access Key Id and AWS Secret access key.  -->
 
-```console
-$ aws configure 
+Connect to our Rytenlab server and, in the command line, please type *"aws configure sso"* on the console. This command is interactive, so the service will prompt 2 different pieces of information. [More detailed information here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.html). Please, introduce the information as it is shown below:
 
-AWS Access Key ID [None]: your_access_key 
-AWS Secret Access Key [None]: your_secret_key 
-Default region name [None]: eu-west-2 
-Default output format [None]: json 
+```{r aws-sso-configure, fig.cap = "Configure AWS-UCL SSO login", echo = FALSE}
+knitr::include_graphics('figures/04-AWS/aws_sso_configure.PNG')
 ```
 
-2. To check whether the connection with AWS has been correctly stablished, we can type the following command to list all our current buckets. 
+Copy the URL and the code returned by the *"aws configure sso"* command and introduce it following the instructions.
+
+Once the login request has been approved, the command line will ask you to choose the role that you would like to use:
+
+```{r aws-sso-roles, fig.cap = "Choose a role.", echo = FALSE}
+knitr::include_graphics('figures/04-AWS/aws_sso_roles.PNG')
+```
+
+Finally, introduce the region and the output format to be used:
+
+```{r aws-sso-client, fig.cap = "Introduce the CLI region and output format.", echo = FALSE}
+knitr::include_graphics('figures/04-AWS/aws_sso_client.PNG')
+```
+
+If everything has gone as expected, you should now be able to list our set of buckets that we have on AWS (your profile name should have been given as part of the previous command output):
 
 ```console
-$ aws s3 ls 
+$ aws s3 ls --profile your_profile_name
 ```
+
 
 #### Upload a single file to AWS
 
