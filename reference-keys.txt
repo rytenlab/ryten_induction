@@ -2,6 +2,10 @@ fig:build-book
 fig:ucl-vpn-success
 fig:session-button
 fig:session-screen
+fig:aws-sso-login
+fig:aws-sso-configure
+fig:aws-sso-roles
+fig:aws-sso-client
 fig:Renviron-example
 fig:Workflow-view
 welcome
@@ -41,6 +45,7 @@ why-backup-your-data-stored-on-the-ryten-server
 what-options-are-available-to-you-as-ryten-server-user
 what-are-good-practices-for-data-backup
 aws
+login-on-aws-using-ucl-sso
 accessing-aws-using-the-aws-command-line-interface
 configure-the-aws-cli-service
 upload-a-single-file-to-aws
