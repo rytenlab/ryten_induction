@@ -81,42 +81,54 @@ Once the login request has been approved, the command line will ask you to choos
 knitr::include_graphics('figures/04-AWS/aws_sso_roles.PNG')
 ```
 
-Finally, introduce the region and the output format to be used:
+Once you have chosen your role, the command line will ask for 3 pieces of information. In all cases, AWS will provide default values in square brackets. These can be selected by simply pressing `<ENTER>`.
 
-```{r aws-sso-client, fig.cap = "Introduce the CLI region and output format.", echo = FALSE}
-knitr::include_graphics('figures/04-AWS/aws_sso_client.PNG')
-```
+1. `CLI default client Region [None]`. Please use `eu-west-2`. 
+2. `CLI default output format [None]`. We recommend `json`.
+3. `CLI profile name [ROLENAME-ACCOUNT_ID]`. 
+      - AWS will suggest a profile name in square brackets, which is usually a combination of the role name and account ID. 
+      - If you do not enter an alternative, and simply press `<ENTER>` your profile name will now be what was suggested in square brackets.
+      - The point of the profile name is to allow you to specify your own configurations i.e. so you can reference this profile from among all those defined on the server.
+      - If you specify `default` as the profile name, this profile becomes the one used whenever you run an AWS CLI command and you do not specify a profile name.
 
-If everything has gone as expected, you should now be able to list our set of buckets that we have on AWS (your profile name should have been given as part of the previous command output):
+If everything has gone as expected, you should now be able to list the set of buckets on AWS. **Remember: to use any AWS CLI command, your profile name must be specified, unless you chose to use the `default` profile.**
 
 ```console
 $ aws s3 ls --profile your_profile_name
 ```
 
+#### AWS SSO session duration
+
+Any AWS session will be automatically signed out after 12 hours (this is the maximum session duration; for more information see [here](https://docs.aws.amazon.com/singlesignon/latest/userguide/howtosessionduration.html)). Please bear this in mind when downloading/uploading any files and checking data integrity. If you think your process may take longer than 12 hours, consider breaking up the process by using subfolders.
 
 #### Upload a single file to AWS
 
-Let's suppose we have a bucket on AWS called 'my-bucket'. Let's also suppose you have a file called 'myfile.txt' stored in your local that you would like to upload to AWS. To upload the file 'myfile.txt' to the bucket 'my-bucket':
+Let's suppose we have a bucket on AWS called `my-bucket`. Let's also suppose you have a file called `myfile.txt` stored in your local that you would like to upload to AWS. To upload the file `myfile.txt` to the bucket `my-bucket`:
 
 ```console
-$ aws s3 cp myfile.txt s3://my-bucket/ 
+$ aws s3 cp --profile your_profile_name myfile.txt s3://my-bucket/ 
 ```
+
+Unless you have chosen to use the `default` profile, your profile name must be specified.
 
 #### Download a single file from AWS
 
-To download the file 'myfile.txt' from the 's3://my-bucket/' AWS bucket into your local folder:
+To download the file `myfile.txt` from the `s3://my-bucket/` AWS bucket into your local folder:
 
 ```console
-$ aws s3 cp s3://my-bucket/myfile.txt ./my_local_folder 
+$ aws s3 cp --profile your_profile_name s3://my-bucket/myfile.txt ./my_local_folder 
 ```
+Unless you have chosen to use the `default` profile, your profile name must be specified.
 
 #### Upload multiple files to AWS
 
 To upload multiple files, we can use the sync command. The **sync** command syncs objects under a specified local folder to files in a AWS bucket by uploading them to AWS.
 
 ```console
-$ aws s3 sync my_local_folder/ s3://my-bucket/ 
+$ aws s3 sync --profile your_profile_name my_local_folder/ s3://my-bucket/ 
 ```
+
+Unless you have chosen to use the `default` profile, your profile name must be specified.
 
 #### Download multiple files from AWS
 
@@ -125,36 +137,40 @@ To download multiple files from an AWS bucket to your local folder, we can also 
 ***Please, be aware the costs associated with downloading files correspond to $0.090 per GB - first 10 TB / month data transfer out beyond the global free tier.***
 
 ```console
-$ aws s3 sync s3://my-bucket/my_remote_folder/ ./my_local_folder 
+$ aws s3 sync --profile your_profile_name s3://my-bucket/my_remote_folder/ ./my_local_folder 
 ```
+
+Unless you have chosen to use the `default` profile, your profile name must be specified.
 
 ### Checking AWS file integrity
 
-Considering the example used in the previous section, let's check the integrity of the local folder './my_local_folder' matches with the integrity of the remote AWS folder 's3://my-bucket/my_local_folder/'.
+Considering the example used in the previous section, let's check the integrity of the local folder `./my_local_folder` matches with the integrity of the remote AWS folder `s3://my-bucket/my_local_folder/`.
 
-1. First, clone the 'aws-s3-integrity-check' repo.
+**It is important that when you run the integrity check that you are using the `default` profile. If not, AWS will expect your profile name to be specified with `--profile` (which the `aws-s3-integrity-check` repo is not currently configured for).
+
+1. First, clone the `aws-s3-integrity-check` repo.
 
 ```console
 $ git clone https://github.com/SoniaRuiz/aws-s3-integrity-check.git
 ```
-2. Clone the 's3md5' repo.
+2. Clone the `s3md5` repo.
 
 ```console
 $ git clone https://github.com/antespi/s3md5.git
 ```
-3. Move the s3md5 folder within the aws-s3-integrity-check folder:
+3. Move the `s3md5` folder within the `aws-s3-integrity-check` folder:
 
 ```console
 $ mv ./s3md5 ./aws-s3-integrity-check
 ```
 
-4. Next, grant execution access permission to he s3md5 script file.
+4. Next, grant execution access permission to he `s3md5` script file.
 
 ```console
 $ chmod 755 ./aws-s3-integrity-check/s3md5/s3md5
 ```
 
-5. The aws-s3-integrity-check folder should look similar to the following:
+5. The `aws-s3-integrity-check` folder should look similar to the following:
 
 ```console
 total 16
@@ -163,7 +179,7 @@ total 16
 drwxr-xr-x 2 your_user your_group 4096 date s3md5
 ```
 
-6. Execute the script 'aws_check_integrity.sh' following the this structure: **aws_check_integrity.sh 'local_path' 'bucket_name' 'bucket_folder'**
+6. Execute the script `aws_check_integrity.sh` following the this structure: **`aws_check_integrity.sh` `local_path` `bucket_name` `bucket_folder`**
 
 ```console
 $ aws_check_integrity.sh ./my_local_folder my-bucket my_local_folder/
