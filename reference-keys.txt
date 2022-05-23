@@ -5,7 +5,6 @@ fig:session-screen
 fig:aws-sso-login
 fig:aws-sso-configure
 fig:aws-sso-roles
-fig:aws-sso-client
 fig:Renviron-example
 fig:Workflow-view
 welcome
@@ -48,6 +47,7 @@ aws
 login-on-aws-using-ucl-sso
 accessing-aws-using-the-aws-command-line-interface
 configure-the-aws-cli-service
+aws-sso-session-duration
 upload-a-single-file-to-aws
 download-a-single-file-from-aws
 upload-multiple-files-to-aws
