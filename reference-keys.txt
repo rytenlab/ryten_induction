@@ -93,6 +93,7 @@ resources
 how-tos
 reproducible-science
 heritability-and-ld-score-regression
+rna-sequencing
 statistics-and-data-visualisation
 books
 references
