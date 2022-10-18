@@ -128,7 +128,8 @@ If your name is not on this list, but you are using a port for e.g. Jupyter Note
 
 - RStudio server: 8787
 - Aine: 8960
-- David: 8932, 8888
+- David: 8932
+- Kylie: 8888
 - Karishma: 8965
 - Regina: 8990, 8991
 - Sainath: 8999
